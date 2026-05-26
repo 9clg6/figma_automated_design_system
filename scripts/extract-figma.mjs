@@ -45,7 +45,7 @@ if (!FILE_KEY) {
 }
 
 // Pages to fetch (only the relevant DS pages, not the full 136k-node file)
-const DS_PAGE_IDS = config.figma_page_ids || ['58558:395', '58558:363'];
+const DS_PAGE_IDS = config.figma_page_ids || ['49823:12141', '58558:389', '58558:391'];
 
 // ── Cache ──────────────────────────────────────────────────────
 const CACHE_DIR = join(ROOT, '.cache');
@@ -173,7 +173,7 @@ async function main() {
 
   // ── Step 1: lightweight check — has the file changed? ────────
   console.log('📡 Step 1: checking file metadata (lightweight)...');
-  const fileMeta = await figmaGet(`/files/${FILE_KEY}?depth=0`);
+  const fileMeta = await figmaGet(`/files/${FILE_KEY}?depth=1`);
   console.log(`   File: "${fileMeta.name}"`);
   console.log(`   Last modified: ${fileMeta.lastModified}`);
 
@@ -229,96 +229,75 @@ async function main() {
   console.log(`   Total: ${nodeCount} nodes indexed`);
 
   // ── Resolve styles ───────────────────────────────────────────
-  // Use styles from the pages response, OR scan nodes for style references
+  // Build reverse lookup: style_id → { name, styleType, key, description }
+  // Then walk nodes: node.styles.fill/text/effect → style_id → name + extract value from node
   const styleEntries = Object.entries(pageStyles);
-  console.log(`\n📋 Styles found: ${styleEntries.length}`);
+  console.log(`\n📋 Styles definitions found: ${styleEntries.length}`);
 
-  // If no styles in page response, scan nodes for fills/text/effects directly
+  const styleLookup = {}; // style_id → info
+  const byType = { FILL: 0, TEXT: 0, EFFECT: 0 };
+  for (const [styleId, info] of styleEntries) {
+    styleLookup[styleId] = info;
+    if (byType[info.styleType] !== undefined) byType[info.styleType]++;
+  }
+  console.log(
+    `   FILL: ${byType.FILL}, TEXT: ${byType.TEXT}, EFFECT: ${byType.EFFECT}`,
+  );
+
   const colors = {};
   const typography = {};
   const effects = {};
 
-  if (styleEntries.length > 0) {
-    // Strategy A: resolve via file.styles map
-    const byType = { FILL: [], TEXT: [], EFFECT: [], GRID: [] };
-    for (const [nodeId, info] of styleEntries) {
-      const type = info.styleType;
-      if (byType[type]) byType[type].push({ nodeId, ...info });
-    }
+  console.log('\n🔗 Resolving styles via node references...');
 
-    console.log(
-      `   FILL: ${byType.FILL.length}, TEXT: ${byType.TEXT.length}, EFFECT: ${byType.EFFECT.length}`,
-    );
-    console.log('\n🔗 Resolving style properties...');
+  for (const [nodeId, node] of Object.entries(nodeIndex)) {
+    if (!node.styles) continue;
 
-    for (const style of byType.FILL) {
-      const node = nodeIndex[style.nodeId];
+    // ── Colors: node.styles.fill or node.styles.fills → style_id
+    const fillStyleId = node.styles.fill || node.styles.fills;
+    if (fillStyleId && styleLookup[fillStyleId]) {
+      const info = styleLookup[fillStyleId];
       const parsed = parseColor(node);
-      if (parsed) {
-        colors[style.name] = {
-          node_id: style.nodeId,
-          key: style.key,
-          description: style.description || '',
+      if (parsed && !colors[info.name]) {
+        colors[info.name] = {
+          node_id: nodeId,
+          style_id: fillStyleId,
+          key: info.key || '',
+          description: info.description || '',
           ...parsed,
         };
       }
     }
 
-    for (const style of byType.TEXT) {
-      const node = nodeIndex[style.nodeId];
+    // ── Typography: node.styles.text → style_id
+    const textStyleId = node.styles.text;
+    if (textStyleId && styleLookup[textStyleId]) {
+      const info = styleLookup[textStyleId];
       const parsed = parseTypography(node);
-      if (parsed) {
-        typography[style.name] = {
-          node_id: style.nodeId,
-          key: style.key,
-          description: style.description || '',
+      if (parsed && !typography[info.name]) {
+        typography[info.name] = {
+          node_id: nodeId,
+          style_id: textStyleId,
+          key: info.key || '',
+          description: info.description || '',
           ...parsed,
         };
       }
     }
 
-    for (const style of byType.EFFECT) {
-      const node = nodeIndex[style.nodeId];
+    // ── Effects: node.styles.effect → style_id
+    const effectStyleId = node.styles.effect;
+    if (effectStyleId && styleLookup[effectStyleId]) {
+      const info = styleLookup[effectStyleId];
       const parsed = parseEffects(node);
-      if (parsed) {
-        effects[style.name] = {
-          node_id: style.nodeId,
-          key: style.key,
-          description: style.description || '',
+      if (parsed?.length && !effects[info.name]) {
+        effects[info.name] = {
+          node_id: nodeId,
+          style_id: effectStyleId,
+          key: info.key || '',
+          description: info.description || '',
           effects: parsed,
         };
-      }
-    }
-  } else {
-    // Strategy B: no styles map — scan all nodes for fills/text/effects
-    console.log('   No styles map — scanning nodes directly...');
-
-    for (const [nodeId, node] of Object.entries(nodeIndex)) {
-      // Colors: nodes with fills and a named style reference
-      if (node.fills?.length && node.styles?.fill) {
-        const parsed = parseColor(node);
-        if (parsed) {
-          const name = node.name || `color-${nodeId}`;
-          colors[name] = { node_id: nodeId, ...parsed };
-        }
-      }
-
-      // Typography: text nodes with style properties
-      if (node.type === 'TEXT' && node.style) {
-        const parsed = parseTypography(node);
-        if (parsed) {
-          const name = node.name || `text-${nodeId}`;
-          typography[name] = { node_id: nodeId, ...parsed };
-        }
-      }
-
-      // Effects: nodes with effects
-      if (node.effects?.length) {
-        const parsed = parseEffects(node);
-        if (parsed?.length) {
-          const name = node.name || `effect-${nodeId}`;
-          effects[name] = { node_id: nodeId, effects: parsed };
-        }
       }
     }
   }

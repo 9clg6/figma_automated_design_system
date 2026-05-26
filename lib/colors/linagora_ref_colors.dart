@@ -22,7 +22,7 @@ class LinagoraRefColors {
 
   LinagoraRefColors._material()
       : primary = const MaterialColor(
-          0xFF46A2FF,
+          0xFF0A84FF,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF0157AD),
@@ -35,17 +35,17 @@ class LinagoraRefColors {
             80: Color(0xFFBFDFFF),
             90: Color(0xFFD2E9FF),
             95: Color(0xFFE3F1FF),
-            99: Color(0xFFF7FBFF),
+            99: Color(0xFFF6FBFF),
             100: Color(0xFFFFFFFF),
           },
         ),
         secondary = const MaterialColor(
-          0xFF85B5EC,
+          0xFF5C9CE6,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF243B55),
             20: Color(0xFF436E9F),
-            30: Color(0xFF5085C4),
+            30: Color(0xFF5085C3),
             40: Color(0xFF5C9CE6),
             50: Color(0xFF85B5EC),
             60: Color(0xFF96BCE8),
@@ -58,7 +58,7 @@ class LinagoraRefColors {
           },
         ),
         tertiary = const MaterialColor(
-          0xFFCFD8E2,
+          0xFFB8C1CC,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF37383A),
@@ -76,7 +76,7 @@ class LinagoraRefColors {
           },
         ),
         neutral = const MaterialColor(
-          0xFF787579,
+          0xFF605D62,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF1C1B1F),
@@ -94,7 +94,7 @@ class LinagoraRefColors {
           },
         ),
         neutralVariant = const MaterialColor(
-          0xFF79747E,
+          0xFF605D66,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF1D1A22),
@@ -112,7 +112,7 @@ class LinagoraRefColors {
           },
         ),
         error = const MaterialColor(
-          0xFF46A2FF,
+          0xFFFF3347,
           <int, Color>{
             0: Color(0xFF000000),
             10: Color(0xFF7A1E27),

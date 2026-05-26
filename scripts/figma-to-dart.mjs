@@ -32,15 +32,14 @@ const MAP_PATH = join(ROOT, 'config', 'figma-map.json');
 const PROMPT_PATH = join(ROOT, 'config', 'system-prompt.md');
 const KB_PATH = join(ROOT, 'kb', 'registries');
 
-const MODEL = 'claude-sonnet-4-20250514';
+const MODEL = 'claude-sonnet-4-6';
 const MAX_TOKENS = 8192;
 const TIMEOUT_MS = 8 * 60 * 1000; // 8 min hard cap
 
 // ── Allowlist — only these paths can be edited ─────────────────
 const ALLOWED_PATHS = [
-  'lib/widgets/theme/',
-  'lib/config/theme/',
-  'lib/theme/',
+  'lib/colors/',
+  'lib/style/',
 ];
 
 // ── Load inputs ────────────────────────────────────────────────
@@ -63,12 +62,15 @@ function loadDartFiles() {
   const map = JSON.parse(figmaMap);
   const files = {};
 
-  for (const [_nodeId, dartPath] of Object.entries(map)) {
-    const fullPath = join(ROOT, dartPath);
-    if (existsSync(fullPath)) {
-      files[dartPath] = readFileSync(fullPath, 'utf8');
-    } else {
-      files[dartPath] = '// File does not exist yet — create it.';
+  for (const registry of Object.values(map.registries || {})) {
+    const dartFiles = registry.dart_files || (registry.dart_file ? [registry.dart_file] : []);
+    for (const dartPath of dartFiles) {
+      const fullPath = join(ROOT, dartPath);
+      if (existsSync(fullPath)) {
+        files[dartPath] = readFileSync(fullPath, 'utf8');
+      } else {
+        files[dartPath] = '// File does not exist yet — create it.';
+      }
     }
   }
 
@@ -77,34 +79,42 @@ function loadDartFiles() {
 
 // ── Default system prompt ──────────────────────────────────────
 function getDefaultSystemPrompt() {
-  return `You are a Flutter theme engineer. You receive:
-1. A diff of design system changes from Figma (knowledge-base registry format)
-2. A mapping of Figma node IDs to Dart file paths
+  return `You are a Flutter theme engineer for the Linagora Design Flutter package.
+
+You receive:
+1. A diff of design system changes from Figma (KB registry format)
+2. A mapping of registries to Dart file paths
 3. The current content of those Dart files
 
 Your job:
 - Update ONLY the Dart files listed in the mapping
-- Map every design token to the project's theme system (ColorScheme, TextTheme, AppSpacing)
-- NEVER hardcode color values, font sizes, or spacing — always use theme references
+- Preserve the existing class structure and singleton factory pattern
 - NEVER touch files outside the allowed paths
 - Output a JSON array of file edits
 
 Allowed paths: ${ALLOWED_PATHS.join(', ')}
 
+Conventions:
+- Classes use Linagora* prefix (LinagoraSysColors, LinagoraTextStyle, etc.)
+- Colors: 3-layer architecture (KeyColors → RefColors → SysColors)
+- LinagoraSysColors uses private _*Dark fields with getter fallbacks
+- All values use const Color(0xFF...) or const TextStyle(...)
+- Singleton pattern: static final _instance + factory .material()
+
 Output format (strict JSON, no markdown):
 [
   {
-    "path": "lib/theme/colors.dart",
+    "path": "lib/colors/linagora_sys_colors.dart",
     "action": "edit",
     "content": "// full file content after edit"
   }
 ]
 
 Rules:
-- Preserve existing code structure and comments
-- Add new tokens, update changed values, do NOT remove tokens unless explicitly deleted in the diff
-- Use const where possible
-- Follow Dart conventions (lowerCamelCase for variables, UpperCamelCase for classes)
+- Preserve existing code structure, comments, constructor parameters
+- Add new tokens, update changed values, do NOT remove unless explicitly deleted
+- Use const everywhere
+- Follow existing naming (lowerCamelCase fields, UpperCamelCase classes)
 `;
 }
 

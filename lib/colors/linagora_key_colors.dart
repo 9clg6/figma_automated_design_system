@@ -21,10 +21,10 @@ class LinagoraKeyColors {
   }
 
   LinagoraKeyColors._material()
-      : primary = const Color(0xFF6750A4),
-        secondary = const Color(0xFF625B71),
-        tertiary = const Color(0xFF7D5260),
+      : primary = const Color(0xFF0A84FF),
+        secondary = const Color(0xFF5C9CE6),
+        tertiary = const Color(0xFFB8C1CC),
         neutral = const Color(0xFF605D62),
         neutralVariant = const Color(0xFF605D66),
-        error = const Color(0xFFB3261E);
+        error = const Color(0xFFFF3347);
 }

@@ -1,0 +1,6 @@
+dsName: "twake-ds"
+figmaFileKey: "Cu4NB44bcURKEy40DEfwWi"
+kbPath: "bridge-ds"
+cron:
+  cadence: "daily"
+  time: "06:00"

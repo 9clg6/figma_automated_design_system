@@ -30,7 +30,7 @@ const ROOT = resolve(import.meta.dirname, '..');
 const DIFF_PATH = '/tmp/kb.diff';
 const MAP_PATH = join(ROOT, 'config', 'figma-map.json');
 const PROMPT_PATH = join(ROOT, 'config', 'system-prompt.md');
-const KB_PATH = join(ROOT, 'bridge-ds', 'knowledge-base');
+const KB_PATH = join(ROOT, 'kb', 'registries');
 
 const MODEL = 'claude-sonnet-4-20250514';
 const MAX_TOKENS = 8192;

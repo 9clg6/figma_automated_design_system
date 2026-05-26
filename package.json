@@ -8,11 +8,11 @@
     "node": ">=20"
   },
   "scripts": {
+    "extract": "node scripts/extract-figma.mjs",
     "sync": "node scripts/figma-to-dart.mjs",
     "dry-run": "echo 'Dry run — would call figma-to-dart.mjs'"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
-    "@noemuch/bridge-ds": "^6.0.0"
+    "@anthropic-ai/sdk": "^0.39.0"
   }
 }

@@ -1,0 +1,121 @@
+name: Figma DS Sync
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # Nightly at 2am UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — detect drift only, no PR'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: '20'
+  KB_PATH: bridge-ds/knowledge-base
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ── 1. Setup ──────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Bridge DS
+        run: npm install -g @noemuch/bridge-ds
+
+      # ── 2. Extract KB from Figma REST API ─────────────────────
+      - name: Extract Figma KB
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: bridge-ds extract --headless
+
+      # ── 3. Detect drift ───────────────────────────────────────
+      - name: Detect KB drift
+        id: drift
+        run: |
+          if git diff --quiet ${{ env.KB_PATH }}/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No KB drift detected. Exiting."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --stat ${{ env.KB_PATH }}/
+            git diff ${{ env.KB_PATH }}/ > /tmp/kb.diff
+
+            # Count changed nodes for guard rail
+            CHANGED_FILES=$(git diff --name-only ${{ env.KB_PATH }}/ | wc -l)
+            echo "changed_files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
+            echo "::notice::KB drift detected: $CHANGED_FILES files changed."
+          fi
+
+      # ── 4. Guard: abort if diff is too large ──────────────────
+      - name: Guard — diff size check
+        if: steps.drift.outputs.changed == 'true'
+        run: |
+          MAX_CHANGED=20
+          if [ "${{ steps.drift.outputs.changed_files }}" -gt "$MAX_CHANGED" ]; then
+            echo "::error::Diff too large (${{ steps.drift.outputs.changed_files }} files > $MAX_CHANGED). Likely a DS refactor — needs manual review."
+            exit 1
+          fi
+
+      # ── 5. Claude Agent — generate Dart code from KB diff ─────
+      - name: Generate Dart code
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        timeout-minutes: 10
+        run: node scripts/figma-to-dart.mjs
+
+      # ── 6. Validate ──────────────────────────────────────────
+      - name: Validate — Flutter analyze
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: pubspec.yaml
+          cache: true
+
+      - name: Run analysis & tests
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        run: |
+          flutter analyze lib/
+          flutter test test/theme/
+
+      # ── 7. Open draft PR ─────────────────────────────────────
+      - name: Create draft PR
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: figma-sync/${{ github.run_id }}
+          commit-message: 'chore(theme): sync Figma DS changes'
+          title: 'chore(theme): sync Figma DS changes'
+          body: |
+            ## Automated Figma DS sync
+
+            **Drift detected** in `${{ env.KB_PATH }}/` — ${{ steps.drift.outputs.changed_files }} files changed.
+
+            ### KB diff
+            ```diff
+            ${{ steps.drift.outputs.changed_files }} files changed
+            ```
+
+            ### Checklist
+            - [ ] Review token mapping changes
+            - [ ] Verify generated Dart matches Figma intent
+            - [ ] Check `flutter analyze` passed
+            - [ ] Check `flutter test test/theme/` passed
+          draft: true
+          labels: |
+            design-system
+            automated

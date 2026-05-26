@@ -1,0 +1,33 @@
+{
+  "$schema": "./figma-map.schema.json",
+  "$comment": "Maps Figma node IDs (from bridge-ds knowledge-base) to Dart file paths.",
+  "figma_file_key": "7Jvj1nOTgL6HHcXuPSErzf",
+
+  "registries": {
+    "colors": {
+      "kb_file": "bridge-ds/knowledge-base/registries/colors.json",
+      "dart_file": "lib/theme/app_colors.dart",
+      "description": "Color tokens → AppColors class"
+    },
+    "typography": {
+      "kb_file": "bridge-ds/knowledge-base/registries/typography.json",
+      "dart_file": "lib/theme/app_typography.dart",
+      "description": "Text styles → AppTypography class"
+    },
+    "spacing": {
+      "kb_file": "bridge-ds/knowledge-base/registries/spacing.json",
+      "dart_file": "lib/theme/app_spacing.dart",
+      "description": "Spacing tokens → AppSpacing constants"
+    },
+    "radii": {
+      "kb_file": "bridge-ds/knowledge-base/registries/radii.json",
+      "dart_file": "lib/theme/app_radii.dart",
+      "description": "Border radius tokens → AppRadii constants"
+    },
+    "shadows": {
+      "kb_file": "bridge-ds/knowledge-base/registries/shadows.json",
+      "dart_file": "lib/theme/app_shadows.dart",
+      "description": "Shadow tokens → AppShadows constants"
+    }
+  }
+}

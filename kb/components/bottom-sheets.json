@@ -1,0 +1,453 @@
+{
+  "name": "❖ Bottom sheets",
+  "page_id": "58560:42862",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Bottom sheet",
+      "id": "51827:5859",
+      "variants": [
+        {
+          "name": "Modal=True",
+          "type": "COMPONENT",
+          "id": "51827:5863",
+          "width": 400,
+          "height": 480,
+          "children": []
+        },
+        {
+          "name": "Modal=False",
+          "type": "COMPONENT",
+          "id": "51827:5860",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Modal=True",
+      "id": "51827:5863",
+      "variants": [
+        {
+          "name": "Modal=True",
+          "type": "COMPONENT",
+          "id": "51827:5863",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Modal=False",
+      "id": "51827:5860",
+      "variants": [
+        {
+          "name": "Modal=False",
+          "type": "COMPONENT",
+          "id": "51827:5860",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Bottom sheet-dark",
+      "id": "51827:5867",
+      "variants": [
+        {
+          "name": "Modal=True",
+          "type": "COMPONENT",
+          "id": "51827:5871",
+          "width": 400,
+          "height": 480,
+          "children": []
+        },
+        {
+          "name": "Modal=False",
+          "type": "COMPONENT",
+          "id": "51827:5868",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Modal=True",
+      "id": "51827:5871",
+      "variants": [
+        {
+          "name": "Modal=True",
+          "type": "COMPONENT",
+          "id": "51827:5871",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Modal=False",
+      "id": "51827:5868",
+      "variants": [
+        {
+          "name": "Modal=False",
+          "type": "COMPONENT",
+          "id": "51827:5868",
+          "width": 400,
+          "height": 480,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Bottom sheets",
+    "type": "CANVAS",
+    "id": "58560:42862",
+    "children": [
+      {
+        "name": "Bottom sheets",
+        "type": "FRAME",
+        "id": "58560:42863",
+        "width": 1104,
+        "height": 2053,
+        "cornerRadii": [
+          60,
+          60,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "hex": "#FFFFFF"
+          }
+        ],
+        "styleRefs": {
+          "fills": "51430:5595",
+          "fill": "51430:5595"
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58560:42864",
+            "width": 1104,
+            "height": 323,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Bottom sheets"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58560:42864;52040:21481",
+                "width": 1000,
+                "height": 201,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58560:42864;52040:21482",
+                    "width": 533,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Bottom sheets",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58560:42864;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58560:42864;52040:21484",
+                    "width": 1000,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Bottom sheets are surfaces containing supplementar",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Components",
+            "type": "FRAME",
+            "id": "58560:42865",
+            "width": 1104,
+            "height": 1730,
+            "layout": {
+              "mode": "HORIZONTAL",
+              "padding": {
+                "top": 70,
+                "right": 70,
+                "bottom": 70,
+                "left": 70
+              },
+              "align": "CENTER"
+            },
+            "children": [
+              {
+                "name": "Light Scheme",
+                "type": "FRAME",
+                "id": "58560:42866",
+                "width": 482,
+                "height": 1590,
+                "cornerRadii": [
+                  16,
+                  0,
+                  0,
+                  16
+                ],
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 10,
+                  "padding": {}
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#F4F4F4"
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#CAC4D0"
+                  }
+                ],
+                "strokeWeight": 1,
+                "styleRefs": {
+                  "fills": "50391:8177",
+                  "strokes": "51527:4756",
+                  "fill": "50391:8177",
+                  "stroke": "51527:4756"
+                },
+                "children": [
+                  {
+                    "name": "Bottom sheet",
+                    "type": "COMPONENT_SET",
+                    "id": "51827:5859",
+                    "width": 480,
+                    "height": 1588,
+                    "cornerRadii": [
+                      16,
+                      0,
+                      0,
+                      16
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8177",
+                      "fill": "50391:8177"
+                    },
+                    "children": [
+                      {
+                        "name": "Modal=True",
+                        "type": "COMPONENT",
+                        "id": "51827:5863",
+                        "width": 400,
+                        "height": 480,
+                        "children": []
+                      },
+                      {
+                        "name": "Modal=False",
+                        "type": "COMPONENT",
+                        "id": "51827:5860",
+                        "width": 400,
+                        "height": 480,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Dark Scheme",
+                "type": "FRAME",
+                "id": "58560:42867",
+                "width": 482,
+                "height": 1590,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 10,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Bottom sheet-dark",
+                    "type": "COMPONENT_SET",
+                    "id": "51827:5867",
+                    "width": 482,
+                    "height": 1590,
+                    "cornerRadii": [
+                      0,
+                      16,
+                      16,
+                      0
+                    ],
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      }
+                    ],
+                    "strokes": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      }
+                    ],
+                    "strokeWeight": 1,
+                    "styleRefs": {
+                      "fills": "50391:8202",
+                      "strokes": "50391:8202",
+                      "fill": "50391:8202",
+                      "stroke": "50391:8202"
+                    },
+                    "children": [
+                      {
+                        "name": "Modal=True",
+                        "type": "COMPONENT",
+                        "id": "51827:5871",
+                        "width": 400,
+                        "height": 480,
+                        "children": []
+                      },
+                      {
+                        "name": "Modal=False",
+                        "type": "COMPONENT",
+                        "id": "51827:5868",
+                        "width": 400,
+                        "height": 480,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

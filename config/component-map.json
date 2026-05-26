@@ -1,0 +1,233 @@
+{
+  "figma_file": "Cu4NB44bcURKEy40DEfwWi",
+  "components": {
+    "avatar": {
+      "page_id": "58634:16307",
+      "figma_name": "❖ Avatar",
+      "dart_files": [
+        "lib/avatar/round_avatar.dart",
+        "lib/avatar/round_avatar_style.dart",
+        "lib/avatar/avatar.dart"
+      ]
+    },
+    "badges": {
+      "page_id": "58558:25218",
+      "figma_name": "❖ Badges",
+      "dart_files": []
+    },
+    "bottom-sheets": {
+      "page_id": "58560:42862",
+      "figma_name": "❖ Bottom sheets",
+      "dart_files": []
+    },
+    "box-text": {
+      "page_id": "58993:4183",
+      "figma_name": "❖ Box text",
+      "dart_files": []
+    },
+    "bubble-media": {
+      "page_id": "58667:16777",
+      "figma_name": "❖ Bubble media",
+      "dart_files": []
+    },
+    "bubble-message": {
+      "page_id": "58582:45351",
+      "figma_name": "❖ Bubble message",
+      "dart_files": []
+    },
+    "bubble-thread": {
+      "page_id": "58648:25202",
+      "figma_name": "❖ Bubble thread",
+      "dart_files": []
+    },
+    "buttons": {
+      "page_id": "58560:42876",
+      "figma_name": "❖ Buttons",
+      "dart_files": []
+    },
+    "cards": {
+      "page_id": "58560:42899",
+      "figma_name": "❖ Cards",
+      "dart_files": []
+    },
+    "chat-message": {
+      "page_id": "54227:28234",
+      "figma_name": "❖ Chat message",
+      "dart_files": []
+    },
+    "checkboxes": {
+      "page_id": "58560:42900",
+      "figma_name": "❖ Checkboxes",
+      "dart_files": []
+    },
+    "chips": {
+      "page_id": "58560:42901",
+      "figma_name": "❖ Chips",
+      "dart_files": []
+    },
+    "date-pickers": {
+      "page_id": "58560:42902",
+      "figma_name": "❖ Date pickers",
+      "dart_files": []
+    },
+    "dialog-modal": {
+      "page_id": "58560:42903",
+      "figma_name": "❖ Dialog modal",
+      "dart_files": [
+        "lib/dialog/confirmation_dialog_builder.dart",
+        "lib/dialog/options_dialog.dart"
+      ]
+    },
+    "dividers": {
+      "page_id": "58560:43737",
+      "figma_name": "❖ Dividers",
+      "dart_files": [
+        "lib/style/linagora_divider_style.dart"
+      ]
+    },
+    "fab": {
+      "page_id": "58560:43738",
+      "figma_name": "❖ Floating action buttons (FAB)",
+      "dart_files": []
+    },
+    "headers": {
+      "page_id": "58582:39763",
+      "figma_name": "❖ Headers",
+      "dart_files": []
+    },
+    "icon-button": {
+      "page_id": "58560:43739",
+      "figma_name": "❖ Icon button",
+      "dart_files": []
+    },
+    "input-field": {
+      "page_id": "58582:45028",
+      "figma_name": "❖ Input field",
+      "dart_files": []
+    },
+    "label": {
+      "page_id": "58582:45232",
+      "figma_name": "❖ Label",
+      "dart_files": []
+    },
+    "lists": {
+      "page_id": "58560:43740",
+      "figma_name": "❖ Lists",
+      "dart_files": [
+        "lib/list_item/twake_list_item.dart",
+        "lib/list_item/twake_inkwell.dart"
+      ]
+    },
+    "menus": {
+      "page_id": "58560:43741",
+      "figma_name": "❖ Menus",
+      "dart_files": []
+    },
+    "menu-new": {
+      "page_id": "60275:776",
+      "figma_name": "❖ menu new (desktop+mobile)",
+      "dart_files": []
+    },
+    "members-list": {
+      "page_id": "58568:34601",
+      "figma_name": "❖ Members list",
+      "dart_files": []
+    },
+    "message-counter": {
+      "page_id": "58648:39819",
+      "figma_name": "❖ Message counter",
+      "dart_files": []
+    },
+    "message-type-icon": {
+      "page_id": "58688:41412",
+      "figma_name": "❖ Message type icon",
+      "dart_files": []
+    },
+    "navigation-rail": {
+      "page_id": "58582:36629",
+      "figma_name": "❖ Navigation rail",
+      "dart_files": []
+    },
+    "on-action-hovered-bar": {
+      "page_id": "58568:35422",
+      "figma_name": "❖ On action hovered bar",
+      "dart_files": [
+        "lib/style/linagora_hover_style.dart"
+      ]
+    },
+    "pin-events": {
+      "page_id": "58582:45268",
+      "figma_name": "❖ Pin events",
+      "dart_files": []
+    },
+    "progress-indicators": {
+      "page_id": "58560:43876",
+      "figma_name": "❖ Progress indicators",
+      "dart_files": []
+    },
+    "reaction-chat": {
+      "page_id": "58560:43877",
+      "figma_name": "❖ Reaction chat",
+      "dart_files": [
+        "lib/reaction/reaction_picker.dart",
+        "lib/reaction/reaction_dialog.dart",
+        "lib/reaction/reaction_dialog_widget.dart"
+      ]
+    },
+    "radio-buttons": {
+      "page_id": "58560:43878",
+      "figma_name": "❖ Radio buttons",
+      "dart_files": []
+    },
+    "ruller": {
+      "page_id": "58560:43979",
+      "figma_name": "❖ Ruller",
+      "dart_files": []
+    },
+    "side-sheets": {
+      "page_id": "58560:43980",
+      "figma_name": "❖ Side sheets",
+      "dart_files": []
+    },
+    "sliders": {
+      "page_id": "58560:43981",
+      "figma_name": "❖ Sliders",
+      "dart_files": []
+    },
+    "snackbars": {
+      "page_id": "58560:43982",
+      "figma_name": "❖ Snackbars",
+      "dart_files": []
+    },
+    "settings": {
+      "page_id": "58575:31940",
+      "figma_name": "❖ Settings",
+      "dart_files": []
+    },
+    "switch": {
+      "page_id": "58560:43983",
+      "figma_name": "❖ Switch",
+      "dart_files": []
+    },
+    "tabs": {
+      "page_id": "58560:43984",
+      "figma_name": "❖ Tabs",
+      "dart_files": []
+    },
+    "timestamp": {
+      "page_id": "58566:34822",
+      "figma_name": "❖ Timestamp",
+      "dart_files": []
+    },
+    "tooltips": {
+      "page_id": "58566:33530",
+      "figma_name": "❖ Tooltips",
+      "dart_files": []
+    },
+    "typing-bar": {
+      "page_id": "58582:44736",
+      "figma_name": "❖ Typing bar",
+      "dart_files": []
+    }
+  }
+}

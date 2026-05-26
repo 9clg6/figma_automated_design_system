@@ -1,0 +1,382 @@
+{
+  "M3/Elevation Light/1": {
+    "node_id": "58560:1086",
+    "style_id": "50732:11524",
+    "key": "18ae0e1e09e0045e2b06b3f3ee0875a808b0205e",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.08
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 80,
+        "spread": 0
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 3,
+        "spread": 1
+      }
+    ]
+  },
+  "M3/Elevation Light/2": {
+    "node_id": "58560:1087",
+    "style_id": "50732:11523",
+    "key": "3b0506e2f96e7af6eefd44325e025de9b86dc7ff",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 2,
+        "spread": 0
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 2
+        },
+        "radius": 6,
+        "spread": 2
+      }
+    ]
+  },
+  "M3/Elevation Light/3": {
+    "node_id": "58560:1088",
+    "style_id": "50732:11522",
+    "key": "78dbb8708198bca8beac708d4b14ef887c24dd04",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "radius": 8,
+        "spread": 3
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 3,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Light/4": {
+    "node_id": "58560:1089",
+    "style_id": "50732:11521",
+    "key": "636513f0102dd75aa625d71a6b33ce75f54be2f5",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 6
+        },
+        "radius": 10,
+        "spread": 4
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 2
+        },
+        "radius": 3,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Light/5": {
+    "node_id": "58560:1090",
+    "style_id": "50732:11520",
+    "key": "203fa57f97e176ae8957bf4ea4e00f883ddb204a",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "radius": 4,
+        "spread": 0
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 8
+        },
+        "radius": 12,
+        "spread": 6
+      }
+    ]
+  },
+  "M3/Elevation Dark/1": {
+    "node_id": "58560:1092",
+    "style_id": "50732:11954",
+    "key": "72d5df9c303a4f7f808f5fcba6c1c9b0a00e657f",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 3,
+        "spread": 1
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 2,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Dark/2": {
+    "node_id": "58560:1093",
+    "style_id": "50732:11528",
+    "key": "df1e88f263f31764a4d9ab795045505b2095addd",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 2
+        },
+        "radius": 6,
+        "spread": 2
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 2,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Dark/3": {
+    "node_id": "58560:1094",
+    "style_id": "50732:11527",
+    "key": "e36e730f3a57d169ea4ad3230b998a9d7bfe711a",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "radius": 8,
+        "spread": 3
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 1
+        },
+        "radius": 3,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Dark/4": {
+    "node_id": "58560:1095",
+    "style_id": "50732:11526",
+    "key": "016eb07c7765df2df6c1b470e9f5b1fc32d6ac88",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 6
+        },
+        "radius": 10,
+        "spread": 4
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 2
+        },
+        "radius": 3,
+        "spread": 0
+      }
+    ]
+  },
+  "M3/Elevation Dark/5": {
+    "node_id": "58560:1096",
+    "style_id": "50732:11525",
+    "key": "2e804e068edb642ee102e0b7534415710cb0804b",
+    "description": "",
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.15
+        },
+        "offset": {
+          "x": 0,
+          "y": 8
+        },
+        "radius": 12,
+        "spread": 6
+      },
+      {
+        "type": "DROP_SHADOW",
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "radius": 4,
+        "spread": 0
+      }
+    ]
+  }
+}

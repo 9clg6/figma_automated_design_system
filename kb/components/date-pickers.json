@@ -1,0 +1,700 @@
+{
+  "name": "❖ Date pickers",
+  "page_id": "58560:42902",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Modal Date Picker",
+      "id": "51954:18136",
+      "variants": []
+    },
+    {
+      "name": "Input Date Picker",
+      "id": "51954:18540",
+      "variants": []
+    },
+    {
+      "name": "Docked Input Date Picker [desktop]",
+      "id": "51954:18567",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Local M3 calendar cell",
+      "id": "51954:18817",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Year",
+      "id": "51954:18918",
+      "variants": []
+    },
+    {
+      "name": "Building blocks/Menu button",
+      "id": "51954:18957",
+      "variants": []
+    },
+    {
+      "name": "Modal Date Picker-dark",
+      "id": "51954:18994",
+      "variants": []
+    },
+    {
+      "name": "Input Date Picker-dark",
+      "id": "51954:19398",
+      "variants": []
+    },
+    {
+      "name": "Docked Input Date Picker-dark [desktop]",
+      "id": "51954:19425",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/M3 calendar cell-dark",
+      "id": "51954:19543",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Year-dark",
+      "id": "51954:19649",
+      "variants": []
+    },
+    {
+      "name": "Building blocks/Menu button-dark",
+      "id": "51954:19688",
+      "variants": []
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Date pickers",
+    "type": "CANVAS",
+    "id": "58560:42902",
+    "children": [
+      {
+        "name": "Date pickers",
+        "type": "FRAME",
+        "id": "58560:43506",
+        "width": 2572,
+        "height": 2724,
+        "cornerRadii": [
+          60,
+          60,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58560:43507",
+            "width": 2572,
+            "height": 323,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Date pickers"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Date pickers let users select a date, or a range of dates."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58560:43507;52040:21481",
+                "width": 2468,
+                "height": 201,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58560:43507;52040:21482",
+                    "width": 457,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Date pickers",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58560:43507;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58560:43507;52040:21484",
+                    "width": 2468,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Date pickers let users select a date, or a range o",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Components",
+            "type": "FRAME",
+            "id": "58560:43508",
+            "width": 2572,
+            "height": 2401,
+            "layout": {
+              "mode": "HORIZONTAL",
+              "spacing": 40,
+              "padding": {
+                "top": 70,
+                "right": 70,
+                "bottom": 70,
+                "left": 70
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "51430:5595",
+              "fill": "51430:5595"
+            },
+            "children": [
+              {
+                "name": "Light Scheme",
+                "type": "FRAME",
+                "id": "58560:43509",
+                "width": 1195,
+                "height": 2261,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "padding": {
+                    "top": 40,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#F4F4F4"
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#CAC4D0"
+                  }
+                ],
+                "strokeWeight": 1,
+                "styleRefs": {
+                  "fills": "50391:8177",
+                  "strokes": "51527:4756",
+                  "fill": "50391:8177",
+                  "stroke": "51527:4756"
+                },
+                "children": [
+                  {
+                    "name": "Components",
+                    "type": "FRAME",
+                    "id": "58560:43510",
+                    "width": 1148,
+                    "height": 1741,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 40,
+                      "padding": {
+                        "bottom": 40
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Modal Date Picker",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18136",
+                        "width": 1148,
+                        "height": 724,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8177",
+                          "fill": "50391:8177"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Input Date Picker",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18540",
+                        "width": 716,
+                        "height": 314,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8177",
+                          "fill": "50391:8177"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Docked Input Date Picker [desktop]",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18567",
+                        "width": 1147,
+                        "height": 583,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8177",
+                          "fill": "50391:8177"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Labels",
+                        "type": "GROUP",
+                        "id": "58560:43511",
+                        "width": 254,
+                        "height": 1144,
+                        "cornerRadii": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks",
+                    "type": "FRAME",
+                    "id": "58560:43515",
+                    "width": 1155,
+                    "height": 460,
+                    "cornerRadius": 16,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "padding": {
+                        "top": 100,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 124
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      },
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8294",
+                      "fill": "50391:8294"
+                    },
+                    "children": [
+                      {
+                        "name": "Building Blocks/Local M3 calendar cell",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18817",
+                        "width": 658,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Year",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18918",
+                        "width": 236,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "children": []
+                      },
+                      {
+                        "name": "Building blocks/Menu button",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18957",
+                        "width": 137,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 22,
+                          "padding": {
+                            "top": 26,
+                            "right": 20,
+                            "bottom": 26,
+                            "left": 20
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Labels",
+                        "type": "GROUP",
+                        "id": "58560:43516",
+                        "width": 1088,
+                        "height": 337,
+                        "cornerRadii": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "children": []
+                      },
+                      {
+                        "name": "Title",
+                        "type": "FRAME",
+                        "id": "58560:43532",
+                        "width": 132,
+                        "height": 44,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 10,
+                            "right": 10,
+                            "bottom": 10,
+                            "left": 10
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Dark Scheme",
+                "type": "FRAME",
+                "id": "58560:43534",
+                "width": 1197,
+                "height": 1804,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "padding": {
+                    "top": 40,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#1C1B1F"
+                  }
+                ],
+                "styleRefs": {
+                  "fills": "50391:8202",
+                  "fill": "50391:8202"
+                },
+                "children": [
+                  {
+                    "name": "Components",
+                    "type": "FRAME",
+                    "id": "58560:43535",
+                    "width": 1157,
+                    "height": 1744,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 40,
+                      "padding": {
+                        "bottom": 40
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Modal Date Picker-dark",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:18994",
+                        "width": 1157,
+                        "height": 727,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Input Date Picker-dark",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:19398",
+                        "width": 716,
+                        "height": 314,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Docked Input Date Picker-dark [desktop]",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:19425",
+                        "width": 1143,
+                        "height": 583,
+                        "cornerRadius": 5,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Labels",
+                        "type": "GROUP",
+                        "id": "58560:43536",
+                        "width": 254,
+                        "height": 1144,
+                        "cornerRadii": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks",
+                    "type": "FRAME",
+                    "id": "58560:43540",
+                    "width": 1097,
+                    "height": 460,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "padding": {
+                        "top": 100,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 124
+                      },
+                      "align": "MAX"
+                    },
+                    "children": [
+                      {
+                        "name": "Building Blocks/M3 calendar cell-dark",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:19543",
+                        "width": 583,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Year-dark",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:19649",
+                        "width": 236,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "children": []
+                      },
+                      {
+                        "name": "Building blocks/Menu button-dark",
+                        "type": "COMPONENT_SET",
+                        "id": "51954:19688",
+                        "width": 137,
+                        "height": 340,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 22,
+                          "padding": {
+                            "top": 26,
+                            "right": 20,
+                            "bottom": 26,
+                            "left": 20
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Labels",
+                        "type": "GROUP",
+                        "id": "58560:43541",
+                        "width": 1012,
+                        "height": 337,
+                        "cornerRadii": [
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "children": []
+                      },
+                      {
+                        "name": "Title",
+                        "type": "FRAME",
+                        "id": "58560:43556",
+                        "width": 132,
+                        "height": 44,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 10,
+                            "right": 10,
+                            "bottom": 10,
+                            "left": 10
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

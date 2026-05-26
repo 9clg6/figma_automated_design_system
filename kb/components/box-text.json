@@ -1,0 +1,966 @@
+{
+  "name": "❖ Box text",
+  "page_id": "58993:4183",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Dialog 2",
+      "id": "58898:30274",
+      "variants": [
+        {
+          "name": "Dialog 2",
+          "type": "COMPONENT",
+          "id": "58898:30274",
+          "width": 340,
+          "height": 144,
+          "cornerRadius": 16,
+          "layout": {
+            "mode": "VERTICAL",
+            "spacing": 8,
+            "padding": {
+              "top": 16,
+              "right": 16,
+              "bottom": 16,
+              "left": 16
+            },
+            "crossAlign": "MAX"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#F4F4F4"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8177",
+            "fill": "50391:8177"
+          },
+          "children": [
+            {
+              "name": "Content",
+              "type": "FRAME",
+              "id": "58898:29860",
+              "width": 308,
+              "height": 56,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 8,
+                "padding": {},
+                "align": "MAX"
+              },
+              "children": [
+                {
+                  "name": "title-chat",
+                  "type": "FRAME",
+                  "id": "58898:29861",
+                  "width": 308,
+                  "height": 28,
+                  "layout": {
+                    "mode": "HORIZONTAL",
+                    "spacing": 10,
+                    "padding": {},
+                    "crossAlign": "CENTER"
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Sub text",
+                  "type": "TEXT",
+                  "id": "58898:29863",
+                  "width": 308,
+                  "height": 20,
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "hex": "#1C1B1F"
+                    }
+                  ],
+                  "text": "Sub text",
+                  "textStyle": {
+                    "fontFamily": "Inter",
+                    "fontSize": 14,
+                    "fontWeight": 500,
+                    "letterSpacing": 0.25,
+                    "lineHeight": 20,
+                    "textAlign": "LEFT"
+                  },
+                  "styleRefs": {
+                    "fill": "50391:8178",
+                    "text": "50391:8315"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Buttons",
+              "type": "FRAME",
+              "id": "58898:29864",
+              "width": 308,
+              "height": 48,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {},
+                "align": "MAX",
+                "crossAlign": "CENTER"
+              },
+              "children": [
+                {
+                  "name": "Button",
+                  "type": "INSTANCE",
+                  "id": "58898:29865",
+                  "width": 87,
+                  "height": 48,
+                  "cornerRadius": 100,
+                  "layout": {
+                    "mode": "HORIZONTAL",
+                    "padding": {},
+                    "align": "CENTER",
+                    "crossAlign": "CENTER"
+                  },
+                  "componentProperties": {
+                    "Change icon mobile#56768:0": {
+                      "type": "INSTANCE_SWAP",
+                      "value": "56249:35797",
+                      "preferredValues": [
+                        {
+                          "type": "COMPONENT",
+                          "key": "6f46252e088239cafa171882fe41de83242606e0"
+                        },
+                        {
+                          "type": "COMPONENT",
+                          "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                        }
+                      ]
+                    },
+                    "Change Icon desktop#3032:170": {
+                      "type": "INSTANCE_SWAP",
+                      "value": "56249:37417",
+                      "preferredValues": [
+                        {
+                          "type": "COMPONENT",
+                          "key": "6f46252e088239cafa171882fe41de83242606e0"
+                        },
+                        {
+                          "type": "COMPONENT",
+                          "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                        }
+                      ]
+                    },
+                    "Label#3031:0": {
+                      "type": "TEXT",
+                      "value": "Close"
+                    },
+                    "Type": {
+                      "value": "text",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Icon configuration": {
+                      "value": "none",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "State": {
+                      "value": "enabled",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Device": {
+                      "value": "on-mobile",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Theme": {
+                      "value": "light",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "name": "Button",
+                  "type": "INSTANCE",
+                  "id": "58898:29866",
+                  "width": 85,
+                  "height": 48,
+                  "cornerRadius": 100,
+                  "layout": {
+                    "mode": "HORIZONTAL",
+                    "padding": {},
+                    "align": "CENTER",
+                    "crossAlign": "CENTER"
+                  },
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "hex": "#0A84FF"
+                    }
+                  ],
+                  "styleRefs": {
+                    "fills": "50391:8184",
+                    "fill": "50391:8184"
+                  },
+                  "componentProperties": {
+                    "Change icon mobile#56768:0": {
+                      "type": "INSTANCE_SWAP",
+                      "value": "56249:35797",
+                      "preferredValues": [
+                        {
+                          "type": "COMPONENT",
+                          "key": "6f46252e088239cafa171882fe41de83242606e0"
+                        },
+                        {
+                          "type": "COMPONENT",
+                          "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                        }
+                      ]
+                    },
+                    "Change Icon desktop#3032:170": {
+                      "type": "INSTANCE_SWAP",
+                      "value": "56249:37417",
+                      "preferredValues": [
+                        {
+                          "type": "COMPONENT",
+                          "key": "6f46252e088239cafa171882fe41de83242606e0"
+                        },
+                        {
+                          "type": "COMPONENT",
+                          "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                        }
+                      ]
+                    },
+                    "Label#3031:0": {
+                      "type": "TEXT",
+                      "value": "Label"
+                    },
+                    "Type": {
+                      "value": "filled",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Icon configuration": {
+                      "value": "none",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "State": {
+                      "value": "enabled",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Device": {
+                      "value": "on-mobile",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    },
+                    "Theme": {
+                      "value": "dark",
+                      "type": "VARIANT",
+                      "boundVariables": {}
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bubble message button",
+      "id": "58993:18722",
+      "variants": [
+        {
+          "name": "Device=Mobile",
+          "type": "COMPONENT",
+          "id": "58993:18721",
+          "width": 360,
+          "height": 278,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 4,
+            "padding": {
+              "top": 4,
+              "right": 16,
+              "bottom": 4,
+              "left": 16
+            },
+            "align": "MAX",
+            "crossAlign": "MAX"
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "58993:18299",
+              "width": 328,
+              "height": 270,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 8,
+                "padding": {},
+                "align": "MAX"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Device=Desktop",
+          "type": "COMPONENT",
+          "id": "58993:18720",
+          "width": 1128,
+          "height": 161,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 4,
+            "padding": {
+              "top": 4,
+              "right": 16,
+              "bottom": 4,
+              "left": 16
+            },
+            "crossAlign": "MAX"
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "58993:18534",
+              "width": 1096,
+              "height": 153,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 8,
+                "padding": {},
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Device=Mobile",
+      "id": "58993:18721",
+      "variants": [
+        {
+          "name": "Device=Mobile",
+          "type": "COMPONENT",
+          "id": "58993:18721",
+          "width": 360,
+          "height": 278,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 4,
+            "padding": {
+              "top": 4,
+              "right": 16,
+              "bottom": 4,
+              "left": 16
+            },
+            "align": "MAX",
+            "crossAlign": "MAX"
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "58993:18299",
+              "width": 328,
+              "height": 270,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 8,
+                "padding": {},
+                "align": "MAX"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Device=Desktop",
+      "id": "58993:18720",
+      "variants": [
+        {
+          "name": "Device=Desktop",
+          "type": "COMPONENT",
+          "id": "58993:18720",
+          "width": 1128,
+          "height": 161,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 4,
+            "padding": {
+              "top": 4,
+              "right": 16,
+              "bottom": 4,
+              "left": 16
+            },
+            "crossAlign": "MAX"
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "58993:18534",
+              "width": 1096,
+              "height": 153,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 8,
+                "padding": {},
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Box text",
+    "type": "CANVAS",
+    "id": "58993:4183",
+    "children": [
+      {
+        "name": "Box text",
+        "type": "FRAME",
+        "id": "58993:4226",
+        "width": 1992,
+        "height": 1297,
+        "cornerRadii": [
+          52,
+          52,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58993:4220",
+            "width": 1992,
+            "height": 216,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Box Text"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Badges are used to convey dynamic information, such as a count or status. A badge can include text, labels, or numbers. "
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58993:4220;52040:21481",
+                "width": 1888,
+                "height": 94,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58993:4220;52040:21482",
+                    "width": 291,
+                    "height": 94,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Box Text",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 80,
+                      "fontWeight": 400,
+                      "letterSpacing": -2,
+                      "lineHeight": 93.75,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58993:4220;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58993:4220;52040:21484",
+                    "width": 1044,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Badges are used to convey dynamic information, suc",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "boxtext",
+            "type": "FRAME",
+            "id": "58993:4185",
+            "width": 1992,
+            "height": 1081,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "children": [
+              {
+                "name": "Dialog 2",
+                "type": "COMPONENT",
+                "id": "58898:30274",
+                "width": 340,
+                "height": 144,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 8,
+                  "padding": {
+                    "top": 16,
+                    "right": 16,
+                    "bottom": 16,
+                    "left": 16
+                  },
+                  "crossAlign": "MAX"
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#F4F4F4"
+                  }
+                ],
+                "styleRefs": {
+                  "fills": "50391:8177",
+                  "fill": "50391:8177"
+                },
+                "children": [
+                  {
+                    "name": "Content",
+                    "type": "FRAME",
+                    "id": "58898:29860",
+                    "width": 308,
+                    "height": 56,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 8,
+                      "padding": {},
+                      "align": "MAX"
+                    },
+                    "children": [
+                      {
+                        "name": "title-chat",
+                        "type": "FRAME",
+                        "id": "58898:29861",
+                        "width": 308,
+                        "height": 28,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {},
+                          "crossAlign": "CENTER"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Sub text",
+                        "type": "TEXT",
+                        "id": "58898:29863",
+                        "width": 308,
+                        "height": 20,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "text": "Sub text",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.25,
+                          "lineHeight": 20,
+                          "textAlign": "LEFT"
+                        },
+                        "styleRefs": {
+                          "fill": "50391:8178",
+                          "text": "50391:8315"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Buttons",
+                    "type": "FRAME",
+                    "id": "58898:29864",
+                    "width": 308,
+                    "height": 48,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 10,
+                      "padding": {},
+                      "align": "MAX",
+                      "crossAlign": "CENTER"
+                    },
+                    "children": [
+                      {
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "id": "58898:29865",
+                        "width": 87,
+                        "height": 48,
+                        "cornerRadius": 100,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {},
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "componentProperties": {
+                          "Change icon mobile#56768:0": {
+                            "type": "INSTANCE_SWAP",
+                            "value": "56249:35797",
+                            "preferredValues": [
+                              {
+                                "type": "COMPONENT",
+                                "key": "6f46252e088239cafa171882fe41de83242606e0"
+                              },
+                              {
+                                "type": "COMPONENT",
+                                "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                              }
+                            ]
+                          },
+                          "Change Icon desktop#3032:170": {
+                            "type": "INSTANCE_SWAP",
+                            "value": "56249:37417",
+                            "preferredValues": [
+                              {
+                                "type": "COMPONENT",
+                                "key": "6f46252e088239cafa171882fe41de83242606e0"
+                              },
+                              {
+                                "type": "COMPONENT",
+                                "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                              }
+                            ]
+                          },
+                          "Label#3031:0": {
+                            "type": "TEXT",
+                            "value": "Close"
+                          },
+                          "Type": {
+                            "value": "text",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Icon configuration": {
+                            "value": "none",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "State": {
+                            "value": "enabled",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Device": {
+                            "value": "on-mobile",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Theme": {
+                            "value": "light",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Button",
+                        "type": "INSTANCE",
+                        "id": "58898:29866",
+                        "width": 85,
+                        "height": 48,
+                        "cornerRadius": 100,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {},
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8184",
+                          "fill": "50391:8184"
+                        },
+                        "componentProperties": {
+                          "Change icon mobile#56768:0": {
+                            "type": "INSTANCE_SWAP",
+                            "value": "56249:35797",
+                            "preferredValues": [
+                              {
+                                "type": "COMPONENT",
+                                "key": "6f46252e088239cafa171882fe41de83242606e0"
+                              },
+                              {
+                                "type": "COMPONENT",
+                                "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                              }
+                            ]
+                          },
+                          "Change Icon desktop#3032:170": {
+                            "type": "INSTANCE_SWAP",
+                            "value": "56249:37417",
+                            "preferredValues": [
+                              {
+                                "type": "COMPONENT",
+                                "key": "6f46252e088239cafa171882fe41de83242606e0"
+                              },
+                              {
+                                "type": "COMPONENT",
+                                "key": "f2ea5181210859c6bab792ea2a8c33179d37edf4"
+                              }
+                            ]
+                          },
+                          "Label#3031:0": {
+                            "type": "TEXT",
+                            "value": "Label"
+                          },
+                          "Type": {
+                            "value": "filled",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Icon configuration": {
+                            "value": "none",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "State": {
+                            "value": "enabled",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Device": {
+                            "value": "on-mobile",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "Theme": {
+                            "value": "dark",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Bubble message button",
+                "type": "COMPONENT_SET",
+                "id": "58993:18722",
+                "width": 1582,
+                "height": 318,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Device=Mobile",
+                    "type": "COMPONENT",
+                    "id": "58993:18721",
+                    "width": 360,
+                    "height": 278,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 4,
+                      "padding": {
+                        "top": 4,
+                        "right": 16,
+                        "bottom": 4,
+                        "left": 16
+                      },
+                      "align": "MAX",
+                      "crossAlign": "MAX"
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "FRAME",
+                        "id": "58993:18299",
+                        "width": 328,
+                        "height": 270,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 8,
+                          "padding": {},
+                          "align": "MAX"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Device=Desktop",
+                    "type": "COMPONENT",
+                    "id": "58993:18720",
+                    "width": 1128,
+                    "height": 161,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 4,
+                      "padding": {
+                        "top": 4,
+                        "right": 16,
+                        "bottom": 4,
+                        "left": 16
+                      },
+                      "crossAlign": "MAX"
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "FRAME",
+                        "id": "58993:18534",
+                        "width": 1096,
+                        "height": 153,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 8,
+                          "padding": {},
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

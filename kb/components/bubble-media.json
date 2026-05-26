@@ -1,0 +1,2239 @@
+{
+  "name": "❖ Bubble media",
+  "page_id": "58667:16777",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "File",
+      "id": "54210:73885",
+      "variants": [
+        {
+          "name": "Type=Preview",
+          "type": "COMPONENT",
+          "id": "54210:73886",
+          "width": 64,
+          "height": 64,
+          "cornerRadius": 16,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#F5F5F5"
+            }
+          ],
+          "children": [
+            {
+              "name": "File icon",
+              "type": "INSTANCE",
+              "id": "54210:73887",
+              "width": 48,
+              "height": 48,
+              "componentProperties": {
+                "Type": {
+                  "value": "PDF",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Type=Media",
+          "type": "COMPONENT",
+          "id": "54210:73888",
+          "width": 64,
+          "height": 64,
+          "children": [
+            {
+              "name": "Rectangle 10",
+              "type": "RECTANGLE",
+              "id": "54210:73889",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "fills": [
+                {
+                  "type": "IMAGE"
+                }
+              ]
+            },
+            {
+              "name": "Video play",
+              "type": "FRAME",
+              "id": "54210:73890",
+              "width": 19,
+              "height": 19,
+              "children": []
+            },
+            {
+              "name": "1:20",
+              "type": "TEXT",
+              "id": "54210:73893",
+              "width": 24,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "1:20",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 11,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "LEFT"
+              },
+              "styleRefs": {
+                "text": "50391:8318"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Type=Preview",
+      "id": "54210:73886",
+      "variants": [
+        {
+          "name": "Type=Preview",
+          "type": "COMPONENT",
+          "id": "54210:73886",
+          "width": 64,
+          "height": 64,
+          "cornerRadius": 16,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#F5F5F5"
+            }
+          ],
+          "children": [
+            {
+              "name": "File icon",
+              "type": "INSTANCE",
+              "id": "54210:73887",
+              "width": 48,
+              "height": 48,
+              "componentProperties": {
+                "Type": {
+                  "value": "PDF",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Type=Media",
+      "id": "54210:73888",
+      "variants": [
+        {
+          "name": "Type=Media",
+          "type": "COMPONENT",
+          "id": "54210:73888",
+          "width": 64,
+          "height": 64,
+          "children": [
+            {
+              "name": "Rectangle 10",
+              "type": "RECTANGLE",
+              "id": "54210:73889",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "fills": [
+                {
+                  "type": "IMAGE"
+                }
+              ]
+            },
+            {
+              "name": "Video play",
+              "type": "FRAME",
+              "id": "54210:73890",
+              "width": 19,
+              "height": 19,
+              "children": []
+            },
+            {
+              "name": "1:20",
+              "type": "TEXT",
+              "id": "54210:73893",
+              "width": 24,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "1:20",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 11,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "LEFT"
+              },
+              "styleRefs": {
+                "text": "50391:8318"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "File dowload",
+      "id": "54210:73894",
+      "variants": [
+        {
+          "name": "Downloaded?=False",
+          "type": "COMPONENT",
+          "id": "54210:73895",
+          "width": 327,
+          "height": 80,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Component 2",
+              "type": "INSTANCE",
+              "id": "54210:73896",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 8,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F5F5F5"
+                }
+              ],
+              "componentProperties": {
+                "How long?#1550:14": {
+                  "type": "TEXT",
+                  "value": "1:20"
+                },
+                "Show Play?#1550:15": {
+                  "type": "BOOLEAN",
+                  "value": true
+                },
+                "Show Time?#1550:13": {
+                  "type": "BOOLEAN",
+                  "value": false
+                },
+                "Type": {
+                  "value": "Preview",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            },
+            {
+              "name": "Content Container",
+              "type": "FRAME",
+              "id": "54210:73897",
+              "width": 239,
+              "height": 64,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {
+                  "top": 8,
+                  "bottom": 8
+                }
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Downloaded?=True",
+          "type": "COMPONENT",
+          "id": "54210:73908",
+          "width": 327,
+          "height": 80,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Component 2",
+              "type": "INSTANCE",
+              "id": "54210:73909",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 8,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F5F5F5"
+                }
+              ],
+              "componentProperties": {
+                "How long?#1550:14": {
+                  "type": "TEXT",
+                  "value": "1:20"
+                },
+                "Show Play?#1550:15": {
+                  "type": "BOOLEAN",
+                  "value": true
+                },
+                "Show Time?#1550:13": {
+                  "type": "BOOLEAN",
+                  "value": false
+                },
+                "Type": {
+                  "value": "Preview",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            },
+            {
+              "name": "Content Container",
+              "type": "FRAME",
+              "id": "54210:73910",
+              "width": 239,
+              "height": 64,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {
+                  "top": 8,
+                  "bottom": 8
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Downloaded?=False",
+      "id": "54210:73895",
+      "variants": [
+        {
+          "name": "Downloaded?=False",
+          "type": "COMPONENT",
+          "id": "54210:73895",
+          "width": 327,
+          "height": 80,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Component 2",
+              "type": "INSTANCE",
+              "id": "54210:73896",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 8,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F5F5F5"
+                }
+              ],
+              "componentProperties": {
+                "How long?#1550:14": {
+                  "type": "TEXT",
+                  "value": "1:20"
+                },
+                "Show Play?#1550:15": {
+                  "type": "BOOLEAN",
+                  "value": true
+                },
+                "Show Time?#1550:13": {
+                  "type": "BOOLEAN",
+                  "value": false
+                },
+                "Type": {
+                  "value": "Preview",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            },
+            {
+              "name": "Content Container",
+              "type": "FRAME",
+              "id": "54210:73897",
+              "width": 239,
+              "height": 64,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {
+                  "top": 8,
+                  "bottom": 8
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Downloaded?=True",
+      "id": "54210:73908",
+      "variants": [
+        {
+          "name": "Downloaded?=True",
+          "type": "COMPONENT",
+          "id": "54210:73908",
+          "width": 327,
+          "height": 80,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Component 2",
+              "type": "INSTANCE",
+              "id": "54210:73909",
+              "width": 64,
+              "height": 64,
+              "cornerRadius": 16,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 8,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F5F5F5"
+                }
+              ],
+              "componentProperties": {
+                "How long?#1550:14": {
+                  "type": "TEXT",
+                  "value": "1:20"
+                },
+                "Show Play?#1550:15": {
+                  "type": "BOOLEAN",
+                  "value": true
+                },
+                "Show Time?#1550:13": {
+                  "type": "BOOLEAN",
+                  "value": false
+                },
+                "Type": {
+                  "value": "Preview",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "children": []
+            },
+            {
+              "name": "Content Container",
+              "type": "FRAME",
+              "id": "54210:73910",
+              "width": 239,
+              "height": 64,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {
+                  "top": 8,
+                  "bottom": 8
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Recording bubble message",
+      "id": "54544:3077",
+      "variants": [
+        {
+          "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3078",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3079",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3083",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3153",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3154",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3158",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3228",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3229",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3233",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3303",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3304",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3308",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3378",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3379",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3383",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3453",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3454",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3458",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=False",
+      "id": "54544:3078",
+      "variants": [
+        {
+          "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3078",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3079",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3083",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=True",
+      "id": "54544:3153",
+      "variants": [
+        {
+          "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3153",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3154",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3158",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=False",
+      "id": "54544:3228",
+      "variants": [
+        {
+          "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3228",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3229",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3233",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=True",
+      "id": "54544:3303",
+      "variants": [
+        {
+          "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3303",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3304",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3308",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=False",
+      "id": "54544:3378",
+      "variants": [
+        {
+          "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=False",
+          "type": "COMPONENT",
+          "id": "54544:3378",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3379",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3383",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=True",
+      "id": "54544:3453",
+      "variants": [
+        {
+          "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=True",
+          "type": "COMPONENT",
+          "id": "54544:3453",
+          "width": 258,
+          "height": 62,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 8,
+              "right": 8,
+              "bottom": 8,
+              "left": 8
+            }
+          },
+          "children": [
+            {
+              "name": "Play",
+              "type": "FRAME",
+              "id": "54544:3454",
+              "width": 40,
+              "height": 40,
+              "cornerRadius": 24,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 10,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                }
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#0A84FF"
+                }
+              ],
+              "styleRefs": {
+                "fills": "50391:8159",
+                "fill": "50391:8159"
+              },
+              "children": []
+            },
+            {
+              "name": "Concainer",
+              "type": "FRAME",
+              "id": "54544:3458",
+              "width": 194,
+              "height": 46,
+              "layout": {
+                "mode": "VERTICAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Bubble media",
+    "type": "CANVAS",
+    "id": "58667:16777",
+    "children": [
+      {
+        "name": "Bubble media",
+        "type": "FRAME",
+        "id": "58668:218",
+        "width": 1408,
+        "height": 1251,
+        "cornerRadii": [
+          52,
+          52,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {},
+          "crossAlign": "CENTER"
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58668:212",
+            "width": 1408,
+            "height": 219,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Bubble media"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Bottom sheets are surfaces containing supplementary content, anchored to the bottom of the screen."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58668:212;52040:21481",
+                "width": 1304,
+                "height": 97,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58668:212;52040:21482",
+                    "width": 500,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Bubble media",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58668:212;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58668:212;52040:21484",
+                    "width": 1044,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Bottom sheets are surfaces containing supplementar",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Bubble media",
+            "type": "FRAME",
+            "id": "58667:16778",
+            "width": 1408,
+            "height": 1032,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "children": [
+              {
+                "name": "File",
+                "type": "COMPONENT_SET",
+                "id": "54210:73885",
+                "width": 172,
+                "height": 96,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Type=Preview",
+                    "type": "COMPONENT",
+                    "id": "54210:73886",
+                    "width": 64,
+                    "height": 64,
+                    "cornerRadius": 16,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F5F5F5"
+                      }
+                    ],
+                    "children": [
+                      {
+                        "name": "File icon",
+                        "type": "INSTANCE",
+                        "id": "54210:73887",
+                        "width": 48,
+                        "height": 48,
+                        "componentProperties": {
+                          "Type": {
+                            "value": "PDF",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Type=Media",
+                    "type": "COMPONENT",
+                    "id": "54210:73888",
+                    "width": 64,
+                    "height": 64,
+                    "children": [
+                      {
+                        "name": "Rectangle 10",
+                        "type": "RECTANGLE",
+                        "id": "54210:73889",
+                        "width": 64,
+                        "height": 64,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "IMAGE"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Video play",
+                        "type": "FRAME",
+                        "id": "54210:73890",
+                        "width": 19,
+                        "height": 19,
+                        "children": []
+                      },
+                      {
+                        "name": "1:20",
+                        "type": "TEXT",
+                        "id": "54210:73893",
+                        "width": 24,
+                        "height": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "1:20",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.5,
+                          "lineHeight": 16,
+                          "textAlign": "LEFT"
+                        },
+                        "styleRefs": {
+                          "text": "50391:8318"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "File dowload",
+                "type": "COMPONENT_SET",
+                "id": "54210:73894",
+                "width": 359,
+                "height": 216,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Downloaded?=False",
+                    "type": "COMPONENT",
+                    "id": "54210:73895",
+                    "width": 327,
+                    "height": 80,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Component 2",
+                        "type": "INSTANCE",
+                        "id": "54210:73896",
+                        "width": 64,
+                        "height": 64,
+                        "cornerRadius": 16,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 8,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F5F5F5"
+                          }
+                        ],
+                        "componentProperties": {
+                          "How long?#1550:14": {
+                            "type": "TEXT",
+                            "value": "1:20"
+                          },
+                          "Show Play?#1550:15": {
+                            "type": "BOOLEAN",
+                            "value": true
+                          },
+                          "Show Time?#1550:13": {
+                            "type": "BOOLEAN",
+                            "value": false
+                          },
+                          "Type": {
+                            "value": "Preview",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Content Container",
+                        "type": "FRAME",
+                        "id": "54210:73897",
+                        "width": 239,
+                        "height": 64,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "top": 8,
+                            "bottom": 8
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Downloaded?=True",
+                    "type": "COMPONENT",
+                    "id": "54210:73908",
+                    "width": 327,
+                    "height": 80,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Component 2",
+                        "type": "INSTANCE",
+                        "id": "54210:73909",
+                        "width": 64,
+                        "height": 64,
+                        "cornerRadius": 16,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 8,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F5F5F5"
+                          }
+                        ],
+                        "componentProperties": {
+                          "How long?#1550:14": {
+                            "type": "TEXT",
+                            "value": "1:20"
+                          },
+                          "Show Play?#1550:15": {
+                            "type": "BOOLEAN",
+                            "value": true
+                          },
+                          "Show Time?#1550:13": {
+                            "type": "BOOLEAN",
+                            "value": false
+                          },
+                          "Type": {
+                            "value": "Preview",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Content Container",
+                        "type": "FRAME",
+                        "id": "54210:73910",
+                        "width": 239,
+                        "height": 64,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "top": 8,
+                            "bottom": 8
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Recording bubble message",
+                "type": "COMPONENT_SET",
+                "id": "54544:3077",
+                "width": 845,
+                "height": 266,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=False",
+                    "type": "COMPONENT",
+                    "id": "54544:3078",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3079",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3083",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Default?=True, Playing?=False, Pause?=False, Send by You?=True",
+                    "type": "COMPONENT",
+                    "id": "54544:3153",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3154",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3158",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=False",
+                    "type": "COMPONENT",
+                    "id": "54544:3228",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3229",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3233",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Default?=False, Playing?=True, Pause?=False, Send by You?=True",
+                    "type": "COMPONENT",
+                    "id": "54544:3303",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3304",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3308",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=False",
+                    "type": "COMPONENT",
+                    "id": "54544:3378",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3379",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3383",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Default?=False, Playing?=False, Pause?=True, Send by You?=True",
+                    "type": "COMPONENT",
+                    "id": "54544:3453",
+                    "width": 258,
+                    "height": 62,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 8,
+                        "right": 8,
+                        "bottom": 8,
+                        "left": 8
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Play",
+                        "type": "FRAME",
+                        "id": "54544:3454",
+                        "width": 40,
+                        "height": 40,
+                        "cornerRadius": 24,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 10,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#0A84FF"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8159",
+                          "fill": "50391:8159"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Concainer",
+                        "type": "FRAME",
+                        "id": "54544:3458",
+                        "width": 194,
+                        "height": 46,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Recroding",
+            "type": "TEXT",
+            "id": "58688:711",
+            "width": 109,
+            "height": 28,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#000000"
+              }
+            ],
+            "text": "Recroding",
+            "textStyle": {
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": 600,
+              "letterSpacing": 0,
+              "lineHeight": 28,
+              "textAlign": "RIGHT"
+            },
+            "styleRefs": {
+              "fill": "51430:5596",
+              "text": "50391:8310"
+            }
+          },
+          {
+            "name": "File Download",
+            "type": "TEXT",
+            "id": "58688:713",
+            "width": 150,
+            "height": 28,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#000000"
+              }
+            ],
+            "text": "File Download",
+            "textStyle": {
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": 600,
+              "letterSpacing": 0,
+              "lineHeight": 28,
+              "textAlign": "LEFT"
+            },
+            "styleRefs": {
+              "fill": "51430:5596",
+              "text": "50391:8310"
+            }
+          },
+          {
+            "name": "File",
+            "type": "TEXT",
+            "id": "58688:714",
+            "width": 38,
+            "height": 28,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#000000"
+              }
+            ],
+            "text": "File",
+            "textStyle": {
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": 600,
+              "letterSpacing": 0,
+              "lineHeight": 28,
+              "textAlign": "LEFT"
+            },
+            "styleRefs": {
+              "fill": "51430:5596",
+              "text": "50391:8310"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

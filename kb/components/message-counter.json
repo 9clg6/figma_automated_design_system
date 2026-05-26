@@ -1,0 +1,753 @@
+{
+  "name": "❖ Message counter",
+  "page_id": "58648:39819",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Message Counter",
+      "id": "54431:28459",
+      "variants": [
+        {
+          "name": "@?=True, Single Digit?=False, Multiple Digits?=False",
+          "type": "COMPONENT",
+          "id": "54431:28458",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 16,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "top": 2,
+              "right": 2,
+              "bottom": 2,
+              "left": 2
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "↳ Counter Value",
+              "type": "TEXT",
+              "id": "54431:28435",
+              "width": 12,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "@",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            },
+            {
+              "name": "Padding Bottom",
+              "type": "RECTANGLE",
+              "id": "54431:28436",
+              "width": 4,
+              "height": 2,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#D9D9D9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "@?=False, Single Digit?=True, Multiple Digits?=False",
+          "type": "COMPONENT",
+          "id": "54431:28448",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 10,
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "9",
+              "type": "TEXT",
+              "id": "54431:28447",
+              "width": 20,
+              "height": 20,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "9",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            }
+          ]
+        },
+        {
+          "name": "@?=False, Single Digit?=False, Multiple Digits?=True",
+          "type": "COMPONENT",
+          "id": "54431:28457",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 10,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 2,
+              "right": 6,
+              "bottom": 2,
+              "left": 6
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "9",
+              "type": "TEXT",
+              "id": "54431:28453",
+              "width": 8,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "9",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "@?=True, Single Digit?=False, Multiple Digits?=False",
+      "id": "54431:28458",
+      "variants": [
+        {
+          "name": "@?=True, Single Digit?=False, Multiple Digits?=False",
+          "type": "COMPONENT",
+          "id": "54431:28458",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 16,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "top": 2,
+              "right": 2,
+              "bottom": 2,
+              "left": 2
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "↳ Counter Value",
+              "type": "TEXT",
+              "id": "54431:28435",
+              "width": 12,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "@",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            },
+            {
+              "name": "Padding Bottom",
+              "type": "RECTANGLE",
+              "id": "54431:28436",
+              "width": 4,
+              "height": 2,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#D9D9D9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "@?=False, Single Digit?=True, Multiple Digits?=False",
+      "id": "54431:28448",
+      "variants": [
+        {
+          "name": "@?=False, Single Digit?=True, Multiple Digits?=False",
+          "type": "COMPONENT",
+          "id": "54431:28448",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 10,
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "9",
+              "type": "TEXT",
+              "id": "54431:28447",
+              "width": 20,
+              "height": 20,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "9",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "@?=False, Single Digit?=False, Multiple Digits?=True",
+      "id": "54431:28457",
+      "variants": [
+        {
+          "name": "@?=False, Single Digit?=False, Multiple Digits?=True",
+          "type": "COMPONENT",
+          "id": "54431:28457",
+          "width": 20,
+          "height": 20,
+          "cornerRadius": 10,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 2,
+              "right": 6,
+              "bottom": 2,
+              "left": 6
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#0A84FF"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8159",
+            "fill": "50391:8159"
+          },
+          "children": [
+            {
+              "name": "9",
+              "type": "TEXT",
+              "id": "54431:28453",
+              "width": 8,
+              "height": 16,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#FFFFFF"
+                }
+              ],
+              "text": "9",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.5,
+                "lineHeight": 16,
+                "textAlign": "CENTER"
+              },
+              "styleRefs": {
+                "fill": "50391:8160",
+                "text": "50391:8317"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Message counter",
+    "type": "CANVAS",
+    "id": "58648:39819",
+    "children": [
+      {
+        "name": "Message counters",
+        "type": "FRAME",
+        "id": "58676:40717",
+        "width": 1022,
+        "height": 405,
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {},
+          "crossAlign": "CENTER"
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58676:40711",
+            "width": 1022,
+            "height": 219,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Mesage counters"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": false
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Modals direct the user's attention solely to a specific task or piece of information by displaying a window that overlays the page content."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58676:40711;52040:21481",
+                "width": 918,
+                "height": 97,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58676:40711;52040:21482",
+                    "width": 636,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Mesage counters",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58676:40711;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58676:40711;52040:21484",
+                    "width": 1044,
+                    "height": 48,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Modals direct the user's attention solely to a spe",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Message counter",
+            "type": "FRAME",
+            "id": "58648:39850",
+            "width": 1022,
+            "height": 186,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "children": [
+              {
+                "name": "Message Counter",
+                "type": "COMPONENT_SET",
+                "id": "54431:28459",
+                "width": 102,
+                "height": 52,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "@?=True, Single Digit?=False, Multiple Digits?=False",
+                    "type": "COMPONENT",
+                    "id": "54431:28458",
+                    "width": 20,
+                    "height": 20,
+                    "cornerRadius": 16,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "padding": {
+                        "top": 2,
+                        "right": 2,
+                        "bottom": 2,
+                        "left": 2
+                      },
+                      "align": "CENTER",
+                      "crossAlign": "CENTER"
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8159",
+                      "fill": "50391:8159"
+                    },
+                    "children": [
+                      {
+                        "name": "↳ Counter Value",
+                        "type": "TEXT",
+                        "id": "54431:28435",
+                        "width": 12,
+                        "height": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "@",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.5,
+                          "lineHeight": 16,
+                          "textAlign": "CENTER"
+                        },
+                        "styleRefs": {
+                          "fill": "50391:8160",
+                          "text": "50391:8317"
+                        }
+                      },
+                      {
+                        "name": "Padding Bottom",
+                        "type": "RECTANGLE",
+                        "id": "54431:28436",
+                        "width": 4,
+                        "height": 2,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#D9D9D9"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "@?=False, Single Digit?=True, Multiple Digits?=False",
+                    "type": "COMPONENT",
+                    "id": "54431:28448",
+                    "width": 20,
+                    "height": 20,
+                    "cornerRadius": 10,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8159",
+                      "fill": "50391:8159"
+                    },
+                    "children": [
+                      {
+                        "name": "9",
+                        "type": "TEXT",
+                        "id": "54431:28447",
+                        "width": 20,
+                        "height": 20,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "9",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.5,
+                          "lineHeight": 16,
+                          "textAlign": "CENTER"
+                        },
+                        "styleRefs": {
+                          "fill": "50391:8160",
+                          "text": "50391:8317"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "@?=False, Single Digit?=False, Multiple Digits?=True",
+                    "type": "COMPONENT",
+                    "id": "54431:28457",
+                    "width": 20,
+                    "height": 20,
+                    "cornerRadius": 10,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 2,
+                        "right": 6,
+                        "bottom": 2,
+                        "left": 6
+                      },
+                      "align": "CENTER",
+                      "crossAlign": "CENTER"
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8159",
+                      "fill": "50391:8159"
+                    },
+                    "children": [
+                      {
+                        "name": "9",
+                        "type": "TEXT",
+                        "id": "54431:28453",
+                        "width": 8,
+                        "height": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "9",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.5,
+                          "lineHeight": 16,
+                          "textAlign": "CENTER"
+                        },
+                        "styleRefs": {
+                          "fill": "50391:8160",
+                          "text": "50391:8317"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

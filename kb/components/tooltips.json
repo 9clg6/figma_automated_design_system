@@ -1,0 +1,680 @@
+{
+  "name": "❖ Tooltips",
+  "page_id": "58566:33530",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Container",
+      "id": "54351:28405",
+      "variants": [
+        {
+          "name": "Type=Plain",
+          "type": "COMPONENT",
+          "id": "54351:28404",
+          "width": 336,
+          "height": 40,
+          "cornerRadius": 4,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 4,
+              "right": 8,
+              "bottom": 4,
+              "left": 8
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#313033"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8183",
+            "fill": "50391:8183"
+          },
+          "children": [
+            {
+              "name": "m3_icons__check_circle_fill_on__24px",
+              "type": "INSTANCE",
+              "id": "59153:1158",
+              "width": 24,
+              "height": 24,
+              "children": []
+            },
+            {
+              "name": "Rich tooltip bring attention to a particular element of feature that warrants the user’s focus",
+              "type": "TEXT",
+              "id": "54351:28386",
+              "width": 320,
+              "height": 32,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F4EFF4"
+                }
+              ],
+              "text": "Rich tooltip bring attention to a particular eleme",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.4000000059604645,
+                "lineHeight": 16,
+                "textAlign": "LEFT"
+              },
+              "styleRefs": {
+                "fill": "50391:8182",
+                "text": "50391:8316"
+              }
+            },
+            {
+              "name": "Icons/close_24px",
+              "type": "INSTANCE",
+              "id": "59153:976",
+              "width": 24,
+              "height": 24,
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Type=Rich",
+          "type": "COMPONENT",
+          "id": "54351:28403",
+          "width": 352,
+          "height": 160,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "VERTICAL",
+            "spacing": 12,
+            "padding": {
+              "top": 12,
+              "right": 16,
+              "bottom": 8,
+              "left": 16
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#FFFFFF"
+            }
+          ],
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "radius": 8,
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "color": "#000000"
+            },
+            {
+              "type": "DROP_SHADOW",
+              "radius": 3,
+              "offset": {
+                "x": 0,
+                "y": 1
+              },
+              "color": "#000000"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8209",
+            "fill": "50391:8209",
+            "effect": "50732:11522"
+          },
+          "children": [
+            {
+              "name": "Content",
+              "type": "FRAME",
+              "id": "54351:28398",
+              "width": 320,
+              "height": 88,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 4,
+                "padding": {}
+              },
+              "children": []
+            },
+            {
+              "name": "Buttons",
+              "type": "FRAME",
+              "id": "54351:28399",
+              "width": 320,
+              "height": 40,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Type=Plain",
+      "id": "54351:28404",
+      "variants": [
+        {
+          "name": "Type=Plain",
+          "type": "COMPONENT",
+          "id": "54351:28404",
+          "width": 336,
+          "height": 40,
+          "cornerRadius": 4,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "top": 4,
+              "right": 8,
+              "bottom": 4,
+              "left": 8
+            },
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#313033"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8183",
+            "fill": "50391:8183"
+          },
+          "children": [
+            {
+              "name": "m3_icons__check_circle_fill_on__24px",
+              "type": "INSTANCE",
+              "id": "59153:1158",
+              "width": 24,
+              "height": 24,
+              "children": []
+            },
+            {
+              "name": "Rich tooltip bring attention to a particular element of feature that warrants the user’s focus",
+              "type": "TEXT",
+              "id": "54351:28386",
+              "width": 320,
+              "height": 32,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#F4EFF4"
+                }
+              ],
+              "text": "Rich tooltip bring attention to a particular eleme",
+              "textStyle": {
+                "fontFamily": "Inter",
+                "fontSize": 12,
+                "fontWeight": 500,
+                "letterSpacing": 0.4000000059604645,
+                "lineHeight": 16,
+                "textAlign": "LEFT"
+              },
+              "styleRefs": {
+                "fill": "50391:8182",
+                "text": "50391:8316"
+              }
+            },
+            {
+              "name": "Icons/close_24px",
+              "type": "INSTANCE",
+              "id": "59153:976",
+              "width": 24,
+              "height": 24,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Type=Rich",
+      "id": "54351:28403",
+      "variants": [
+        {
+          "name": "Type=Rich",
+          "type": "COMPONENT",
+          "id": "54351:28403",
+          "width": 352,
+          "height": 160,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "VERTICAL",
+            "spacing": 12,
+            "padding": {
+              "top": 12,
+              "right": 16,
+              "bottom": 8,
+              "left": 16
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#FFFFFF"
+            }
+          ],
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "radius": 8,
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "color": "#000000"
+            },
+            {
+              "type": "DROP_SHADOW",
+              "radius": 3,
+              "offset": {
+                "x": 0,
+                "y": 1
+              },
+              "color": "#000000"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8209",
+            "fill": "50391:8209",
+            "effect": "50732:11522"
+          },
+          "children": [
+            {
+              "name": "Content",
+              "type": "FRAME",
+              "id": "54351:28398",
+              "width": 320,
+              "height": 88,
+              "layout": {
+                "mode": "VERTICAL",
+                "spacing": 4,
+                "padding": {}
+              },
+              "children": []
+            },
+            {
+              "name": "Buttons",
+              "type": "FRAME",
+              "id": "54351:28399",
+              "width": 320,
+              "height": 40,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "padding": {}
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Tooltips",
+    "type": "CANVAS",
+    "id": "58566:33530",
+    "children": [
+      {
+        "name": "Tooltips",
+        "type": "FRAME",
+        "id": "58566:34399",
+        "width": 816,
+        "height": 971,
+        "cornerRadii": [
+          60,
+          60,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58566:33531",
+            "width": 816,
+            "height": 323,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Tooltips"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Tooltips display brief labels or messages"
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58566:33531;52040:21481",
+                "width": 712,
+                "height": 201,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58566:33531;52040:21482",
+                    "width": 291,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Tooltips",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58566:33531;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58566:33531;52040:21484",
+                    "width": 712,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Tooltips display brief labels or messages",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Container",
+            "type": "FRAME",
+            "id": "58566:34398",
+            "width": 816,
+            "height": 648,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "children": [
+              {
+                "name": "Container",
+                "type": "COMPONENT_SET",
+                "id": "54351:28405",
+                "width": 439,
+                "height": 496,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Type=Plain",
+                    "type": "COMPONENT",
+                    "id": "54351:28404",
+                    "width": 336,
+                    "height": 40,
+                    "cornerRadius": 4,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "top": 4,
+                        "right": 8,
+                        "bottom": 4,
+                        "left": 8
+                      },
+                      "align": "CENTER",
+                      "crossAlign": "CENTER"
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#313033"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8183",
+                      "fill": "50391:8183"
+                    },
+                    "children": [
+                      {
+                        "name": "m3_icons__check_circle_fill_on__24px",
+                        "type": "INSTANCE",
+                        "id": "59153:1158",
+                        "width": 24,
+                        "height": 24,
+                        "children": []
+                      },
+                      {
+                        "name": "Rich tooltip bring attention to a particular element of feature that warrants the user’s focus",
+                        "type": "TEXT",
+                        "id": "54351:28386",
+                        "width": 320,
+                        "height": 32,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4EFF4"
+                          }
+                        ],
+                        "text": "Rich tooltip bring attention to a particular eleme",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.4000000059604645,
+                          "lineHeight": 16,
+                          "textAlign": "LEFT"
+                        },
+                        "styleRefs": {
+                          "fill": "50391:8182",
+                          "text": "50391:8316"
+                        }
+                      },
+                      {
+                        "name": "Icons/close_24px",
+                        "type": "INSTANCE",
+                        "id": "59153:976",
+                        "width": 24,
+                        "height": 24,
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Type=Rich",
+                    "type": "COMPONENT",
+                    "id": "54351:28403",
+                    "width": 352,
+                    "height": 160,
+                    "cornerRadius": 12,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 12,
+                      "padding": {
+                        "top": 12,
+                        "right": 16,
+                        "bottom": 8,
+                        "left": 16
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#FFFFFF"
+                      }
+                    ],
+                    "effects": [
+                      {
+                        "type": "DROP_SHADOW",
+                        "radius": 8,
+                        "offset": {
+                          "x": 0,
+                          "y": 4
+                        },
+                        "color": "#000000"
+                      },
+                      {
+                        "type": "DROP_SHADOW",
+                        "radius": 3,
+                        "offset": {
+                          "x": 0,
+                          "y": 1
+                        },
+                        "color": "#000000"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8209",
+                      "fill": "50391:8209",
+                      "effect": "50732:11522"
+                    },
+                    "children": [
+                      {
+                        "name": "Content",
+                        "type": "FRAME",
+                        "id": "54351:28398",
+                        "width": 320,
+                        "height": 88,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 4,
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Buttons",
+                        "type": "FRAME",
+                        "id": "54351:28399",
+                        "width": 320,
+                        "height": 40,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

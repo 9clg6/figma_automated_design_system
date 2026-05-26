@@ -1,0 +1,2356 @@
+{
+  "name": "❖ Tabs",
+  "page_id": "58560:43984",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Search Tabs",
+      "id": "54210:73929",
+      "variants": [
+        {
+          "name": "Active?=False",
+          "type": "COMPONENT",
+          "id": "54210:73930",
+          "width": 93,
+          "height": 48,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "right": 4,
+              "left": 4
+            }
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "54210:73931",
+              "width": 85,
+              "height": 48,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 4,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                },
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            },
+            {
+              "name": "Divider",
+              "type": "RECTANGLE",
+              "id": "54400:28540",
+              "width": 93,
+              "height": 1,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#6750A4"
+                }
+              ],
+              "styleRefs": {
+                "fill": "51430:5479"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Active?=True",
+          "type": "COMPONENT",
+          "id": "54210:73934",
+          "width": 93,
+          "height": 48,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "right": 4,
+              "left": 4
+            }
+          },
+          "children": [
+            {
+              "name": "Divider",
+              "type": "RECTANGLE",
+              "id": "54400:28541",
+              "width": 93,
+              "height": 1,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#6750A4"
+                }
+              ],
+              "styleRefs": {
+                "fill": "51430:5479"
+              }
+            },
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "54210:73935",
+              "width": 85,
+              "height": 48,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 4,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                },
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Active?=False",
+      "id": "54210:73930",
+      "variants": [
+        {
+          "name": "Active?=False",
+          "type": "COMPONENT",
+          "id": "54210:73930",
+          "width": 93,
+          "height": 48,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "right": 4,
+              "left": 4
+            }
+          },
+          "children": [
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "54210:73931",
+              "width": 85,
+              "height": 48,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 4,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                },
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            },
+            {
+              "name": "Divider",
+              "type": "RECTANGLE",
+              "id": "54400:28540",
+              "width": 93,
+              "height": 1,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#6750A4"
+                }
+              ],
+              "styleRefs": {
+                "fill": "51430:5479"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Active?=True",
+      "id": "54210:73934",
+      "variants": [
+        {
+          "name": "Active?=True",
+          "type": "COMPONENT",
+          "id": "54210:73934",
+          "width": 93,
+          "height": 48,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "spacing": 8,
+            "padding": {
+              "right": 4,
+              "left": 4
+            }
+          },
+          "children": [
+            {
+              "name": "Divider",
+              "type": "RECTANGLE",
+              "id": "54400:28541",
+              "width": 93,
+              "height": 1,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "hex": "#6750A4"
+                }
+              ],
+              "styleRefs": {
+                "fill": "51430:5479"
+              }
+            },
+            {
+              "name": "Container",
+              "type": "FRAME",
+              "id": "54210:73935",
+              "width": 85,
+              "height": 48,
+              "layout": {
+                "mode": "HORIZONTAL",
+                "spacing": 4,
+                "padding": {
+                  "top": 8,
+                  "right": 8,
+                  "bottom": 8,
+                  "left": 8
+                },
+                "align": "CENTER",
+                "crossAlign": "CENTER"
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "id": "58671:46523",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46524",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46539",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46547",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46562",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46570",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46585",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46593",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46608",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46616",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {},
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46631",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+      "id": "58671:46524",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46524",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+      "id": "58671:46539",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46539",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+      "id": "58671:46547",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46547",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+      "id": "58671:46562",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46562",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+      "id": "58671:46570",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46570",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+      "id": "58671:46585",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46585",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+      "id": "58671:46593",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46593",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+      "id": "58671:46608",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46608",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+      "id": "58671:46616",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46616",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {},
+            "align": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+      "id": "58671:46631",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46631",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Building Blocks/Tab Single Unit/Primary/Icon and label",
+      "id": "58671:46641",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Tab Single Unit/Primary/Icon only",
+      "id": "58671:46692",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Tab Single Unit/Primary/Label only",
+      "id": "58671:46735",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Tab Single Unit/Secondary/Label only",
+      "id": "58671:46778",
+      "variants": []
+    },
+    {
+      "name": "Building Blocks/Tab Single Unit/Secondary/Icon and label",
+      "id": "58671:46817",
+      "variants": []
+    },
+    {
+      "name": "Tabs-dark",
+      "id": "58671:46865",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46866",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46881",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46889",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46904",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46912",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46927",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46935",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46950",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46958",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        },
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46973",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+      "id": "58671:46866",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46866",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+      "id": "58671:46881",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46881",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+      "id": "58671:46889",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46889",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+      "id": "58671:46904",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46904",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+      "id": "58671:46912",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46912",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+      "id": "58671:46927",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+          "type": "COMPONENT",
+          "id": "58671:46927",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+      "id": "58671:46935",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46935",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+      "id": "58671:46950",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+          "type": "COMPONENT",
+          "id": "58671:46950",
+          "width": 360,
+          "height": 65,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+      "id": "58671:46958",
+      "variants": [
+        {
+          "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46958",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {
+              "left": 52
+            }
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+      "id": "58671:46973",
+      "variants": [
+        {
+          "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+          "type": "COMPONENT",
+          "id": "58671:46973",
+          "width": 360,
+          "height": 49,
+          "layout": {
+            "mode": "VERTICAL",
+            "padding": {}
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "hex": "#1C1B1F"
+            }
+          ],
+          "styleRefs": {
+            "fills": "50391:8202",
+            "fill": "50391:8202"
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Tabs",
+    "type": "CANVAS",
+    "id": "58560:43984",
+    "children": [
+      {
+        "name": "Tabs Settings",
+        "type": "FRAME",
+        "id": "58560:44210",
+        "width": 712,
+        "height": 916,
+        "cornerRadii": [
+          60,
+          60,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "hex": "#FFFFFF"
+          }
+        ],
+        "styleRefs": {
+          "fills": "51430:5595",
+          "fill": "51430:5595"
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58560:44211",
+            "width": 712,
+            "height": 347,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Tabs Settings"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Tabs organize and support navigation between groups of related content at the same level of hierarchy."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58560:44211;52040:21481",
+                "width": 608,
+                "height": 225,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58560:44211;52040:21482",
+                    "width": 500,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Tabs Settings",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58560:44211;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58560:44211;52040:21484",
+                    "width": 608,
+                    "height": 48,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Tabs organize and support navigation between group",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tabs",
+            "type": "FRAME",
+            "id": "58568:42599",
+            "width": 712,
+            "height": 569,
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "effects": [
+              {
+                "type": "DROP_SHADOW",
+                "radius": 80,
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "color": "#000000"
+              },
+              {
+                "type": "DROP_SHADOW",
+                "radius": 3,
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "color": "#000000"
+              }
+            ],
+            "styleRefs": {
+              "fills": "51430:5595",
+              "fill": "51430:5595",
+              "effect": "50732:11524"
+            },
+            "children": [
+              {
+                "name": "Search Tabs",
+                "type": "COMPONENT_SET",
+                "id": "54210:73929",
+                "width": 184,
+                "height": 185,
+                "cornerRadius": 5,
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#9747FF"
+                  }
+                ],
+                "strokeWeight": 1,
+                "children": [
+                  {
+                    "name": "Active?=False",
+                    "type": "COMPONENT",
+                    "id": "54210:73930",
+                    "width": 93,
+                    "height": 48,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "right": 4,
+                        "left": 4
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "FRAME",
+                        "id": "54210:73931",
+                        "width": 85,
+                        "height": 48,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 4,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          },
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Divider",
+                        "type": "RECTANGLE",
+                        "id": "54400:28540",
+                        "width": 93,
+                        "height": 1,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#6750A4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fill": "51430:5479"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Active?=True",
+                    "type": "COMPONENT",
+                    "id": "54210:73934",
+                    "width": 93,
+                    "height": 48,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 8,
+                      "padding": {
+                        "right": 4,
+                        "left": 4
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Divider",
+                        "type": "RECTANGLE",
+                        "id": "54400:28541",
+                        "width": 93,
+                        "height": 1,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#6750A4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fill": "51430:5479"
+                        }
+                      },
+                      {
+                        "name": "Container",
+                        "type": "FRAME",
+                        "id": "54210:73935",
+                        "width": 85,
+                        "height": 48,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "spacing": 4,
+                          "padding": {
+                            "top": 8,
+                            "right": 8,
+                            "bottom": 8,
+                            "left": 8
+                          },
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tabs basics",
+        "type": "FRAME",
+        "id": "58671:46519",
+        "width": 1828,
+        "height": 932,
+        "cornerRadii": [
+          52,
+          52,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58671:46520",
+            "width": 1828,
+            "height": 323,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Tabs basics"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Switches toggle the state of a single item on or off."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58671:46520;52040:21481",
+                "width": 1724,
+                "height": 201,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58671:46520;52040:21482",
+                    "width": 433,
+                    "height": 97,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Tabs basics",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 80,
+                      "fontWeight": 500,
+                      "letterSpacing": -2,
+                      "lineHeight": 96.81817626953125,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58671:46520;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58671:46520;52040:21484",
+                    "width": 1724,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Switches toggle the state of a single item on or o",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Tab M3",
+            "type": "FRAME",
+            "id": "58671:46521",
+            "width": 1828,
+            "height": 609,
+            "layout": {
+              "mode": "HORIZONTAL",
+              "spacing": 40,
+              "padding": {
+                "top": 70,
+                "right": 70,
+                "bottom": 70,
+                "left": 70
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFFFF"
+              }
+            ],
+            "children": [
+              {
+                "name": "Light Scheme",
+                "type": "FRAME",
+                "id": "58671:46522",
+                "width": 824,
+                "height": 469,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 20,
+                  "padding": {
+                    "top": 20,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#F4F4F4"
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#CAC4D0"
+                  }
+                ],
+                "strokeWeight": 1,
+                "styleRefs": {
+                  "fills": "50391:8177",
+                  "strokes": "51527:4756",
+                  "fill": "50391:8177",
+                  "stroke": "51527:4756"
+                },
+                "children": [
+                  {
+                    "name": "Tabs",
+                    "type": "COMPONENT_SET",
+                    "id": "58671:46523",
+                    "width": 784,
+                    "height": 429,
+                    "cornerRadius": 16,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8177",
+                      "fill": "50391:8177"
+                    },
+                    "children": [
+                      {
+                        "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46524",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46539",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46547",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46562",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46570",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46585",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46593",
+                        "width": 360,
+                        "height": 65,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46608",
+                        "width": 360,
+                        "height": 65,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46616",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {},
+                          "align": "CENTER",
+                          "crossAlign": "CENTER"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46631",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks",
+                    "type": "FRAME",
+                    "id": "58671:46639",
+                    "width": 784,
+                    "height": 956,
+                    "cornerRadius": 16,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 20,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      },
+                      "crossAlign": "CENTER"
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      },
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8294",
+                      "fill": "50391:8294"
+                    },
+                    "children": [
+                      {
+                        "name": "Building Blocks",
+                        "type": "TEXT",
+                        "id": "58671:46640",
+                        "width": 119,
+                        "height": 24,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#000000"
+                          }
+                        ],
+                        "text": "Building Blocks",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.15000000596046448,
+                          "lineHeight": 24,
+                          "textAlign": "LEFT"
+                        },
+                        "styleRefs": {
+                          "fill": "51430:5596",
+                          "text": "50391:8311"
+                        }
+                      },
+                      {
+                        "name": "Building Blocks/Tab Single Unit/Primary/Icon and label",
+                        "type": "COMPONENT_SET",
+                        "id": "58671:46641",
+                        "width": 568,
+                        "height": 184,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          },
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8294",
+                          "fill": "50391:8294"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Tab Single Unit/Primary/Icon only",
+                        "type": "COMPONENT_SET",
+                        "id": "58671:46692",
+                        "width": 568,
+                        "height": 152,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          },
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8294",
+                          "fill": "50391:8294"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Tab Single Unit/Primary/Label only",
+                        "type": "COMPONENT_SET",
+                        "id": "58671:46735",
+                        "width": 568,
+                        "height": 152,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          },
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8294",
+                          "fill": "50391:8294"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Tab Single Unit/Secondary/Label only",
+                        "type": "COMPONENT_SET",
+                        "id": "58671:46778",
+                        "width": 568,
+                        "height": 152,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          },
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8294",
+                          "fill": "50391:8294"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Building Blocks/Tab Single Unit/Secondary/Icon and label",
+                        "type": "COMPONENT_SET",
+                        "id": "58671:46817",
+                        "width": 568,
+                        "height": 152,
+                        "cornerRadius": 16,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          },
+                          {
+                            "type": "SOLID",
+                            "hex": "#F4F4F4"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8294",
+                          "fill": "50391:8294"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Dark Scheme",
+                "type": "FRAME",
+                "id": "58671:46864",
+                "width": 824,
+                "height": 469,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 20,
+                  "padding": {
+                    "top": 20,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#1C1B1F"
+                  }
+                ],
+                "styleRefs": {
+                  "fills": "50391:8202",
+                  "fill": "50391:8202"
+                },
+                "children": [
+                  {
+                    "name": "Tabs-dark",
+                    "type": "COMPONENT_SET",
+                    "id": "58671:46865",
+                    "width": 784,
+                    "height": 429,
+                    "cornerRadius": 16,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8202",
+                      "fill": "50391:8202"
+                    },
+                    "children": [
+                      {
+                        "name": "Type=Scrollable, Style=Secondary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46866",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Secondary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46881",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Secondary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46889",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Secondary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46904",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Icon-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46912",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Icon-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46927",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46935",
+                        "width": 360,
+                        "height": 65,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Label & Icon",
+                        "type": "COMPONENT",
+                        "id": "58671:46950",
+                        "width": 360,
+                        "height": 65,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Scrollable, Style=Primary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46958",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {
+                            "left": 52
+                          }
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Type=Fixed, Style=Primary, Configuration=Label-only",
+                        "type": "COMPONENT",
+                        "id": "58671:46973",
+                        "width": 360,
+                        "height": 49,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "padding": {}
+                        },
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#1C1B1F"
+                          }
+                        ],
+                        "styleRefs": {
+                          "fills": "50391:8202",
+                          "fill": "50391:8202"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks",
+                    "type": "FRAME",
+                    "id": "58671:46981",
+                    "width": 784,
+                    "height": 956,
+                    "cornerRadius": 16,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 20,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      },
+                      "crossAlign": "CENTER"
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      },
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8299",
+                      "fill": "50391:8299"
+                    },
+                    "children": [
+                      {
+                        "name": "Building Blocks",
+                        "type": "TEXT",
+                        "id": "58671:46982",
+                        "width": 119,
+                        "height": 24,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "Building Blocks",
+                        "textStyle": {
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.15000000596046448,
+                          "lineHeight": 24,
+                          "textAlign": "LEFT"
+                        },
+                        "styleRefs": {
+                          "fill": "51430:5595",
+                          "text": "50391:8311"
+                        }
+                      },
+                      {
+                        "name": "Building Blocks",
+                        "type": "FRAME",
+                        "id": "58671:46983",
+                        "width": 568,
+                        "height": 872,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

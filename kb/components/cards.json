@@ -1,0 +1,1211 @@
+{
+  "name": "❖ Cards",
+  "page_id": "58560:42899",
+  "dart_files": [],
+  "has_implementation": false,
+  "variants": [],
+  "components": [
+    {
+      "name": "Stacked card",
+      "id": "52346:27573",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52346:27574",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:27693",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:27738",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Outlined",
+      "id": "52346:27574",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52346:27574",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Elevated",
+      "id": "52350:27693",
+      "variants": [
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:27693",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Filled",
+      "id": "52350:27738",
+      "variants": [
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:27738",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Horizontal card",
+      "id": "52350:27876",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:27877",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28183",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28197",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Outlined",
+      "id": "52350:27877",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:27877",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Elevated",
+      "id": "52350:28183",
+      "variants": [
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28183",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Filled",
+      "id": "52350:28197",
+      "variants": [
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28197",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Card/Outlined",
+      "id": "52347:27855",
+      "variants": []
+    },
+    {
+      "name": "Card/Elevated",
+      "id": "52350:27635",
+      "variants": []
+    },
+    {
+      "name": "Card/Filled",
+      "id": "52350:27728",
+      "variants": []
+    },
+    {
+      "name": "Stacked card-dark",
+      "id": "52350:28283",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:28284",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28308",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28332",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Outlined",
+      "id": "52350:28284",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:28284",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Elevated",
+      "id": "52350:28308",
+      "variants": [
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28308",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Filled",
+      "id": "52350:28332",
+      "variants": [
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28332",
+          "width": 360,
+          "height": 480,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Horizontal card-dark",
+      "id": "52350:28356",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:28357",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28370",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        },
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28383",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Outlined",
+      "id": "52350:28357",
+      "variants": [
+        {
+          "name": "Style=Outlined",
+          "type": "COMPONENT",
+          "id": "52350:28357",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Elevated",
+      "id": "52350:28370",
+      "variants": [
+        {
+          "name": "Style=Elevated",
+          "type": "COMPONENT",
+          "id": "52350:28370",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Style=Filled",
+      "id": "52350:28383",
+      "variants": [
+        {
+          "name": "Style=Filled",
+          "type": "COMPONENT",
+          "id": "52350:28383",
+          "width": 360,
+          "height": 80,
+          "cornerRadius": 12,
+          "layout": {
+            "mode": "HORIZONTAL",
+            "padding": {}
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "Card/Outlined",
+      "id": "52350:28397",
+      "variants": []
+    },
+    {
+      "name": "Card/Elevated",
+      "id": "52350:28408",
+      "variants": []
+    },
+    {
+      "name": "Card/Filled",
+      "id": "52350:28419",
+      "variants": []
+    }
+  ],
+  "pageSpec": {
+    "name": "❖ Cards",
+    "type": "CANVAS",
+    "id": "58560:42899",
+    "children": [
+      {
+        "name": "Cards",
+        "type": "FRAME",
+        "id": "58560:42904",
+        "width": 2692,
+        "height": 1140,
+        "cornerRadii": [
+          60,
+          60,
+          16,
+          16
+        ],
+        "layout": {
+          "mode": "VERTICAL",
+          "padding": {}
+        },
+        "fills": [
+          {
+            "type": "SOLID",
+            "hex": "#FFFFFF"
+          }
+        ],
+        "styleRefs": {
+          "fills": "50391:8160",
+          "fill": "50391:8160"
+        },
+        "children": [
+          {
+            "name": "Header",
+            "type": "INSTANCE",
+            "id": "58560:42905",
+            "width": 2692,
+            "height": 320,
+            "layout": {
+              "mode": "VERTICAL",
+              "spacing": 60,
+              "padding": {
+                "top": 52,
+                "right": 52,
+                "bottom": 70,
+                "left": 52
+              }
+            },
+            "fills": [
+              {
+                "type": "SOLID",
+                "hex": "#FFFBFE"
+              },
+              {
+                "type": "SOLID",
+                "hex": "#0A84FF"
+              }
+            ],
+            "styleRefs": {
+              "fills": "50391:8298",
+              "fill": "50391:8298"
+            },
+            "componentProperties": {
+              "Show Definition#58584:0": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Component#52040:2": {
+                "type": "TEXT",
+                "value": "Cards"
+              },
+              "Link#52040:1": {
+                "type": "TEXT",
+                "value": "See design guideline"
+              },
+              "Show Link#58584:1": {
+                "type": "BOOLEAN",
+                "value": true
+              },
+              "Definition#52040:0": {
+                "type": "TEXT",
+                "value": "Cards are versatile containers, holding anything from images to headlines, supporting text, buttons, lists, and other components."
+              }
+            },
+            "children": [
+              {
+                "name": "Title",
+                "type": "FRAME",
+                "id": "I58560:42905;52040:21481",
+                "width": 2588,
+                "height": 198,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "spacing": 24,
+                  "padding": {}
+                },
+                "children": [
+                  {
+                    "name": "Component name",
+                    "type": "TEXT",
+                    "id": "I58560:42905;52040:21482",
+                    "width": 201,
+                    "height": 94,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Cards",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 80,
+                      "fontWeight": 400,
+                      "letterSpacing": -2,
+                      "lineHeight": 93.75,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596"
+                    }
+                  },
+                  {
+                    "name": "Link",
+                    "type": "TEXT",
+                    "id": "I58560:42905;52040:21483",
+                    "width": 220,
+                    "height": 32,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#0A84FF"
+                      }
+                    ],
+                    "text": "See design guideline",
+                    "textStyle": {
+                      "fontFamily": "Roboto",
+                      "fontSize": 24,
+                      "fontWeight": 400,
+                      "letterSpacing": 0,
+                      "lineHeight": 32,
+                      "textAlign": "CENTER"
+                    },
+                    "styleRefs": {
+                      "fill": "50391:8159"
+                    }
+                  },
+                  {
+                    "name": "Definition",
+                    "type": "TEXT",
+                    "id": "I58560:42905;52040:21484",
+                    "width": 2588,
+                    "height": 24,
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#000000"
+                      }
+                    ],
+                    "text": "Cards are versatile containers, holding anything f",
+                    "textStyle": {
+                      "fontFamily": "Inter",
+                      "fontSize": 17,
+                      "fontWeight": 500,
+                      "letterSpacing": -0.15000000596046448,
+                      "lineHeight": 24,
+                      "textAlign": "LEFT"
+                    },
+                    "styleRefs": {
+                      "fill": "51430:5596",
+                      "text": "50391:8314"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Components",
+            "type": "FRAME",
+            "id": "58560:42906",
+            "width": 2692,
+            "height": 820,
+            "layout": {
+              "mode": "HORIZONTAL",
+              "spacing": 40,
+              "padding": {
+                "top": 70,
+                "right": 70,
+                "bottom": 70,
+                "left": 70
+              }
+            },
+            "children": [
+              {
+                "name": "Light Scheme",
+                "type": "FRAME",
+                "id": "58560:42907",
+                "width": 1256,
+                "height": 680,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "padding": {
+                    "top": 20,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#F4F4F4"
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#CAC4D0"
+                  }
+                ],
+                "strokeWeight": 1,
+                "styleRefs": {
+                  "fills": "50391:8177",
+                  "strokes": "51527:4756",
+                  "fill": "50391:8177",
+                  "stroke": "51527:4756"
+                },
+                "children": [
+                  {
+                    "name": "Stacked card",
+                    "type": "COMPONENT_SET",
+                    "id": "52346:27573",
+                    "width": 1216,
+                    "height": 520,
+                    "cornerRadius": 5,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8177",
+                      "fill": "50391:8177"
+                    },
+                    "children": [
+                      {
+                        "name": "Style=Outlined",
+                        "type": "COMPONENT",
+                        "id": "52346:27574",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Elevated",
+                        "type": "COMPONENT",
+                        "id": "52350:27693",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Filled",
+                        "type": "COMPONENT",
+                        "id": "52350:27738",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Horizontal card",
+                    "type": "COMPONENT_SET",
+                    "id": "52350:27876",
+                    "width": 1216,
+                    "height": 120,
+                    "cornerRadius": 5,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#F4F4F4"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8177",
+                      "fill": "50391:8177"
+                    },
+                    "children": [
+                      {
+                        "name": "Style=Outlined",
+                        "type": "COMPONENT",
+                        "id": "52350:27877",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Elevated",
+                        "type": "COMPONENT",
+                        "id": "52350:28183",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Filled",
+                        "type": "COMPONENT",
+                        "id": "52350:28197",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks Title",
+                    "type": "FRAME",
+                    "id": "58560:42908",
+                    "width": 1216,
+                    "height": 44,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 10,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "left": 20
+                      },
+                      "align": "CENTER",
+                      "crossAlign": "CENTER"
+                    },
+                    "children": [
+                      {
+                        "name": "Label",
+                        "type": "TEXT",
+                        "id": "58560:42909",
+                        "width": 111,
+                        "height": 24,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#000000"
+                          }
+                        ],
+                        "text": "Building blocks",
+                        "textStyle": {
+                          "fontFamily": "Roboto",
+                          "fontSize": 16,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.10000000149011612,
+                          "lineHeight": 24,
+                          "textAlign": "CENTER"
+                        },
+                        "styleRefs": {
+                          "fill": "51430:5596"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks / Cards",
+                    "type": "FRAME",
+                    "id": "58560:42910",
+                    "width": 1216,
+                    "height": 1920,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Card/Outlined",
+                        "type": "COMPONENT_SET",
+                        "id": "52347:27855",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Card/Elevated",
+                        "type": "COMPONENT_SET",
+                        "id": "52350:27635",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Card/Filled",
+                        "type": "COMPONENT_SET",
+                        "id": "52350:27728",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Dark Scheme",
+                "type": "FRAME",
+                "id": "58560:42911",
+                "width": 1256,
+                "height": 680,
+                "cornerRadius": 16,
+                "layout": {
+                  "mode": "VERTICAL",
+                  "padding": {
+                    "top": 20,
+                    "right": 20,
+                    "bottom": 20,
+                    "left": 20
+                  }
+                },
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#1C1B1F"
+                  }
+                ],
+                "strokes": [
+                  {
+                    "type": "SOLID",
+                    "hex": "#49454F"
+                  }
+                ],
+                "strokeWeight": 1,
+                "styleRefs": {
+                  "fills": "50391:8202",
+                  "strokes": "51527:4761",
+                  "fill": "50391:8202",
+                  "stroke": "51527:4761"
+                },
+                "children": [
+                  {
+                    "name": "Stacked card-dark",
+                    "type": "COMPONENT_SET",
+                    "id": "52350:28283",
+                    "width": 1216,
+                    "height": 520,
+                    "cornerRadius": 5,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8202",
+                      "fill": "50391:8202"
+                    },
+                    "children": [
+                      {
+                        "name": "Style=Outlined",
+                        "type": "COMPONENT",
+                        "id": "52350:28284",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Elevated",
+                        "type": "COMPONENT",
+                        "id": "52350:28308",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Filled",
+                        "type": "COMPONENT",
+                        "id": "52350:28332",
+                        "width": 360,
+                        "height": 480,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Horizontal card-dark",
+                    "type": "COMPONENT_SET",
+                    "id": "52350:28356",
+                    "width": 1216,
+                    "height": 120,
+                    "cornerRadius": 5,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "hex": "#1C1B1F"
+                      }
+                    ],
+                    "styleRefs": {
+                      "fills": "50391:8202",
+                      "fill": "50391:8202"
+                    },
+                    "children": [
+                      {
+                        "name": "Style=Outlined",
+                        "type": "COMPONENT",
+                        "id": "52350:28357",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Elevated",
+                        "type": "COMPONENT",
+                        "id": "52350:28370",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Style=Filled",
+                        "type": "COMPONENT",
+                        "id": "52350:28383",
+                        "width": 360,
+                        "height": 80,
+                        "cornerRadius": 12,
+                        "layout": {
+                          "mode": "HORIZONTAL",
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks Title",
+                    "type": "FRAME",
+                    "id": "58560:42912",
+                    "width": 1216,
+                    "height": 44,
+                    "layout": {
+                      "mode": "VERTICAL",
+                      "spacing": 10,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "left": 20
+                      },
+                      "align": "CENTER",
+                      "crossAlign": "CENTER"
+                    },
+                    "children": [
+                      {
+                        "name": "Label",
+                        "type": "TEXT",
+                        "id": "58560:42913",
+                        "width": 111,
+                        "height": 24,
+                        "fills": [
+                          {
+                            "type": "SOLID",
+                            "hex": "#FFFFFF"
+                          }
+                        ],
+                        "text": "Building blocks",
+                        "textStyle": {
+                          "fontFamily": "Roboto",
+                          "fontSize": 16,
+                          "fontWeight": 500,
+                          "letterSpacing": 0.10000000149011612,
+                          "lineHeight": 24,
+                          "textAlign": "CENTER"
+                        },
+                        "styleRefs": {
+                          "fill": "51430:5595"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Building Blocks / Cards",
+                    "type": "FRAME",
+                    "id": "58560:42914",
+                    "width": 1216,
+                    "height": 1920,
+                    "layout": {
+                      "mode": "HORIZONTAL",
+                      "spacing": 48,
+                      "padding": {
+                        "top": 20,
+                        "right": 20,
+                        "bottom": 20,
+                        "left": 20
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Card/Outlined",
+                        "type": "COMPONENT_SET",
+                        "id": "52350:28397",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Card/Elevated",
+                        "type": "COMPONENT_SET",
+                        "id": "52350:28408",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Card/Filled",
+                        "type": "COMPONENT_SET",
+                        "id": "52350:28419",
+                        "width": 360,
+                        "height": 1880,
+                        "cornerRadius": 5,
+                        "layout": {
+                          "mode": "VERTICAL",
+                          "spacing": 20,
+                          "padding": {}
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -10,6 +10,7 @@
   "scripts": {
     "extract": "node scripts/extract-figma.mjs",
     "sync": "node scripts/figma-to-dart.mjs",
+    "widget": "node scripts/figma-to-widget.mjs",
     "dry-run": "echo 'Dry run — would call figma-to-dart.mjs'"
   },
   "dependencies": {

@@ -8,6 +8,15 @@
         "lib/avatar/round_avatar.dart",
         "lib/avatar/round_avatar_style.dart",
         "lib/avatar/avatar.dart"
+      ],
+      "golden_test": "test/goldens/components/avatar_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/avatar_monogram.png",
+        "test/goldens/components/avatar_figma_sizes.png",
+        "test/goldens/components/avatar_custom_gradients.png",
+        "test/goldens/components/avatar_all_gradients.png",
+        "test/goldens/components/avatar_text_edge_cases.png",
+        "test/goldens/components/avatar_box_shadow.png"
       ]
     },
     "badges": {
@@ -76,6 +85,18 @@
       "dart_files": [
         "lib/dialog/confirmation_dialog_builder.dart",
         "lib/dialog/options_dialog.dart"
+      ],
+      "golden_test": "test/goldens/components/dialog_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/dialog_basic.png",
+        "test/goldens/components/dialog_no_icon.png",
+        "test/goldens/components/dialog_vertical_actions.png",
+        "test/goldens/components/dialog_additional_content.png",
+        "test/goldens/components/dialog_rich_text.png",
+        "test/goldens/components/dialog_custom_colors.png",
+        "test/goldens/components/dialog_options.png",
+        "test/goldens/components/dialog_options_description.png",
+        "test/goldens/components/dialog_options_icons.png"
       ]
     },
     "dividers": {
@@ -83,6 +104,12 @@
       "figma_name": "❖ Dividers",
       "dart_files": [
         "lib/style/linagora_divider_style.dart"
+      ],
+      "golden_test": "test/goldens/components/divider_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/divider_horizontal.png",
+        "test/goldens/components/divider_in_list.png",
+        "test/goldens/components/divider_properties.png"
       ]
     },
     "fab": {
@@ -116,6 +143,14 @@
       "dart_files": [
         "lib/list_item/twake_list_item.dart",
         "lib/list_item/twake_inkwell.dart"
+      ],
+      "golden_test": "test/goldens/components/list_item_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/list_item_line_variants.png",
+        "test/goldens/components/list_item_leading.png",
+        "test/goldens/components/list_item_trailing.png",
+        "test/goldens/components/list_item_custom_sizing.png",
+        "test/goldens/components/inkwell_states.png"
       ]
     },
     "menus": {
@@ -153,6 +188,11 @@
       "figma_name": "❖ On action hovered bar",
       "dart_files": [
         "lib/style/linagora_hover_style.dart"
+      ],
+      "golden_test": "test/goldens/components/hover_style_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/hover_style_properties.png",
+        "test/goldens/components/hover_bar_showcase.png"
       ]
     },
     "pin-events": {
@@ -172,6 +212,14 @@
         "lib/reaction/reaction_picker.dart",
         "lib/reaction/reaction_dialog.dart",
         "lib/reaction/reaction_dialog_widget.dart"
+      ],
+      "golden_test": "test/goldens/components/reaction_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/reaction_picker_default.png",
+        "test/goldens/components/reaction_picker_more.png",
+        "test/goldens/components/reaction_picker_my_reaction.png",
+        "test/goldens/components/reaction_picker_custom.png",
+        "test/goldens/components/reaction_picker_all_variants.png"
       ]
     },
     "radio-buttons": {

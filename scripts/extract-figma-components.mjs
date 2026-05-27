@@ -159,6 +159,7 @@ function extractComponentSpec(node, depth = 0) {
       radius: e.radius,
       offset: e.offset,
       color: e.color ? rgbaToHex(e.color) : undefined,
+      opacity: e.color?.a !== undefined ? Math.round(e.color.a * 100) / 100 : 1,
     }));
   }
 
@@ -199,7 +200,13 @@ function rgbaToHex(c) {
   const r = Math.round((c.r || 0) * 255);
   const g = Math.round((c.g || 0) * 255);
   const b = Math.round((c.b || 0) * 255);
-  return '#' + [r, g, b].map(v => v.toString(16).padLeft(2, '0')).join('').toUpperCase();
+  const hex = '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
+  // Include alpha when not fully opaque (Figma uses 0-1 float)
+  if (c.a !== undefined && c.a < 1) {
+    const a8 = Math.round(c.a * 255);
+    return hex + a8.toString(16).padStart(2, '0').toUpperCase();
+  }
+  return hex;
 }
 
 // Polyfill padLeft for older node

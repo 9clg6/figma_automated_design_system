@@ -6,7 +6,7 @@
  * Custom Figma REST extractor — works on Free/Pro plans.
  *
  * Strategy (2 lightweight API calls, no rate limit issues):
- *   1. GET /v1/files/:key?depth=0       → check lastModified (skip if unchanged)
+ *   1. GET /v1/files/:key?depth=1       → check lastModified (skip if unchanged)
  *   2. GET /v1/files/:key/nodes?ids=...  → fetch ONLY the 2 relevant pages
  *
  * Outputs:
@@ -83,9 +83,16 @@ async function figmaGet(endpoint, retries = 7) {
       await new Promise((r) => setTimeout(r, wait));
       continue;
     }
-    if (!res.ok) {
+    if (res.status === 403) {
+      const body = await res.text().catch(() => '');
       throw new Error(
-        `Figma API ${endpoint}: ${res.status} ${res.statusText}`,
+        `Figma API ${endpoint}: 403 Forbidden — token may be invalid or expired. Body: ${body.slice(0, 200)}`,
+      );
+    }
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      throw new Error(
+        `Figma API ${endpoint}: ${res.status} ${res.statusText} — ${body.slice(0, 200)}`,
       );
     }
     return res.json();

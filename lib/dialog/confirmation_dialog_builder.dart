@@ -83,33 +83,25 @@ class ConfirmationDialogBuilder extends StatelessWidget {
             onCancelButtonAction: onCancelButtonAction,
             onCloseButtonAction: onCloseButtonAction,
           )
-        : Dialog(
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(16)),
-            ),
-            insetPadding: outsideDialogPadding,
-            alignment: alignment ?? Alignment.center,
-            backgroundColor: Colors.white,
-            child: _BodyContent(
-              title: title,
-              textContent: textContent,
-              confirmText: confirmText,
-              cancelText: cancelText,
-              additionalWidgetContent: additionalWidgetContent,
-              cancelBackgroundButtonColor: cancelBackgroundButtonColor,
-              confirmBackgroundButtonColor: confirmBackgroundButtonColor,
-              cancelLabelButtonColor: cancelLabelButtonColor,
-              confirmLabelButtonColor: confirmLabelButtonColor,
-              margin: margin,
-              maxWidth: maxWidth,
-              listTextSpan: listTextSpan,
-              isArrangeActionButtonsVertical: isArrangeActionButtonsVertical,
-              useIconAsBasicLogo: useIconAsBasicLogo,
-              isScrollContentEnabled: isScrollContentEnabled,
-              onConfirmButtonAction: onConfirmButtonAction,
-              onCancelButtonAction: onCancelButtonAction,
-              onCloseButtonAction: onCloseButtonAction,
-            ),
+        : _BodyContent(
+            title: title,
+            textContent: textContent,
+            confirmText: confirmText,
+            cancelText: cancelText,
+            additionalWidgetContent: additionalWidgetContent,
+            cancelBackgroundButtonColor: cancelBackgroundButtonColor,
+            confirmBackgroundButtonColor: confirmBackgroundButtonColor,
+            cancelLabelButtonColor: cancelLabelButtonColor,
+            confirmLabelButtonColor: confirmLabelButtonColor,
+            margin: margin ?? outsideDialogPadding,
+            maxWidth: maxWidth,
+            listTextSpan: listTextSpan,
+            isArrangeActionButtonsVertical: isArrangeActionButtonsVertical,
+            useIconAsBasicLogo: useIconAsBasicLogo,
+            isScrollContentEnabled: isScrollContentEnabled,
+            onConfirmButtonAction: onConfirmButtonAction,
+            onCancelButtonAction: onCancelButtonAction,
+            onCloseButtonAction: onCloseButtonAction,
           );
   }
 }
@@ -161,35 +153,72 @@ class _BodyContent extends StatelessWidget {
     final textTheme = theme.textTheme;
 
     final child = Container(
-      width: 421,
+      width: 312,
       constraints: BoxConstraints(maxWidth: maxWidth),
       decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        color: Color(0xFFFFFFFF),
+        borderRadius: BorderRadius.all(Radius.circular(24)),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x1A000000),
+            blurRadius: 8,
+            offset: Offset(0, 4),
+          ),
+          BoxShadow(
+            color: Color(0x1A000000),
+            blurRadius: 3,
+            offset: Offset(0, 1),
+          ),
+        ],
       ),
       margin: margin,
-      child: Stack(
-        alignment: Alignment.topRight,
-        children: [
-          Padding(
-            padding: const EdgeInsetsDirectional.only(
-              start: 32,
-              end: 32,
-              top: 24,
-              bottom: 32,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _buildTitle(textTheme),
-                _buildContent(textTheme),
-                _buildAdditionalContent(),
-                _buildActionButtons(context),
-              ].where((widget) => widget != const SizedBox.shrink()).toList(),
-            ),
-          ),
-          if (_showCloseButton()) _buildCloseButton(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: _showCloseButton()
+            ? Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Reserve space for the close button so title is not obscured
+                      SizedBox(
+                        height: 40,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (title.trim().isNotEmpty)
+                              Padding(
+                                padding: const EdgeInsetsDirectional.only(
+                                  end: 40,
+                                  start: 40,
+                                ),
+                                child: Text(
+                                  title,
+                                  textAlign: TextAlign.center,
+                                  style: textTheme.headlineSmall,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      _buildContent(textTheme),
+                      _buildAdditionalContent(),
+                      _buildActionButtons(context),
+                    ].where((widget) => widget != const SizedBox.shrink()).toList(),
+                  ),
+                  _buildCloseButton(),
+                ],
+              )
+            : Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildTitle(textTheme),
+                  _buildContent(textTheme),
+                  _buildAdditionalContent(),
+                  _buildActionButtons(context),
+                ].where((widget) => widget != const SizedBox.shrink()).toList(),
+              ),
       ),
     );
 
@@ -204,14 +233,15 @@ class _BodyContent extends StatelessWidget {
 
   Widget _buildCloseButton() {
     if (_showCloseButton()) {
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
+      return SizedBox(
+        width: 40,
+        height: 40,
         child: IconButton(
           onPressed: onCloseButtonAction,
           icon: const SvgPicture(
             AssetBytesLoader(LinagoraDesignImages.svgBytesClose),
           ),
-          padding: const EdgeInsets.all(9),
+          padding: EdgeInsets.zero,
         ),
       );
     } else {
@@ -225,9 +255,7 @@ class _BodyContent extends StatelessWidget {
             child: Text(
               title,
               textAlign: TextAlign.center,
-              style: textTheme.headlineSmall?.copyWith(
-                color: const Color(0xFF424244),
-              ),
+              style: textTheme.headlineSmall,
             ),
           )
         : const SizedBox.shrink();
@@ -236,7 +264,7 @@ class _BodyContent extends StatelessWidget {
   Widget _buildContent(TextTheme textTheme) {
     if (textContent.trim().isNotEmpty) {
       return Padding(
-        padding: const EdgeInsetsDirectional.only(top: 32),
+        padding: const EdgeInsetsDirectional.only(top: 16),
         child: Text(
           textContent,
           style: textTheme.bodyMedium,
@@ -244,7 +272,7 @@ class _BodyContent extends StatelessWidget {
       );
     } else if (listTextSpan != null) {
       return Padding(
-        padding: const EdgeInsetsDirectional.only(top: 32),
+        padding: const EdgeInsetsDirectional.only(top: 16),
         child: RichText(
           text: TextSpan(
             style: textTheme.bodyMedium,
@@ -269,77 +297,67 @@ class _BodyContent extends StatelessWidget {
     if (isArrangeActionButtonsVertical ||
         cancelText.isEmpty ||
         confirmText.isEmpty) {
-      return Padding(
-        padding: const EdgeInsetsDirectional.only(top: 44),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (cancelText.isNotEmpty)
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: _ConfirmDialogButton(
-                  label: cancelText,
-                  backgroundColor: cancelBackgroundButtonColor,
-                  textColor: cancelLabelButtonColor,
-                  onTapAction: onCancelButtonAction,
-                ),
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (cancelText.isNotEmpty)
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: _ConfirmDialogButton(
+                label: cancelText,
+                backgroundColor: cancelBackgroundButtonColor,
+                textColor: cancelLabelButtonColor,
+                onTapAction: onCancelButtonAction,
               ),
-            if (confirmText.isNotEmpty && cancelText.isNotEmpty)
-              const SizedBox(height: 8),
-            if (confirmText.isNotEmpty)
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: _ConfirmDialogButton(
-                  label: confirmText,
-                  backgroundColor: confirmBackgroundButtonColor ??
-                      LinagoraSysColors.material().primary,
-                  textColor: confirmLabelButtonColor ?? Colors.white,
-                  onTapAction: onConfirmButtonAction,
-                ),
+            ),
+          if (confirmText.isNotEmpty && cancelText.isNotEmpty)
+            const SizedBox(height: 8),
+          if (confirmText.isNotEmpty)
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: _ConfirmDialogButton(
+                label: confirmText,
+                backgroundColor: confirmBackgroundButtonColor ??
+                    LinagoraSysColors.material().primary,
+                textColor: confirmLabelButtonColor ?? Colors.white,
+                onTapAction: onConfirmButtonAction,
               ),
-          ],
-        ),
+            ),
+        ],
       );
     } else {
-      return Padding(
-        padding: const EdgeInsetsDirectional.only(
-          top: 44,
-          start: 12,
-          end: 12,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Flexible(
-              child: Container(
-                constraints: const BoxConstraints(minWidth: 67),
-                height: 48,
-                child: _ConfirmDialogButton(
-                  label: cancelText,
-                  backgroundColor: cancelBackgroundButtonColor,
-                  textColor: cancelLabelButtonColor,
-                  onTapAction: onCancelButtonAction,
-                ),
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Flexible(
+            child: Container(
+              constraints: const BoxConstraints(minWidth: 100),
+              height: 48,
+              child: _ConfirmDialogButton(
+                label: cancelText,
+                backgroundColor: cancelBackgroundButtonColor,
+                textColor: cancelLabelButtonColor,
+                onTapAction: onCancelButtonAction,
               ),
             ),
-            const SizedBox(width: 8),
-            Flexible(
-              child: Container(
-                constraints: const BoxConstraints(minWidth: 135),
-                height: 48,
-                child: _ConfirmDialogButton(
-                  label: confirmText,
-                  backgroundColor: confirmBackgroundButtonColor ??
-                      LinagoraSysColors.material().primary,
-                  textColor: confirmLabelButtonColor ?? Colors.white,
-                  onTapAction: onConfirmButtonAction,
-                ),
+          ),
+          const SizedBox(width: 8),
+          Flexible(
+            child: Container(
+              constraints: const BoxConstraints(minWidth: 135),
+              height: 48,
+              child: _ConfirmDialogButton(
+                label: confirmText,
+                backgroundColor: confirmBackgroundButtonColor ??
+                    LinagoraSysColors.material().primary,
+                textColor: confirmLabelButtonColor ?? Colors.white,
+                onTapAction: onConfirmButtonAction,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       );
     }
   }
@@ -370,7 +388,7 @@ class _ConfirmDialogButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         overlayColor: theme.colorScheme.outline.withOpacity(0.08),
         shape: outlineBorder,
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
       ),
       onPressed: onTapAction,
       child: Text(

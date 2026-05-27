@@ -41,6 +41,9 @@ class OptionsDialog<T> extends StatelessWidget {
 
     Widget? descriptionWidget;
 
+    // Close button width is 48px (4px padding + 40px IconButton)
+    const double closeButtonWidth = 48.0;
+
     final closeButton = Padding(
       padding: const EdgeInsets.all(4),
       child: IconButton(
@@ -52,23 +55,21 @@ class OptionsDialog<T> extends StatelessWidget {
       ),
     );
 
+    // Use headlineSmall from theme for both variants without hardcoded fontSize/height
     final titleWidget = Text(
       title,
       textAlign: TextAlign.center,
       style: isBottomSheet
-          ? textTheme.bodyLarge?.copyWith(
-              fontSize: 17,
-              height: 24 / 17,
-              fontWeight: FontWeight.w600,
+          ? textTheme.headlineSmall?.copyWith(
               color: LinagoraRefColors.material().neutral[10],
             )
           : textTheme.headlineSmall?.copyWith(
-              fontSize: 24,
-              height: 32 / 24,
-              letterSpacing: 0,
               color: LinagoraRefColors.material().neutral[10],
             ),
     );
+
+    // separator border color: use theme primary color at 0.16 alpha via colorScheme
+    final separatorColor = theme.colorScheme.primary.withAlpha(41); // 0.16 * 255 ≈ 41
 
     final items = SingleChildScrollView(
       child: Column(
@@ -79,17 +80,8 @@ class OptionsDialog<T> extends StatelessWidget {
               children: [
                 if (option != availableOptions.first)
                   Container(
-                    height: 8,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                          width: 1,
-                          color: LinagoraKeyColors.material()
-                              .primary
-                              .withValues(alpha: 0.16),
-                        ),
-                      ),
-                    ),
+                    height: 1,
+                    color: separatorColor,
                   ),
                 Material(
                   type: MaterialType.transparency,
@@ -102,15 +94,12 @@ class OptionsDialog<T> extends StatelessWidget {
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsetsDirectional.symmetric(
-                                vertical: 2,
+                                vertical: 4,
                               ),
                               child: Text(
                                 option.name,
+                                // Use bodyMedium from theme without explicit fontSize/height/letterSpacing override
                                 style: textTheme.bodyMedium?.copyWith(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                  height: 20 / 14,
-                                  letterSpacing: 0.25,
                                   color:
                                       LinagoraRefColors.material().neutral[10],
                                 ),
@@ -139,14 +128,10 @@ class OptionsDialog<T> extends StatelessWidget {
 
     if (description != null) {
       final descriptionTextStyle = isBottomSheet
-          ? textTheme.bodyLarge?.copyWith(
-              fontSize: 17,
-              height: 24 / 17,
+          ? textTheme.headlineSmall?.copyWith(
               color: LinagoraRefColors.material().neutral[10],
             )
           : textTheme.titleSmall?.copyWith(
-              fontSize: 14,
-              height: 20 / 14,
               color: LinagoraRefColors.material().neutral[10],
             );
 
@@ -161,64 +146,79 @@ class OptionsDialog<T> extends StatelessWidget {
 
     if (isBottomSheet) {
       return Dialog(
-        backgroundColor: LinagoraRefColors.material().neutral[99],
-        insetPadding: EdgeInsets.zero,
+        backgroundColor: const Color(0xFFFFFFFF),
+        insetPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          borderRadius: BorderRadius.all(Radius.circular(24)),
         ),
         alignment: Alignment.bottomCenter,
-        child: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                children: [
-                  const SizedBox(width: 48),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsetsDirectional.only(top: 8),
-                      child: titleWidget,
-                    ),
-                  ),
-                  closeButton,
-                ],
-              ),
-              Flexible(
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.all(8),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
+        child: SizedBox(
+          width: 312,
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.symmetric(vertical: 8),
+                  child: Row(
                     children: [
-                      if (descriptionWidget != null)
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(bottom: 8),
-                          child: descriptionWidget,
-                        ),
-                      Flexible(child: items),
+                      const SizedBox(width: closeButtonWidth),
+                      Expanded(
+                        child: titleWidget,
+                      ),
+                      closeButton,
                     ],
                   ),
                 ),
-              ),
-            ],
+                Flexible(
+                  child: Padding(
+                    padding: const EdgeInsetsDirectional.all(8),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (descriptionWidget != null)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(bottom: 8),
+                            child: descriptionWidget,
+                          ),
+                        Flexible(child: items),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
     }
 
-    return Dialog(
-      child: Container(
-        padding: const EdgeInsetsDirectional.all(16),
-        decoration: BoxDecoration(
-          color: LinagoraRefColors.material().neutral[100],
-          borderRadius: const BorderRadius.all(Radius.circular(16)),
-        ),
-        constraints: const BoxConstraints(maxWidth: 448),
+    return Container(
+      decoration: const BoxDecoration(
+        color: Color(0xFFFFFFFF),
+        borderRadius: BorderRadius.all(Radius.circular(24)),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0x1A000000),
+            blurRadius: 8,
+            offset: Offset(0, 4),
+          ),
+          BoxShadow(
+            color: Color(0x1A000000),
+            blurRadius: 3,
+            offset: Offset(0, 1),
+          ),
+        ],
+      ),
+      constraints: const BoxConstraints(maxWidth: 312),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               children: [
-                const SizedBox(width: 48),
+                const SizedBox(width: closeButtonWidth),
                 Expanded(child: titleWidget),
                 closeButton,
               ],

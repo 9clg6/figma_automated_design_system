@@ -16,14 +16,18 @@ class RoundAvatarStyle {
   ];
 
   static const defaultTextStype = TextStyle(
-    color: Colors.white,
-    fontSize: 22,
-    fontWeight: FontWeight.w700,
-    letterSpacing: -0.013,
+    color: Color(0xFF0A84FF),
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Roboto',
+    letterSpacing: 0.10000000149011612,
+    height: 1.5,
   );
 
   static const defaultMaxChar = 2;
-  static const defaultSize = 56.0;
+  static const defaultSize = 40.0;
   static const minFontSize = 8.0;
   static const defaultGradientStops = [0.1484, 0.9603];
+  static const avatarPhotoBackgroundColor = Color(0xFFD2E9FF);
+  static const avatarCornerRadius = 100.0;
 }

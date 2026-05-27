@@ -29,13 +29,10 @@ class TwakeInkWellState extends State<TwakeInkWell> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      borderRadius: LinagoraHoverStyle.material().borderRadius,
-      color: widget.isSelected
-          ? LinagoraHoverStyle.material().selectedColor
-          : Colors.transparent,
+      borderRadius: BorderRadius.zero,
+      color: const Color(0xFFF4F4F4),
       child: InkWell(
-        borderRadius: LinagoraHoverStyle.material().hoverBorderRadius,
-        splashColor: LinagoraHoverStyle.material().hoverColor,
+        borderRadius: BorderRadius.zero,
         onTap: widget.onTap,
         onSecondaryTapDown: widget.onSecondaryTapDown,
         onHover: widget.onHover,

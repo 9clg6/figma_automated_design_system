@@ -108,31 +108,43 @@ class RoundAvatar extends StatelessWidget {
     textWidget = child;
 
     if (imageProvider != null) {
-      child = ClipRRect(
-        borderRadius: BorderRadius.circular(size / 2),
-        child: Image(
-          image: imageProvider!,
-          width: size,
-          height: size,
-          filterQuality: FilterQuality.medium,
-          fit: BoxFit.cover,
-          errorBuilder: (context, _, __) {
-            if (errorBuilder != null) {
-              return errorBuilder!(context);
-            }
-            return textWidget;
-          },
-          loadingBuilder: (context, widget, loadingProcess) {
-            if (loadingProcess == null) {
-              return widget;
-            }
-            if (imageLoadingBuilder != null) {
-              return imageLoadingBuilder!(context, widget, loadingProcess);
-            }
-            return const Center(
-              child: CircularProgressIndicator.adaptive(),
-            );
-          },
+      child = Container(
+        width: size,
+        height: size,
+        decoration: const BoxDecoration(
+          color: RoundAvatarStyle.avatarPhotoBackgroundColor,
+          borderRadius: BorderRadius.all(
+            Radius.circular(RoundAvatarStyle.avatarCornerRadius),
+          ),
+        ),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(RoundAvatarStyle.avatarCornerRadius),
+          ),
+          child: Image(
+            image: imageProvider!,
+            width: size,
+            height: size,
+            filterQuality: FilterQuality.medium,
+            fit: BoxFit.cover,
+            errorBuilder: (context, _, __) {
+              if (errorBuilder != null) {
+                return errorBuilder!(context);
+              }
+              return textWidget;
+            },
+            loadingBuilder: (context, widget, loadingProcess) {
+              if (loadingProcess == null) {
+                return widget;
+              }
+              if (imageLoadingBuilder != null) {
+                return imageLoadingBuilder!(context, widget, loadingProcess);
+              }
+              return const Center(
+                child: CircularProgressIndicator.adaptive(),
+              );
+            },
+          ),
         ),
       );
     }

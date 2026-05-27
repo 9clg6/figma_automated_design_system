@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:linagora_design_flutter/style/linagora_divider_style.dart';
+
+/// Height constants matching Figma spec variants:
+/// 1-line: 56px, 2-line: 72px, 3-line+: 124px
+class TwakeListItemHeight {
+  static const double oneLine = 56.0;
+  static const double twoLine = 72.0;
+  static const double threeLine = 124.0;
+
+  const TwakeListItemHeight._();
+}
 
 class TwakeListItem extends StatelessWidget {
   final Widget child;
@@ -19,10 +28,10 @@ class TwakeListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
-      padding: padding,
+      padding: padding ?? EdgeInsets.zero,
       height: height,
-      decoration: BoxDecoration(
-        border: LinagoraDividerStyle.material().borderDecoration,
+      decoration: const BoxDecoration(
+        color: Color(0xFFF4F4F4),
       ),
       child: child,
     );

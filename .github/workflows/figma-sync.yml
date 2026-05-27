@@ -177,7 +177,7 @@ jobs:
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         continue-on-error: true
         run: |
-          node scripts/check-compliance-deterministic.mjs --json > kb/sync-logs/compliance-report.json 2>&1 || true
+          node scripts/check-compliance-deterministic.mjs --json > kb/sync-logs/compliance-report.json 2>kb/sync-logs/compliance-stderr.log || true
           if [ -f kb/sync-logs/compliance-report.json ]; then
             AVG=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/compliance-report.json','utf8')); console.log(r.averageScore || 0)")
             BELOW=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/compliance-report.json','utf8')); const c=r.components||[]; console.log(c.filter(x=>x.score<30).length)")

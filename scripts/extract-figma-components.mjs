@@ -81,7 +81,6 @@ async function figmaGet(path, retries = 5) {
     }
   }
 }
-}
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 

@@ -15,8 +15,8 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import https from 'node:https';
 import Anthropic from '@anthropic-ai/sdk';
+import { createFigmaClient, slugify as sharedSlugify, sleep } from './lib/figma-api.mjs';
 
 // ── Config ─────────────────────────────────────────────────────
 const ROOT = resolve(import.meta.dirname, '..');
@@ -31,90 +31,13 @@ const RATE_DELAY = 5000; // 5s between Figma API calls
 
 const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
 const FILE_KEY = componentMap.figma_file;
+const { figmaGet, figmaGetImage } = createFigmaClient(FIGMA_TOKEN, FILE_KEY);
 
 // ── Parse args ─────────────────────────────────────────────────
 const args = process.argv.slice(2);
 function argVal(flag) { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; }
 const targetComponent = argVal('--component');
 const dryRun = args.includes('--dry-run');
-
-// ── Figma API (with 429 retry + exponential backoff) ──────────
-function figmaGetOnce(path) {
-  return new Promise((res, rej) => {
-    const url = `https://api.figma.com/v1${path}`;
-    https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
-      let data = '';
-      resp.on('data', chunk => data += chunk);
-      resp.on('end', () => {
-        if (resp.statusCode === 429) {
-          const retryAfter = parseInt(resp.headers['retry-after'] || '0', 10);
-          rej({ rateLimited: true, retryAfter });
-          return;
-        }
-        if (resp.statusCode !== 200) {
-          rej(new Error(`HTTP ${resp.statusCode}: ${data.slice(0, 200)}`));
-          return;
-        }
-        try { res(JSON.parse(data)); }
-        catch (e) { rej(new Error('JSON parse error: ' + e.message)); }
-      });
-    }).on('error', rej);
-  });
-}
-
-async function figmaGet(path, retries = 5) {
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      return await figmaGetOnce(path);
-    } catch (err) {
-      if (err.rateLimited && attempt < retries) {
-        const wait = Math.max((err.retryAfter || 0) * 1000, 2 ** attempt * 5000);
-        const capped = Math.min(wait, 60000);
-        console.log(`  ⏳ Rate limited, waiting ${capped / 1000}s (attempt ${attempt}/${retries})...`);
-        await new Promise(r => setTimeout(r, capped));
-        continue;
-      }
-      if (err.rateLimited) throw new Error(`Figma API ${path}: rate limited after ${retries} retries`);
-      throw err;
-    }
-  }
-}
-
-function figmaGetImage(nodeId, scale = 2) {
-  return new Promise((res, rej) => {
-    const url = `https://api.figma.com/v1/images/${FILE_KEY}?ids=${encodeURIComponent(nodeId)}&format=png&scale=${scale}`;
-    https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
-      let data = '';
-      resp.on('data', chunk => data += chunk);
-      resp.on('end', () => {
-        if (resp.statusCode !== 200) { res(null); return; }
-        try {
-          const json = JSON.parse(data);
-          const imageUrl = json.images?.[nodeId];
-          if (!imageUrl) { res(null); return; }
-          // Fetch the actual image
-          https.get(imageUrl, (imgResp) => {
-            const chunks = [];
-            imgResp.on('data', c => chunks.push(c));
-            imgResp.on('end', () => {
-              const buf = Buffer.concat(chunks);
-              // If image > 3.5MB raw (~4.7MB base64), retry with scale=1 (Claude limit: 5MB base64)
-              if (buf.length > 3_500_000 && scale > 1) {
-                console.log(`     ⚠️ Image too large (${Math.round(buf.length/1024)}KB), retrying scale=1...`);
-                figmaGetImage(nodeId, 1).then(res).catch(() => res(null));
-                return;
-              }
-              res(buf.toString('base64'));
-            });
-            imgResp.on('error', () => res(null));
-          }).on('error', () => res(null));
-        } catch { res(null); }
-      });
-    }).on('error', () => res(null));
-  });
-}
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // ── Extract component spec from Figma node data ────────────────
 function extractComponentInfo(nodeData) {
@@ -203,10 +126,7 @@ function extractComponentInfo(nodeData) {
 }
 
 // ── Name helpers ───────────────────────────────────────────────
-function slugify(name) {
-  return name.replace(/[❖]/g, '').trim().toLowerCase()
-    .replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
-}
+function slugify(name) { return sharedSlugify(name, '_'); }
 
 function pascalCase(name) {
   return name.replace(/[❖]/g, '').trim()

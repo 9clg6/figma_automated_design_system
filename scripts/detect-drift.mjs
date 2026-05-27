@@ -22,6 +22,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { createFigmaClient, extractComponentSpec, findComponents, sleep } from './lib/figma-api.mjs';
 
 // ── Config ────────────────────────────────────────────────────
 const ROOT = resolve(import.meta.dirname, '..');
@@ -38,6 +39,7 @@ if (!TOKEN) {
 
 const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
 const FILE_KEY = componentMap.figma_file;
+const { figmaGet } = createFigmaClient(TOKEN, FILE_KEY);
 
 // Parse --component filter
 const compArg = process.argv.find((a) => a.startsWith('--component'));
@@ -48,175 +50,16 @@ const compFilter = compArg
     )?.split(',')
   : null;
 
-// ── Figma API ─────────────────────────────────────────────────
-const BASE = 'https://api.figma.com/v1';
-const headers = { 'X-Figma-Token': TOKEN };
-
-async function figmaGet(endpoint, retries = 5) {
-  const url = `${BASE}${endpoint}`;
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    const res = await fetch(url, { headers });
-    if (res.status === 429) {
-      const wait = Math.min(2 ** attempt * 5000, 60000);
-      console.log(`  Rate limited, waiting ${wait / 1000}s (attempt ${attempt}/${retries})...`);
-      await new Promise((r) => setTimeout(r, wait));
-      continue;
-    }
-    if (!res.ok) {
-      const body = await res.text().catch(() => '');
-      throw new Error(`Figma API ${endpoint}: ${res.status} — ${body.slice(0, 200)}`);
-    }
-    return res.json();
-  }
-  throw new Error(`Figma API ${endpoint}: rate limited after ${retries} retries`);
-}
-
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
-}
-
-// ── Spec extraction (mirrors extract-figma-components.mjs) ────
-function rgbaToHex(c) {
-  const r = Math.round((c.r || 0) * 255);
-  const g = Math.round((c.g || 0) * 255);
-  const b = Math.round((c.b || 0) * 255);
-  const hex =
-    '#' +
-    [r, g, b]
-      .map((v) => v.toString(16).padStart(2, '0'))
-      .join('')
-      .toUpperCase();
-  if (c.a !== undefined && c.a < 1) {
-    const a8 = Math.round(c.a * 255);
-    return hex + a8.toString(16).padStart(2, '0').toUpperCase();
-  }
-  return hex;
-}
-
-function extractComponentSpec(node, depth = 0) {
-  const spec = { name: node.name, type: node.type, id: node.id };
-
-  if (node.absoluteBoundingBox) {
-    spec.width = Math.round(node.absoluteBoundingBox.width);
-    spec.height = Math.round(node.absoluteBoundingBox.height);
-  }
-
-  if (node.cornerRadius) spec.cornerRadius = node.cornerRadius;
-  if (node.rectangleCornerRadii) spec.cornerRadii = node.rectangleCornerRadii;
-  if (node.opacity !== undefined && node.opacity !== 1) spec.opacity = node.opacity;
-  if (node.blendMode && node.blendMode !== 'PASS_THROUGH') spec.blendMode = node.blendMode;
-
-  if (node.layoutMode) {
-    spec.layout = {
-      mode: node.layoutMode,
-      spacing: node.itemSpacing,
-      padding: {
-        top: node.paddingTop,
-        right: node.paddingRight,
-        bottom: node.paddingBottom,
-        left: node.paddingLeft,
-      },
-      align: node.primaryAxisAlignItems,
-      crossAlign: node.counterAxisAlignItems,
-    };
-  }
-
-  if (node.fills?.length) {
-    spec.fills = node.fills
-      .filter((f) => f.visible !== false)
-      .map((f) => {
-        const fill = { type: f.type };
-        if (f.color) {
-          fill.hex = rgbaToHex(f.color);
-          if (f.color.a !== undefined && f.color.a < 1) fill.opacity = f.color.a;
-        }
-        if (f.gradientStops) {
-          fill.gradient = f.gradientStops.map((s) => ({
-            position: s.position,
-            hex: rgbaToHex(s.color),
-          }));
-        }
-        return fill;
-      });
-  }
-
-  if (node.strokes?.length) {
-    spec.strokes = node.strokes
-      .filter((s) => s.visible !== false)
-      .map((s) => ({
-        type: s.type,
-        hex: s.color ? rgbaToHex(s.color) : undefined,
-      }));
-    if (node.strokeWeight) spec.strokeWeight = node.strokeWeight;
-  }
-
-  if (node.effects?.length) {
-    spec.effects = node.effects
-      .filter((e) => e.visible !== false)
-      .map((e) => ({
-        type: e.type,
-        radius: e.radius,
-        offset: e.offset,
-        color: e.color ? rgbaToHex(e.color) : undefined,
-        opacity: e.color?.a !== undefined ? Math.round(e.color.a * 100) / 100 : 1,
-      }));
-  }
-
-  if (node.type === 'TEXT') {
-    spec.text = node.characters?.substring(0, 50);
-    if (node.style) {
-      spec.textStyle = {
-        fontFamily: node.style.fontFamily,
-        fontSize: node.style.fontSize,
-        fontWeight: node.style.fontWeight,
-        letterSpacing: node.style.letterSpacing,
-        lineHeight: node.style.lineHeightPx,
-        textAlign: node.style.textAlignHorizontal,
-      };
-    }
-  }
-
-  if (node.styles) spec.styleRefs = node.styles;
-  if (node.componentProperties) spec.componentProperties = node.componentProperties;
-
-  if (node.children && depth < 6) {
-    spec.children = node.children.map((c) => extractComponentSpec(c, depth + 1));
-  }
-
-  return spec;
-}
-
+// ── Build live spec from Figma page ──────────────────────────
 function buildLiveSpec(page, cfg) {
-  const spec = {
+  return {
     name: cfg.figma_name,
     page_id: cfg.page_id,
     dart_files: cfg.dart_files,
     has_implementation: cfg.dart_files.length > 0,
     variants: [],
-    components: [],
+    components: findComponents(page),
   };
-
-  function findComponents(node, parentType = null) {
-    if (node.type === 'COMPONENT_SET') {
-      const set = { name: node.name, id: node.id, variants: [] };
-      if (node.children) {
-        set.variants = node.children
-          .filter((c) => c.type === 'COMPONENT')
-          .map((c) => extractComponentSpec(c, 0));
-      }
-      spec.components.push(set);
-    } else if (node.type === 'COMPONENT' && parentType !== 'COMPONENT_SET') {
-      spec.components.push({
-        name: node.name,
-        id: node.id,
-        variants: [extractComponentSpec(node, 0)],
-      });
-    }
-    if (node.children) node.children.forEach((c) => findComponents(c, node.type));
-  }
-
-  findComponents(page);
-  return spec;
 }
 
 // ── Structural comparison ─────────────────────────────────────

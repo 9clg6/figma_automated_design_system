@@ -32,8 +32,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { execSync } from 'node:child_process';
-import https from 'node:https';
 import Anthropic from '@anthropic-ai/sdk';
+import { createFigmaClient, extractComponentSpec, findComponents, rgbaToHex, sleep } from './lib/figma-api.mjs';
 
 // ── Config ─────────────────────────────────────────────────────
 const ROOT = resolve(import.meta.dirname, '..');
@@ -48,6 +48,10 @@ const TIMEOUT_MS = 10 * 60 * 1000; // 10 min — widget edits are more complex
 
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 const RATE_DELAY = 4200;
+
+const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
+const FILE_KEY = componentMap.figma_file;
+const { figmaGet, figmaGetImage } = createFigmaClient(FIGMA_TOKEN, FILE_KEY);
 
 // ── Parse args ─────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -71,9 +75,6 @@ if (!componentArg && !syncAll) {
   process.exit(1);
 }
 
-const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
-const FILE_KEY = componentMap.figma_file;
-
 // ── Allowlist — derived from component-map.json dart_files ─────
 function buildAllowlist() {
   const dirs = new Set();
@@ -88,136 +89,6 @@ function buildAllowlist() {
 }
 
 const ALLOWED_PATHS = buildAllowlist();
-
-// ── Figma API (with 429 retry + exponential backoff) ──────────
-function figmaGetOnce(path) {
-  return new Promise((res, rej) => {
-    const url = `https://api.figma.com/v1${path}`;
-    https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
-      let data = '';
-      resp.on('data', chunk => data += chunk);
-      resp.on('end', () => {
-        if (resp.statusCode === 429) {
-          const retryAfter = parseInt(resp.headers['retry-after'] || '0', 10);
-          rej({ rateLimited: true, retryAfter });
-          return;
-        }
-        if (resp.statusCode !== 200) {
-          rej(new Error(`HTTP ${resp.statusCode}: ${data.slice(0, 200)}`));
-          return;
-        }
-        try { res(JSON.parse(data)); }
-        catch (e) { rej(new Error('JSON parse error: ' + e.message)); }
-      });
-    }).on('error', rej);
-  });
-}
-
-async function figmaGet(path, retries = 5) {
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      return await figmaGetOnce(path);
-    } catch (err) {
-      if (err.rateLimited && attempt < retries) {
-        const wait = Math.max((err.retryAfter || 0) * 1000, 2 ** attempt * 5000);
-        const capped = Math.min(wait, 60000);
-        console.log(`  ⏳ Rate limited, waiting ${capped / 1000}s (attempt ${attempt}/${retries})...`);
-        await new Promise(r => setTimeout(r, capped));
-        continue;
-      }
-      if (err.rateLimited) throw new Error(`Figma API ${path}: rate limited after ${retries} retries`);
-      throw err;
-    }
-  }
-}
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-// ── Extract component spec (reused from extract-figma-components.mjs) ──
-function extractComponentSpec(node, depth = 0) {
-  const spec = { name: node.name, type: node.type, id: node.id };
-
-  if (node.absoluteBoundingBox) {
-    spec.width = Math.round(node.absoluteBoundingBox.width);
-    spec.height = Math.round(node.absoluteBoundingBox.height);
-  }
-
-  if (node.cornerRadius) spec.cornerRadius = node.cornerRadius;
-  if (node.rectangleCornerRadii) spec.cornerRadii = node.rectangleCornerRadii;
-  if (node.opacity !== undefined && node.opacity !== 1) spec.opacity = node.opacity;
-
-  if (node.layoutMode) {
-    spec.layout = {
-      mode: node.layoutMode,
-      spacing: node.itemSpacing,
-      padding: { top: node.paddingTop, right: node.paddingRight, bottom: node.paddingBottom, left: node.paddingLeft },
-      align: node.primaryAxisAlignItems,
-      crossAlign: node.counterAxisAlignItems,
-    };
-  }
-
-  if (node.fills?.length) {
-    spec.fills = node.fills.filter(f => f.visible !== false).map(f => {
-      const fill = { type: f.type };
-      if (f.color) {
-        fill.hex = rgbaToHex(f.color);
-        if (f.color.a !== undefined && f.color.a < 1) fill.opacity = f.color.a;
-      }
-      if (f.gradientStops) {
-        fill.gradient = f.gradientStops.map(s => ({ position: s.position, hex: rgbaToHex(s.color) }));
-      }
-      return fill;
-    });
-  }
-
-  if (node.strokes?.length) {
-    spec.strokes = node.strokes.filter(s => s.visible !== false).map(s => ({
-      type: s.type, hex: s.color ? rgbaToHex(s.color) : undefined,
-    }));
-    if (node.strokeWeight) spec.strokeWeight = node.strokeWeight;
-  }
-
-  if (node.effects?.length) {
-    spec.effects = node.effects.filter(e => e.visible !== false).map(e => ({
-      type: e.type, radius: e.radius, offset: e.offset,
-      color: e.color ? rgbaToHex(e.color) : undefined,
-      opacity: e.color?.a !== undefined ? Math.round(e.color.a * 100) / 100 : 1,
-    }));
-  }
-
-  if (node.type === 'TEXT') {
-    spec.text = node.characters?.substring(0, 50);
-    if (node.style) {
-      spec.textStyle = {
-        fontFamily: node.style.fontFamily, fontSize: node.style.fontSize,
-        fontWeight: node.style.fontWeight, letterSpacing: node.style.letterSpacing,
-        lineHeight: node.style.lineHeightPx, textAlign: node.style.textAlignHorizontal,
-      };
-    }
-  }
-
-  if (node.styles) spec.styleRefs = node.styles;
-  if (node.componentProperties) spec.componentProperties = node.componentProperties;
-
-  if (node.children && depth < 6) {
-    spec.children = node.children.map(c => extractComponentSpec(c, depth + 1));
-  }
-
-  return spec;
-}
-
-function rgbaToHex(c) {
-  const r = Math.round((c.r || 0) * 255);
-  const g = Math.round((c.g || 0) * 255);
-  const b = Math.round((c.b || 0) * 255);
-  const hex = '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
-  // Include alpha when not fully opaque (Figma uses 0-1 float)
-  if (c.a !== undefined && c.a < 1) {
-    const a8 = Math.round(c.a * 255);
-    return hex + a8.toString(16).padStart(2, '0').toUpperCase();
-  }
-  return hex;
-}
 
 // ── Fetch fresh spec from Figma ────────────────────────────────
 async function fetchComponentSpec(name, cfg) {
@@ -236,28 +107,9 @@ async function fetchComponentSpec(name, cfg) {
     dart_files: cfg.dart_files,
     has_implementation: cfg.dart_files.length > 0,
     variants: [],
-    components: [],
+    components: findComponents(page),
   };
 
-  function findComponents(node, parentType = null) {
-    if (node.type === 'COMPONENT_SET') {
-      const set = { name: node.name, id: node.id, variants: [] };
-      if (node.children) {
-        set.variants = node.children
-          .filter(c => c.type === 'COMPONENT')
-          .map(c => extractComponentSpec(c, 0));
-      }
-      spec.components.push(set);
-    } else if (node.type === 'COMPONENT' && parentType !== 'COMPONENT_SET') {
-      spec.components.push({
-        name: node.name, id: node.id,
-        variants: [extractComponentSpec(node, 0)],
-      });
-    }
-    if (node.children) node.children.forEach(c => findComponents(c, node.type));
-  }
-
-  findComponents(page);
   spec.pageSpec = extractComponentSpec(page, 0);
 
   return spec;

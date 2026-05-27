@@ -13,7 +13,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import https from 'node:https';
+import { createFigmaClient, slugify as sharedSlugify } from './lib/figma-api.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const MAP_PATH = join(ROOT, 'config', 'component-map.json');
@@ -24,31 +24,10 @@ const dryRun = process.argv.includes('--dry-run');
 
 const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
 const FILE_KEY = componentMap.figma_file;
+const { figmaGet } = createFigmaClient(FIGMA_TOKEN, FILE_KEY);
 
-// ── Figma API ─────────────────────────────────────────────────
-function figmaGet(path) {
-  return new Promise((res, rej) => {
-    const url = `https://api.figma.com/v1${path}`;
-    https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
-      let data = '';
-      resp.on('data', chunk => data += chunk);
-      resp.on('end', () => {
-        if (resp.statusCode !== 200) {
-          rej(new Error(`HTTP ${resp.statusCode}: ${data.slice(0, 200)}`));
-          return;
-        }
-        try { res(JSON.parse(data)); }
-        catch (e) { rej(new Error('JSON parse: ' + e.message)); }
-      });
-    }).on('error', rej);
-  });
-}
-
-// ── Slug helper ───────────────────────────────────────────────
-function slugify(name) {
-  return name.replace(/[❖]/g, '').trim().toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
+// ── Slug helper (uses '-' separator for URL-friendly slugs) ───
+function slugify(name) { return sharedSlugify(name, '-'); }
 
 // ── Main ──────────────────────────────────────────────────────
 async function main() {

@@ -22,62 +22,206 @@
     "badges": {
       "page_id": "58558:25218",
       "figma_name": "❖ Badges",
-      "dart_files": []
+      "dart_files": [
+        "lib/badge/twake_badge.dart"
+      ],
+      "golden_test": "test/goldens/components/badge_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/badge_small_light.png",
+        "test/goldens/components/badge_single_digit_light.png",
+        "test/goldens/components/badge_multiple_digits_light.png",
+        "test/goldens/components/badge_all_variants_light.png",
+        "test/goldens/components/badge_all_variants_dark.png"
+      ]
     },
     "bottom-sheets": {
       "page_id": "58560:42862",
       "figma_name": "❖ Bottom sheets",
-      "dart_files": []
+      "dart_files": [
+        "lib/bottom_sheet/twake_bottom_sheet.dart"
+      ],
+      "golden_test": "test/goldens/components/bottom_sheet_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/bottom_sheet_light_non_modal_with_drag_handle.png",
+        "test/goldens/components/bottom_sheet_dark_non_modal_with_drag_handle.png",
+        "test/goldens/components/bottom_sheet_light_modal_with_drag_handle.png",
+        "test/goldens/components/bottom_sheet_dark_modal_with_drag_handle.png",
+        "test/goldens/components/bottom_sheet_light_no_drag_handle.png",
+        "test/goldens/components/bottom_sheet_dark_no_drag_handle.png"
+      ]
     },
     "box-text": {
       "page_id": "58993:4183",
       "figma_name": "❖ Box text",
-      "dart_files": []
+      "dart_files": [
+        "lib/dialog_2/twake_dialog_2.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_dialog_2_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_dialog2_both_buttons.png",
+        "test/goldens/components/twake_dialog2_only_close.png",
+        "test/goldens/components/twake_dialog2_only_right.png",
+        "test/goldens/components/twake_dialog2_no_buttons.png",
+        "test/goldens/components/twake_dialog2_long_content.png"
+      ]
     },
     "bubble-media": {
       "page_id": "58667:16777",
       "figma_name": "❖ Bubble media",
-      "dart_files": []
+      "dart_files": [
+        "lib/file//twake_file.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_file_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_file_preview.png",
+        "test/goldens/components/twake_file_media_show_time_show_play.png",
+        "test/goldens/components/twake_file_media_no_time_show_play.png",
+        "test/goldens/components/twake_file_media_show_time_no_play.png",
+        "test/goldens/components/twake_file_media_no_overlays.png",
+        "test/goldens/components/twake_file_row_preview_and_media.png"
+      ]
     },
     "bubble-message": {
       "page_id": "58582:45351",
       "figma_name": "❖ Bubble message",
-      "dart_files": []
+      "dart_files": [
+        "lib/bubble_message//twake_bubble_message.dart"
+      ],
+      "golden_test": "test/goldens/components/bubble_message_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/goldens/mobile_dm_short_message.png",
+        "test/goldens/components/goldens/mobile_sender_short_message.png",
+        "test/goldens/components/goldens/mobile_chat_multiple_lines.png",
+        "test/goldens/components/goldens/mobile_chat_sender_multiple_lines.png",
+        "test/goldens/components/goldens/mobile_dm_incoming_call.png",
+        "test/goldens/components/goldens/mobile_sender_incoming_video_call.png",
+        "test/goldens/components/goldens/mobile_chat_short_message_with_reaction.png",
+        "test/goldens/components/goldens/mobile_sender_selection_mode.png",
+        "test/goldens/components/goldens/desktop_dm_short_message.png",
+        "test/goldens/components/goldens/desktop_sender_short_message.png"
+      ]
     },
     "bubble-thread": {
       "page_id": "58648:25202",
       "figma_name": "❖ Bubble thread",
-      "dart_files": []
+      "dart_files": [
+        "lib/threads_bubble//twake_threads_bubble.dart"
+      ],
+      "golden_test": "test/goldens/components/threads_bubble_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/light_desktop_dm_react.png",
+        "test/goldens/components/light_desktop_dm_no_react.png",
+        "test/goldens/components/light_desktop_sender_react.png",
+        "test/goldens/components/light_desktop_sender_no_react.png",
+        "test/goldens/components/dark_desktop_dm_react.png",
+        "test/goldens/components/light_mobile_dm_react.png",
+        "test/goldens/components/light_mobile_dm_no_react.png",
+        "test/goldens/components/dark_mobile_dm_react.png",
+        "test/goldens/components/dark_mobile_dm_no_react.png"
+      ]
     },
     "buttons": {
       "page_id": "58560:42876",
       "figma_name": "❖ Buttons",
-      "dart_files": []
+      "dart_files": [
+        "lib/button/twake_button.dart"
+      ],
+      "golden_test": "test/goldens/components/button_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/button_filled_types_light.png",
+        "test/goldens/components/button_filled_states_light.png",
+        "test/goldens/components/button_icon_configs_light.png",
+        "test/goldens/components/button_devices_light.png",
+        "test/goldens/components/button_filled_types_dark.png",
+        "test/goldens/components/button_filled_states_dark.png",
+        "test/goldens/components/button_disabled_all_types.png"
+      ]
     },
     "cards": {
       "page_id": "58560:42899",
       "figma_name": "❖ Cards",
-      "dart_files": []
+      "dart_files": [
+        "lib/stacked_card//twake_stacked_card.dart"
+      ],
+      "golden_test": "test/goldens/components/stacked_card_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/stacked_card_outlined_light.png",
+        "test/goldens/components/stacked_card_elevated_light.png",
+        "test/goldens/components/stacked_card_filled_light.png",
+        "test/goldens/components/stacked_card_outlined_dark.png",
+        "test/goldens/components/stacked_card_elevated_dark.png",
+        "test/goldens/components/stacked_card_filled_dark.png"
+      ]
     },
     "chat-message": {
       "page_id": "54227:28234",
       "figma_name": "❖ Chat message",
-      "dart_files": []
+      "dart_files": [
+        "lib/message_list//twake_message_list_item.dart"
+      ],
+      "golden_test": "test/goldens/components/message_list_item_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/message_list_item_default_unread.png",
+        "test/goldens/components/message_list_item_default_read.png",
+        "test/goldens/components/message_list_item_hovered.png",
+        "test/goldens/components/message_list_item_selected.png",
+        "test/goldens/components/message_list_item_unselect.png",
+        "test/goldens/components/message_list_item_typing.png",
+        "test/goldens/components/message_list_item_reaction.png",
+        "test/goldens/components/message_list_item_media_photo.png",
+        "test/goldens/components/message_list_item_media_video.png",
+        "test/goldens/components/message_list_item_chat_default.png",
+        "test/goldens/components/message_list_item_chat_media_hovered.png",
+        "test/goldens/components/message_list_item_muted_unread.png"
+      ]
     },
     "checkboxes": {
       "page_id": "58560:42900",
       "figma_name": "❖ Checkboxes",
-      "dart_files": []
+      "dart_files": [
+        "lib/checkboxes/twake_checkbox.dart"
+      ],
+      "golden_test": "test/goldens/components/checkboxes_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/checkbox_all_types_enabled.png",
+        "test/goldens/components/checkbox_all_types_hovered.png",
+        "test/goldens/components/checkbox_all_types_focused.png",
+        "test/goldens/components/checkbox_all_types_pressed.png",
+        "test/goldens/components/checkbox_all_types_disabled.png",
+        "test/goldens/components/checkbox_full_matrix_light.png",
+        "test/goldens/components/checkbox_full_matrix_dark.png"
+      ]
     },
     "chips": {
       "page_id": "58560:42901",
       "figma_name": "❖ Chips",
-      "dart_files": []
+      "dart_files": [
+        "lib/input_chip//twake_input_chip.dart"
+      ],
+      "golden_test": "test/goldens/components/input_chip_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/input_chip_label_only_unselected_enabled.png",
+        "test/goldens/components/input_chip_label_trailing_icon_unselected_enabled.png",
+        "test/goldens/components/input_chip_leading_icon_label_unselected_focused.png",
+        "test/goldens/components/input_chip_selected_label_only_hovered.png",
+        "test/goldens/components/input_chip_selected_label_avatar_trailing_dragged.png",
+        "test/goldens/components/input_chip_all_configurations_grid.png"
+      ]
     },
     "date-pickers": {
       "page_id": "58560:42902",
       "figma_name": "❖ Date pickers",
-      "dart_files": []
+      "dart_files": [
+        "lib/modal_date_picker//twake_modal_date_picker.dart"
+      ],
+      "golden_test": "test/goldens/components/modal_date_picker_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/modal_date_picker_single_light.png",
+        "test/goldens/components/modal_date_picker_single_dark.png",
+        "test/goldens/components/modal_date_picker_range_light.png",
+        "test/goldens/components/modal_date_picker_range_dark.png",
+        "test/goldens/components/modal_date_picker_no_selection_light.png"
+      ]
     },
     "dialog-modal": {
       "page_id": "58560:42903",
@@ -115,27 +259,89 @@
     "fab": {
       "page_id": "58560:43738",
       "figma_name": "❖ Floating action buttons (FAB)",
-      "dart_files": []
+      "dart_files": [
+        "lib/small_fab//twake_small_fab.dart"
+      ],
+      "golden_test": "test/goldens/components/small_fab_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/small_fab_light_all_variants.png",
+        "test/goldens/components/small_fab_dark_all_variants.png",
+        "test/goldens/components/small_fab_surface_enabled.png",
+        "test/goldens/components/small_fab_primary_pressed.png"
+      ]
     },
     "headers": {
       "page_id": "58582:39763",
       "figma_name": "❖ Headers",
-      "dart_files": []
+      "dart_files": [
+        "lib/bar_logo_web//twake_bar_logo_web.dart"
+      ],
+      "golden_test": "test/goldens/components/bar_logo_web_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_bar_logo_web_default.png",
+        "test/goldens/components/twake_bar_logo_web_both_icons.png",
+        "test/goldens/components/twake_bar_logo_web_no_icons.png",
+        "test/goldens/components/twake_bar_logo_web_grid_only.png"
+      ]
     },
     "icon-button": {
       "page_id": "58560:43739",
       "figma_name": "❖ Icon button",
-      "dart_files": []
+      "dart_files": [
+        "lib/icon_button_web/twake_icon_button_web.dart"
+      ],
+      "golden_test": "test/goldens/components/icon_button_web_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/icon_button_web_light_standard_enabled.png",
+        "test/goldens/components/icon_button_web_light_filled_enabled.png",
+        "test/goldens/components/icon_button_web_light_outlined_enabled.png",
+        "test/goldens/components/icon_button_web_light_tonal_enabled.png",
+        "test/goldens/components/icon_button_web_dark_standard_enabled.png",
+        "test/goldens/components/icon_button_web_dark_filled_enabled.png",
+        "test/goldens/components/icon_button_web_light_standard_disabled.png",
+        "test/goldens/components/icon_button_web_light_filled_disabled.png",
+        "test/goldens/components/icon_button_web_all_variants_grid.png"
+      ]
     },
     "input-field": {
       "page_id": "58582:45028",
       "figma_name": "❖ Input field",
-      "dart_files": []
+      "dart_files": [
+        "lib/text_fields//twake_text_field.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_text_field_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_text_field_light_outline_enable.png",
+        "test/goldens/components/twake_text_field_light_outline_focused.png",
+        "test/goldens/components/twake_text_field_light_outline_error.png",
+        "test/goldens/components/twake_text_field_light_outline_disabled.png",
+        "test/goldens/components/twake_text_field_dark_outline_enable.png",
+        "test/goldens/components/twake_text_field_dark_outline_error.png",
+        "test/goldens/components/twake_text_field_light_filled_enable.png",
+        "test/goldens/components/twake_text_field_dark_filled_enable.png",
+        "test/goldens/components/twake_text_field_light_filled_focused.png",
+        "test/goldens/components/twake_text_field_dark_filled_disabled.png",
+        "test/goldens/components/twake_text_field_no_supporting_no_trailing.png"
+      ]
     },
     "label": {
       "page_id": "58582:45232",
       "figma_name": "❖ Label",
-      "dart_files": []
+      "dart_files": [
+        "lib/labels//twake_label.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_label_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_label_light_default.png",
+        "test/goldens/components/twake_label_light_collapsed.png",
+        "test/goldens/components/twake_label_light_expanded.png",
+        "test/goldens/components/twake_label_light_clear_btn.png",
+        "test/goldens/components/twake_label_dark_default.png",
+        "test/goldens/components/twake_label_dark_collapsed.png",
+        "test/goldens/components/twake_label_dark_expanded.png",
+        "test/goldens/components/twake_label_dark_clear_btn.png",
+        "test/goldens/components/twake_label_all_variants.png"
+      ]
     },
     "lists": {
       "page_id": "58560:43740",
@@ -156,32 +362,98 @@
     "menus": {
       "page_id": "58560:43741",
       "figma_name": "❖ Menus",
-      "dart_files": []
+      "dart_files": [
+        "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_menu_with_text_field_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_menu_light_with_text_field.png",
+        "test/goldens/components/twake_menu_light_no_text_field.png",
+        "test/goldens/components/twake_menu_dark_with_text_field.png",
+        "test/goldens/components/twake_menu_dark_no_text_field.png"
+      ]
     },
     "menu-new": {
       "page_id": "60275:776",
       "figma_name": "❖ menu new (desktop+mobile)",
-      "dart_files": []
+      "dart_files": [
+        "lib/component_1/twake_message_context_menu.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_message_context_menu_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_message_context_menu_no_emoji_5.png",
+        "test/goldens/components/twake_message_context_menu_emoji_5.png",
+        "test/goldens/components/twake_message_context_menu_no_emoji_7.png",
+        "test/goldens/components/twake_message_context_menu_emoji_9.png",
+        "test/goldens/components/twake_message_context_menu_emoji_9_custom.png"
+      ]
     },
     "members-list": {
       "page_id": "58568:34601",
       "figma_name": "❖ Members list",
-      "dart_files": []
+      "dart_files": [
+        "lib/member_list_1/twake_member_list_item.dart"
+      ],
+      "golden_test": "test/goldens/components/member_list_item_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/member_list_item_default_owner_online.png",
+        "test/goldens/components/member_list_item_default_admin_last_seen.png",
+        "test/goldens/components/member_list_item_default_owner_matrix_email.png",
+        "test/goldens/components/member_list_item_unselect_owner_online.png",
+        "test/goldens/components/member_list_item_selected_owner_online.png",
+        "test/goldens/components/member_list_item_selected_admin_last_seen.png",
+        "test/goldens/components/member_list_item_add_contact_member_matrix_email.png",
+        "test/goldens/components/member_list_item_disabled_contact_member_matrix_email.png",
+        "test/goldens/components/member_list_item_dark_theme_selected.png",
+        "test/goldens/components/member_list_item_full_list_showcase.png"
+      ]
     },
     "message-counter": {
       "page_id": "58648:39819",
       "figma_name": "❖ Message counter",
-      "dart_files": []
+      "dart_files": [
+        "lib/message_counter//twake_message_counter.dart"
+      ],
+      "golden_test": "test/goldens/components/message_counter_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/message_counter_mention_only.png",
+        "test/goldens/components/message_counter_single_digit.png",
+        "test/goldens/components/message_counter_multiple_digits.png",
+        "test/goldens/components/message_counter_mention_single_multiple.png",
+        "test/goldens/components/message_counter_over_99.png"
+      ]
     },
     "message-type-icon": {
       "page_id": "58688:41412",
       "figma_name": "❖ Message type icon",
-      "dart_files": []
+      "dart_files": [
+        "lib/lin_message_type_icon_24px/twake_message_type_icon.dart"
+      ],
+      "golden_test": "test/goldens/components/message_type_icon_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/message_type_icon_all_light.png",
+        "test/goldens/components/message_type_icon_all_dark.png",
+        "test/goldens/components/message_type_icon_attach_light.png",
+        "test/goldens/components/message_type_icon_attach_dark.png"
+      ]
     },
     "navigation-rail": {
       "page_id": "58582:36629",
       "figma_name": "❖ Navigation rail",
-      "dart_files": []
+      "dart_files": [
+        "lib/bottom_navigation//twake_bottom_navigation.dart"
+      ],
+      "golden_test": "test/goldens/components/bottom_navigation_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/bottom_navigation_default_no_badge.png",
+        "test/goldens/components/bottom_navigation_default_with_badge.png",
+        "test/goldens/components/bottom_navigation_active_chat_no_badge.png",
+        "test/goldens/components/bottom_navigation_active_chat_with_badge.png",
+        "test/goldens/components/bottom_navigation_active_contact_with_badge.png",
+        "test/goldens/components/bottom_navigation_active_profil_with_badge.png",
+        "test/goldens/components/bottom_navigation_hovered_no_badge.png",
+        "test/goldens/components/bottom_navigation_hovered_with_badge.png"
+      ]
     },
     "on-action-hovered-bar": {
       "page_id": "58568:35422",
@@ -198,7 +470,28 @@
     "pin-events": {
       "page_id": "58582:45268",
       "figma_name": "❖ Pin events",
-      "dart_files": []
+      "dart_files": [
+        "lib/pin_events//twake_pin_event.dart"
+      ],
+      "golden_test": "test/goldens/components/pin_event_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/light_file_with_caption.png",
+        "test/goldens/components/light_file_no_caption.png",
+        "test/goldens/components/light_photo_with_caption.png",
+        "test/goldens/components/light_link_with_caption.png",
+        "test/goldens/components/light_contact_with_caption.png",
+        "test/goldens/components/light_poll_with_caption.png",
+        "test/goldens/components/light_video_with_caption.png",
+        "test/goldens/components/light_audio_with_caption.png",
+        "test/goldens/components/light_text_with_caption.png",
+        "test/goldens/components/dark_file_with_caption.png",
+        "test/goldens/components/dark_photo_no_caption.png",
+        "test/goldens/components/dark_contact_with_caption.png",
+        "test/goldens/components/mobile_light_file_with_caption.png",
+        "test/goldens/components/mobile_dark_text_no_caption.png",
+        "test/goldens/components/all_types_light_grid.png",
+        "test/goldens/components/all_types_dark_grid.png"
+      ]
     },
     "progress-indicators": {
       "page_id": "58560:43876",
@@ -225,7 +518,14 @@
     "radio-buttons": {
       "page_id": "58560:43878",
       "figma_name": "❖ Radio buttons",
-      "dart_files": []
+      "dart_files": [
+        "lib/linear_progress_indicator/twake_linear_progress_indicator.dart"
+      ],
+      "golden_test": "test/goldens/components/linear_progress_indicator_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_linear_progress_indicator_light.png",
+        "test/goldens/components/twake_linear_progress_indicator_dark.png"
+      ]
     },
     "ruller": {
       "page_id": "58560:43979",
@@ -235,47 +535,154 @@
     "side-sheets": {
       "page_id": "58560:43980",
       "figma_name": "❖ Side sheets",
-      "dart_files": []
+      "dart_files": [
+        "lib/side_sheet/twake_side_sheet.dart"
+      ],
+      "golden_test": "test/goldens/components/side_sheet_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/side_sheet_standard_no_back_no_actions.png",
+        "test/goldens/components/side_sheet_standard_back_no_actions.png",
+        "test/goldens/components/side_sheet_standard_no_back_with_actions.png",
+        "test/goldens/components/side_sheet_standard_back_with_actions.png",
+        "test/goldens/components/side_sheet_modal_no_back_no_actions.png",
+        "test/goldens/components/side_sheet_modal_back_no_actions.png",
+        "test/goldens/components/side_sheet_modal_no_back_with_actions.png",
+        "test/goldens/components/side_sheet_modal_back_with_actions.png"
+      ]
     },
     "sliders": {
       "page_id": "58560:43981",
       "figma_name": "❖ Sliders",
-      "dart_files": []
+      "dart_files": [
+        "lib/slider/twake_slider.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_slider_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/continuous_enabled_0pct.png",
+        "test/goldens/components/continuous_enabled_25pct.png",
+        "test/goldens/components/continuous_disabled_25pct.png",
+        "test/goldens/components/discrete_enabled_0pct.png",
+        "test/goldens/components/discrete_enabled_25pct.png",
+        "test/goldens/components/discrete_disabled_25pct.png",
+        "test/goldens/components/all_variants_grid.png"
+      ]
     },
     "snackbars": {
       "page_id": "58560:43982",
       "figma_name": "❖ Snackbars",
-      "dart_files": []
+      "dart_files": [
+        "lib/snackbar//twake_snackbar.dart"
+      ],
+      "golden_test": "test/goldens/components/snackbar_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/snackbar_single_line_no_action_no_close.png",
+        "test/goldens/components/snackbar_single_line_with_close.png",
+        "test/goldens/components/snackbar_single_line_with_action.png",
+        "test/goldens/components/snackbar_single_line_with_action_and_close.png",
+        "test/goldens/components/snackbar_two_line_no_action_no_close.png",
+        "test/goldens/components/snackbar_two_line_with_close.png",
+        "test/goldens/components/snackbar_two_line_with_action.png",
+        "test/goldens/components/snackbar_two_line_with_action_and_close.png",
+        "test/goldens/components/snackbar_two_line_longer_action.png",
+        "test/goldens/components/snackbar_two_line_longer_action_and_close.png"
+      ]
     },
     "settings": {
       "page_id": "58575:31940",
       "figma_name": "❖ Settings",
-      "dart_files": []
+      "dart_files": [
+        "lib/setting_profile//twake_setting_profile.dart"
+      ],
+      "golden_test": "test/goldens/components/setting_profile_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/setting_profile_default.png",
+        "test/goldens/components/setting_profile_hover.png",
+        "test/goldens/components/setting_profile_active.png"
+      ]
     },
     "switch": {
       "page_id": "58560:43983",
       "figma_name": "❖ Switch",
-      "dart_files": []
+      "dart_files": [
+        "lib/switch/twake_switch.dart"
+      ],
+      "golden_test": "test/goldens/components/switch_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/switch_all_variants_light.png",
+        "test/goldens/components/switch_all_variants_dark.png",
+        "test/goldens/components/switch_selected_enabled.png",
+        "test/goldens/components/switch_unselected_enabled.png",
+        "test/goldens/components/switch_selected_with_icon.png",
+        "test/goldens/components/switch_disabled_selected.png",
+        "test/goldens/components/switch_disabled_unselected.png"
+      ]
     },
     "tabs": {
       "page_id": "58560:43984",
       "figma_name": "❖ Tabs",
-      "dart_files": []
+      "dart_files": [
+        "lib/search_tabs//twake_search_tab.dart"
+      ],
+      "golden_test": "test/goldens/components/search_tabs_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/twake_search_tab_inactive_default.png",
+        "test/goldens/components/twake_search_tab_active_default.png",
+        "test/goldens/components/twake_search_tab_active_leading_icon.png",
+        "test/goldens/components/twake_search_tab_inactive_leading_icon.png",
+        "test/goldens/components/twake_search_tab_active_single_badge.png",
+        "test/goldens/components/twake_search_tab_active_multi_badge.png",
+        "test/goldens/components/twake_search_tab_no_divider.png",
+        "test/goldens/components/twake_search_tab_all_variants_row.png",
+        "test/goldens/components/twake_search_tab_dark_active.png",
+        "test/goldens/components/twake_search_tab_dark_inactive.png"
+      ]
     },
     "timestamp": {
       "page_id": "58566:34822",
       "figma_name": "❖ Timestamp",
-      "dart_files": []
+      "dart_files": [
+        "lib/timestamp//twake_timestamp.dart"
+      ],
+      "golden_test": "test/goldens/components/timestamp_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/today_default.png",
+        "test/goldens/components/today_on_scrolling.png",
+        "test/goldens/components/months_default.png",
+        "test/goldens/components/months_on_scrolling.png",
+        "test/goldens/components/year_default.png",
+        "test/goldens/components/year_on_scrolling.png",
+        "test/goldens/components/custom_label_default.png"
+      ]
     },
     "tooltips": {
       "page_id": "58566:33530",
       "figma_name": "❖ Tooltips",
-      "dart_files": []
+      "dart_files": [
+        "lib/container/twake_tooltip.dart"
+      ],
+      "golden_test": "test/goldens/components/twake_tooltip_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/plain_tooltip.png",
+        "test/goldens/components/rich_tooltip_with_buttons.png",
+        "test/goldens/components/rich_tooltip_no_buttons.png",
+        "test/goldens/components/rich_tooltip_with_icons.png"
+      ]
     },
     "typing-bar": {
       "page_id": "58582:44736",
       "figma_name": "❖ Typing bar",
-      "dart_files": []
+      "dart_files": [
+        "lib/typing_bar//twake_typing_bar.dart"
+      ],
+      "golden_test": "test/goldens/components/typing_bar_golden_test.dart",
+      "golden_files": [
+        "test/goldens/components/typing_bar_default_no_send.png",
+        "test/goldens/components/typing_bar_default_with_send.png",
+        "test/goldens/components/typing_bar_typing_state.png",
+        "test/goldens/components/typing_bar_reply_preview.png",
+        "test/goldens/components/typing_bar_link_preview_no_thumbnail.png",
+        "test/goldens/components/typing_bar_link_preview_with_send.png"
+      ]
     }
   }
 }

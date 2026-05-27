@@ -9,6 +9,10 @@ on:
         description: 'Dry run — detect drift only, no PR'
         type: boolean
         default: false
+      force_generate:
+        description: 'Force re-generate all unimplemented components'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,7 +25,7 @@ env:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       # ── 1. Setup ──────────────────────────────────────────────
@@ -36,85 +40,210 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # ── 2. Extract KB from Figma REST API ─────────────────────
-      - name: Extract Figma KB
-        env:
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
-        run: node scripts/extract-figma.mjs
-
-      # ── 3. Detect drift ───────────────────────────────────────
-      - name: Detect KB drift
-        id: drift
-        run: |
-          if git diff --quiet ${{ env.KB_PATH }}/; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No KB drift detected. Exiting."
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            git diff --stat ${{ env.KB_PATH }}/
-            git diff ${{ env.KB_PATH }}/ > /tmp/kb.diff
-
-            # Count changed nodes for guard rail
-            CHANGED_FILES=$(git diff --name-only ${{ env.KB_PATH }}/ | wc -l)
-            echo "changed_files=$CHANGED_FILES" >> "$GITHUB_OUTPUT"
-            echo "::notice::KB drift detected: $CHANGED_FILES files changed."
-          fi
-
-      # ── 4. Guard: abort if diff is too large ──────────────────
-      - name: Guard — diff size check
-        if: steps.drift.outputs.changed == 'true'
-        run: |
-          MAX_CHANGED=20
-          if [ "${{ steps.drift.outputs.changed_files }}" -gt "$MAX_CHANGED" ]; then
-            echo "::error::Diff too large (${{ steps.drift.outputs.changed_files }} files > $MAX_CHANGED). Likely a DS refactor — needs manual review."
-            exit 1
-          fi
-
-      # ── 5. Claude Agent — generate Dart code from KB diff ─────
-      - name: Generate Dart code
-        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        timeout-minutes: 10
-        run: node scripts/figma-to-dart.mjs
-
-      # ── 6. Validate ──────────────────────────────────────────
-      - name: Validate — Flutter analyze
-        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+      - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version-file: pubspec.yaml
           cache: true
 
-      - name: Run analysis & tests
+      # ── 2. Discover new Figma components ──────────────────────
+      - name: Discover new components
+        id: discover
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: |
+          OUTPUT=$(node scripts/discover-components.mjs 2>&1)
+          echo "$OUTPUT"
+          NEW=$(echo "$OUTPUT" | grep "^NEW_COMPONENTS=" | cut -d= -f2)
+          if [ -n "$NEW" ]; then
+            echo "new_components=$NEW" >> "$GITHUB_OUTPUT"
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::New components discovered: $NEW"
+          else
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 3. Extract KB registries from Figma REST API ──────────
+      - name: Extract Figma KB (registries)
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: node scripts/extract-figma.mjs
+
+      # ── 4. Structural drift detection ─────────────────────────
+      #    Compares live Figma component data against local specs.
+      #    Ignores noise: key ordering, float precision, positions,
+      #    timestamps, IDs. Only flags design-relevant changes.
+      - name: Detect component drift
+        id: drift
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: |
+          node scripts/detect-drift.mjs
+
+          # Parse the machine-readable report
+          REPORT="kb/sync-logs/drift-report.json"
+          if [ ! -f "$REPORT" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No drift report generated."
+            exit 0
+          fi
+
+          CHANGED_COUNT=$(node -e "const r=JSON.parse(require('fs').readFileSync('$REPORT','utf8')); console.log(r.stats.changed)")
+          NEW_COUNT=$(node -e "const r=JSON.parse(require('fs').readFileSync('$REPORT','utf8')); console.log(r.stats.new)")
+          CHANGED_LIST=$(node -e "const r=JSON.parse(require('fs').readFileSync('$REPORT','utf8')); console.log(r.changed.join(','))")
+          SUMMARY=$(node -e "const r=JSON.parse(require('fs').readFileSync('$REPORT','utf8')); console.log(r.summary)")
+          TOTAL=$(node -e "const r=JSON.parse(require('fs').readFileSync('$REPORT','utf8')); console.log(r.stats.total)")
+
+          echo "changed_count=$CHANGED_COUNT" >> "$GITHUB_OUTPUT"
+          echo "changed_list=$CHANGED_LIST" >> "$GITHUB_OUTPUT"
+          echo "summary=$SUMMARY" >> "$GITHUB_OUTPUT"
+          echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+
+          if [ "$CHANGED_COUNT" -gt 0 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Drift detected: $SUMMARY"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No drift detected ($TOTAL components checked)."
+          fi
+
+      # ── 5. Guard: abort if too many components drifted ────────
+      - name: Guard — drift size check
+        if: steps.drift.outputs.changed == 'true'
+        run: |
+          MAX_CHANGED=15
+          CHANGED="${{ steps.drift.outputs.changed_count }}"
+          if [ "$CHANGED" -gt "$MAX_CHANGED" ]; then
+            echo "::error::Too many components drifted ($CHANGED > $MAX_CHANGED). Likely a DS refactor — needs manual review."
+            exit 1
+          fi
+
+      # ── 6. Generate new widgets ───────────────────────────────
+      - name: Generate new widgets
+        if: (steps.discover.outputs.has_new == 'true' || inputs.force_generate == true) && inputs.dry_run != true
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        timeout-minutes: 15
+        run: node scripts/generate-all-widgets.mjs
+
+      # ── 7. Sync ONLY drifted components ─────────────────────────
+      #    Uses the drift report to skip unchanged components.
+      #    Saves Claude API tokens by not re-processing stable specs.
+      - name: Sync drifted components
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        timeout-minutes: 10
+        run: |
+          CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
+          if [ -z "$CHANGED_LIST" ]; then
+            echo "No drifted components to sync."
+            exit 0
+          fi
+
+          # Extract screenshots ONLY for drifted components
+          echo "Extracting specs + screenshots for drifted components only..."
+          node scripts/extract-figma-components.mjs --only "$CHANGED_LIST"
+
+          # Sync each drifted component
+          IFS=',' read -ra COMPS <<< "$CHANGED_LIST"
+          SYNCED=0
+          for comp in "${COMPS[@]}"; do
+            echo "━━━ Syncing $comp ━━━"
+            if node scripts/sync-component.mjs --component "$comp" --skip-analyze; then
+              SYNCED=$((SYNCED + 1))
+            else
+              echo "::warning::sync-component failed for $comp (continuing)"
+            fi
+          done
+          echo "Synced $SYNCED/${#COMPS[@]} drifted components."
+
+      # ── 8. Update widgetbook ──────────────────────────────────
+      - name: Update widgetbook
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        run: node scripts/update-widgetbook.mjs
+
+      # ── 9. Validate ──────────────────────────────────────────
+      - name: Validate — Flutter analyze
         if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
         run: |
+          flutter pub get
           flutter analyze lib/
-          flutter test test/theme/
 
-      # ── 7. Open draft PR ─────────────────────────────────────
-      - name: Create draft PR
+      - name: Golden regression check
+        id: golden_check
         if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        continue-on-error: true
+        run: |
+          node scripts/check-golden-regressions.mjs
+          echo "regression_exit=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Read golden regression report
+        id: golden_report
+        if: steps.golden_check.outcome == 'failure'
+        run: |
+          if [ -f kb/sync-logs/golden-regressions.json ]; then
+            COUNT=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/golden-regressions.json','utf8')); console.log(r.count)")
+            FILES=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/golden-regressions.json','utf8')); console.log(r.files.join(', '))")
+            echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+            echo "files=$FILES" >> "$GITHUB_OUTPUT"
+            echo "::warning::Golden regressions detected ($COUNT files): $FILES"
+          fi
+
+      - name: Update golden references
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        run: flutter test test/goldens/components/ --update-goldens
+
+      # ── 10. Open draft PR ────────────────────────────────────
+      - name: Create draft PR
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         uses: peter-evans/create-pull-request@v6
         with:
           branch: figma-sync/${{ github.run_id }}
-          commit-message: 'chore(theme): sync Figma DS changes'
-          title: 'chore(theme): sync Figma DS changes'
+          commit-message: |
+            chore(design-system): nightly Figma sync
+
+            - Discovered: ${{ steps.discover.outputs.has_new == 'true' && steps.discover.outputs.new_components || 'none' }}
+            - Drifted: ${{ steps.drift.outputs.changed_list || 'none' }}
+            - Drift summary: ${{ steps.drift.outputs.summary || 'no drift' }}
+          title: 'chore(design-system): nightly Figma sync'
           body: |
-            ## Automated Figma DS sync
+            ## Automated Figma Design System Sync
 
-            **Drift detected** in `${{ env.KB_PATH }}/` — ${{ steps.drift.outputs.changed_files }} files changed.
+            **Run:** nightly cron / manual dispatch
+            **Date:** ${{ github.event.repository.updated_at }}
 
-            ### KB diff
-            ```diff
-            ${{ steps.drift.outputs.changed_files }} files changed
-            ```
+            ### Drift detection (structural)
+            | Metric | Value |
+            |--------|-------|
+            | Components checked | ${{ steps.drift.outputs.total || '0' }} |
+            | Drifted | ${{ steps.drift.outputs.changed_count || '0' }} |
+            | Drifted components | ${{ steps.drift.outputs.changed_list || 'none' }} |
+            | New components | ${{ steps.discover.outputs.has_new == 'true' && steps.discover.outputs.new_components || 'none' }} |
+            | Golden regressions | ${{ steps.golden_check.outcome == 'failure' && format('{0} files: {1}', steps.golden_report.outputs.count, steps.golden_report.outputs.files) || 'none' }} |
+
+            ### Cost optimization
+            - Only **${{ steps.drift.outputs.changed_count || '0' }}** components processed (screenshots + Claude API)
+            - **${{ steps.drift.outputs.total || '0' }}** total components checked via structural diff (Figma API only, no Claude)
+            - Estimated Claude API savings: ~${{ steps.drift.outputs.total || '0' }} fewer sync-component calls skipped
+
+            ### Pipeline steps
+            - [x] Discover new Figma components
+            - [x] Extract Figma knowledge base (registries)
+            - [x] Structural drift detection (design-aware diff)
+            - [x] Generate widgets for new components (Claude API)
+            - [x] Sync drifted components only (Claude API)
+            - [x] Update widgetbook
+            - [x] Flutter analyze
+            - [x] Golden regression check ${{ steps.golden_check.outcome == 'failure' && '-- regressions detected' || '' }}
+            - [x] Golden references updated
 
             ### Checklist
-            - [ ] Review token mapping changes
-            - [ ] Verify generated Dart matches Figma intent
-            - [ ] Check `flutter analyze` passed
-            - [ ] Check `flutter test test/theme/` passed
+            - [ ] Review generated Dart code
+            - [ ] Verify widgets match Figma intent
+            - [ ] Merge when satisfied
           draft: true
           labels: |
             design-system

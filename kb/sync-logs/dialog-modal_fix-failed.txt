@@ -1,0 +1,5 @@
+Looking at the QA report, the discrepancies are all "minor" and the QA verdict is "PASS" - meaning the spec JSON values are truncated/empty (`[truncated]`, `{}`), so we can't determine exact correct values from the spec. The current implementation already uses reasonable values (Offset(0,4)/Offset(0,1) for shadows, EdgeInsets.symmetric(horizontal:24, vertical:24) for inset padding).
+
+Since the Figma spec has truncated values for all the flagged items (shadow offsets show `[truncated]`, padding shows `{}`), there's nothing definitive to change - the current implementation's values are already appropriate and the QA report itself recommends PASS.
+
+[]

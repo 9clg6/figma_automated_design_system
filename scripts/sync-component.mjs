@@ -89,8 +89,8 @@ function buildAllowlist() {
 
 const ALLOWED_PATHS = buildAllowlist();
 
-// ── Figma API ──────────────────────────────────────────────────
-function figmaGet(path) {
+// ── Figma API (with 429 retry + exponential backoff) ──────────
+function figmaGetOnce(path) {
   return new Promise((res, rej) => {
     const url = `https://api.figma.com/v1${path}`;
     https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
@@ -98,7 +98,8 @@ function figmaGet(path) {
       resp.on('data', chunk => data += chunk);
       resp.on('end', () => {
         if (resp.statusCode === 429) {
-          rej(new Error(`Rate limited. Retry-After: ${resp.headers['retry-after']}s`));
+          const retryAfter = parseInt(resp.headers['retry-after'] || '0', 10);
+          rej({ rateLimited: true, retryAfter });
           return;
         }
         if (resp.statusCode !== 200) {
@@ -110,6 +111,25 @@ function figmaGet(path) {
       });
     }).on('error', rej);
   });
+}
+
+async function figmaGet(path, retries = 5) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await figmaGetOnce(path);
+    } catch (err) {
+      if (err.rateLimited && attempt < retries) {
+        const wait = Math.max((err.retryAfter || 0) * 1000, 2 ** attempt * 5000);
+        const capped = Math.min(wait, 60000);
+        console.log(`  ⏳ Rate limited, waiting ${capped / 1000}s (attempt ${attempt}/${retries})...`);
+        await new Promise(r => setTimeout(r, capped));
+        continue;
+      }
+      if (err.rateLimited) throw new Error(`Figma API ${path}: rate limited after ${retries} retries`);
+      throw err;
+    }
+  }
+}
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -220,7 +240,7 @@ async function fetchComponentSpec(name, cfg) {
     components: [],
   };
 
-  function findComponents(node) {
+  function findComponents(node, parentType = null) {
     if (node.type === 'COMPONENT_SET') {
       const set = { name: node.name, id: node.id, variants: [] };
       if (node.children) {
@@ -229,13 +249,13 @@ async function fetchComponentSpec(name, cfg) {
           .map(c => extractComponentSpec(c, 0));
       }
       spec.components.push(set);
-    } else if (node.type === 'COMPONENT' && node.parent?.type !== 'COMPONENT_SET') {
+    } else if (node.type === 'COMPONENT' && parentType !== 'COMPONENT_SET') {
       spec.components.push({
         name: node.name, id: node.id,
         variants: [extractComponentSpec(node, 0)],
       });
     }
-    if (node.children) node.children.forEach(findComponents);
+    if (node.children) node.children.forEach(c => findComponents(c, node.type));
   }
 
   findComponents(page);
@@ -590,10 +610,20 @@ function buildUserPrompt(name, diff, newSpec, dartFiles) {
 // ── Validate edits against allowlist ───────────────────────────
 function validateEdits(edits) {
   for (const edit of edits) {
-    const allowed = ALLOWED_PATHS.some(prefix => edit.path.startsWith(prefix));
-    if (!allowed) {
-      throw new Error(`🚫 Edit blocked — path outside allowlist: ${edit.path}\n   Allowed: ${ALLOWED_PATHS.join(', ')}`);
+    // Canonicalize the path to prevent traversal attacks (e.g. "lib/buttons/../../main.dart")
+    const resolved = resolve(ROOT, edit.path);
+    const canonical = resolved.replace(ROOT + '/', '');
+    // Reject if resolved path escapes the project root
+    if (!resolved.startsWith(ROOT + '/')) {
+      throw new Error(`🚫 Edit blocked — path escapes project root: ${edit.path} → ${resolved}`);
     }
+    // Check canonical path against allowlist
+    const allowed = ALLOWED_PATHS.some(prefix => canonical.startsWith(prefix));
+    if (!allowed) {
+      throw new Error(`🚫 Edit blocked — path outside allowlist: ${edit.path} (resolved: ${canonical})\n   Allowed: ${ALLOWED_PATHS.join(', ')}`);
+    }
+    // Replace edit.path with the canonical version
+    edit.path = canonical;
   }
 }
 

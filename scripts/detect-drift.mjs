@@ -196,7 +196,7 @@ function buildLiveSpec(page, cfg) {
     components: [],
   };
 
-  function findComponents(node) {
+  function findComponents(node, parentType = null) {
     if (node.type === 'COMPONENT_SET') {
       const set = { name: node.name, id: node.id, variants: [] };
       if (node.children) {
@@ -205,14 +205,14 @@ function buildLiveSpec(page, cfg) {
           .map((c) => extractComponentSpec(c, 0));
       }
       spec.components.push(set);
-    } else if (node.type === 'COMPONENT' && node.parent?.type !== 'COMPONENT_SET') {
+    } else if (node.type === 'COMPONENT' && parentType !== 'COMPONENT_SET') {
       spec.components.push({
         name: node.name,
         id: node.id,
         variants: [extractComponentSpec(node, 0)],
       });
     }
-    if (node.children) node.children.forEach(findComponents);
+    if (node.children) node.children.forEach((c) => findComponents(c, node.type));
   }
 
   findComponents(page);

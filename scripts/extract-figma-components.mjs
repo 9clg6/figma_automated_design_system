@@ -41,7 +41,7 @@ const onlyFilter = onlyArg ? onlyArg.split('=')[1]?.split(',') || process.argv[p
 // ── Figma API helper ─────────────────────────────────────────
 const RATE_DELAY = 4200; // ~14 req/min to stay safe under 15/min
 
-function figmaGet(path) {
+function figmaGetOnce(path) {
   return new Promise((resolve, reject) => {
     const url = `https://api.figma.com/v1${path}`;
     https.get(url, { headers: { 'X-Figma-Token': TOKEN } }, (res) => {
@@ -49,8 +49,8 @@ function figmaGet(path) {
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         if (res.statusCode === 429) {
-          const retry = res.headers['retry-after'];
-          reject(new Error(`Rate limited. Retry after ${retry}s`));
+          const retryAfter = parseInt(res.headers['retry-after'] || '0', 10);
+          reject({ rateLimited: true, retryAfter });
           return;
         }
         if (res.statusCode !== 200) {
@@ -62,6 +62,25 @@ function figmaGet(path) {
       });
     }).on('error', reject);
   });
+}
+
+async function figmaGet(path, retries = 5) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await figmaGetOnce(path);
+    } catch (err) {
+      if (err.rateLimited && attempt < retries) {
+        const wait = Math.max((err.retryAfter || 0) * 1000, 2 ** attempt * 5000);
+        const capped = Math.min(wait, 60000);
+        console.log(`  ⏳ Rate limited, waiting ${capped / 1000}s (attempt ${attempt}/${retries})...`);
+        await new Promise(r => setTimeout(r, capped));
+        continue;
+      }
+      if (err.rateLimited) throw new Error(`Figma API ${path}: rate limited after ${retries} retries`);
+      throw err;
+    }
+  }
+}
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -262,7 +281,7 @@ async function main() {
         };
 
         // Walk the tree to find COMPONENT_SET and COMPONENT nodes
-        function findComponents(node) {
+        function findComponents(node, parentType = null) {
           if (node.type === 'COMPONENT_SET') {
             const set = {
               name: node.name,
@@ -275,14 +294,14 @@ async function main() {
                 .map(c => extractComponentSpec(c, 0));
             }
             spec.components.push(set);
-          } else if (node.type === 'COMPONENT' && node.parent?.type !== 'COMPONENT_SET') {
+          } else if (node.type === 'COMPONENT' && parentType !== 'COMPONENT_SET') {
             spec.components.push({
               name: node.name,
               id: node.id,
               variants: [extractComponentSpec(node, 0)],
             });
           }
-          if (node.children) node.children.forEach(findComponents);
+          if (node.children) node.children.forEach(c => findComponents(c, node.type));
         }
 
         findComponents(page);

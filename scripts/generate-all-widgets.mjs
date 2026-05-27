@@ -38,8 +38,8 @@ function argVal(flag) { const i = args.indexOf(flag); return i >= 0 ? args[i + 1
 const targetComponent = argVal('--component');
 const dryRun = args.includes('--dry-run');
 
-// ── Figma API ──────────────────────────────────────────────────
-function figmaGet(path) {
+// ── Figma API (with 429 retry + exponential backoff) ──────────
+function figmaGetOnce(path) {
   return new Promise((res, rej) => {
     const url = `https://api.figma.com/v1${path}`;
     https.get(url, { headers: { 'X-Figma-Token': FIGMA_TOKEN } }, (resp) => {
@@ -47,7 +47,8 @@ function figmaGet(path) {
       resp.on('data', chunk => data += chunk);
       resp.on('end', () => {
         if (resp.statusCode === 429) {
-          rej(new Error(`Rate limited (429). Retry-After: ${resp.headers['retry-after']}s`));
+          const retryAfter = parseInt(resp.headers['retry-after'] || '0', 10);
+          rej({ rateLimited: true, retryAfter });
           return;
         }
         if (resp.statusCode !== 200) {
@@ -59,6 +60,24 @@ function figmaGet(path) {
       });
     }).on('error', rej);
   });
+}
+
+async function figmaGet(path, retries = 5) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      return await figmaGetOnce(path);
+    } catch (err) {
+      if (err.rateLimited && attempt < retries) {
+        const wait = Math.max((err.retryAfter || 0) * 1000, 2 ** attempt * 5000);
+        const capped = Math.min(wait, 60000);
+        console.log(`  ⏳ Rate limited, waiting ${capped / 1000}s (attempt ${attempt}/${retries})...`);
+        await new Promise(r => setTimeout(r, capped));
+        continue;
+      }
+      if (err.rateLimited) throw new Error(`Figma API ${path}: rate limited after ${retries} retries`);
+      throw err;
+    }
+  }
 }
 
 function figmaGetImage(nodeId, scale = 2) {

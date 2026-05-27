@@ -167,18 +167,30 @@ jobs:
 
       # ── 9. Validate ──────────────────────────────────────────
       - name: Validate — Flutter analyze
-        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         run: |
           flutter pub get
           flutter analyze lib/
 
-      - name: Golden regression check
-        id: golden_check
-        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+      - name: Compliance check (deterministic)
+        id: compliance
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         continue-on-error: true
         run: |
-          node scripts/check-golden-regressions.mjs
-          echo "regression_exit=$?" >> "$GITHUB_OUTPUT"
+          node scripts/check-compliance-deterministic.mjs --json > kb/sync-logs/compliance-report.json 2>&1 || true
+          if [ -f kb/sync-logs/compliance-report.json ]; then
+            AVG=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/compliance-report.json','utf8')); console.log(r.averageScore || 0)")
+            BELOW=$(node -e "const r=JSON.parse(require('fs').readFileSync('kb/sync-logs/compliance-report.json','utf8')); const c=r.components||[]; console.log(c.filter(x=>x.score<30).length)")
+            echo "average_score=$AVG" >> "$GITHUB_OUTPUT"
+            echo "below_threshold=$BELOW" >> "$GITHUB_OUTPUT"
+            echo "::notice::Compliance average: ${AVG}%, components below 30%: ${BELOW}"
+          fi
+
+      - name: Golden regression check
+        id: golden_check
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        continue-on-error: true
+        run: node scripts/check-golden-regressions.mjs
 
       - name: Read golden regression report
         id: golden_report
@@ -193,15 +205,17 @@ jobs:
           fi
 
       - name: Update golden references
-        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         run: flutter test test/goldens/components/ --update-goldens
 
       # ── 10. Open draft PR ────────────────────────────────────
+      #    Uses a fixed branch name so peter-evans/create-pull-request
+      #    updates the existing PR instead of creating a new one each night.
       - name: Create draft PR
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: figma-sync/${{ github.run_id }}
+          branch: figma-sync/auto
           commit-message: |
             chore(design-system): nightly Figma sync
 
@@ -222,6 +236,7 @@ jobs:
             | Drifted | ${{ steps.drift.outputs.changed_count || '0' }} |
             | Drifted components | ${{ steps.drift.outputs.changed_list || 'none' }} |
             | New components | ${{ steps.discover.outputs.has_new == 'true' && steps.discover.outputs.new_components || 'none' }} |
+            | Compliance score | ${{ steps.compliance.outputs.average_score || 'n/a' }}% avg (${{ steps.compliance.outputs.below_threshold || '0' }} below 30%) |
             | Golden regressions | ${{ steps.golden_check.outcome == 'failure' && format('{0} files: {1}', steps.golden_report.outputs.count, steps.golden_report.outputs.files) || 'none' }} |
 
             ### Cost optimization
@@ -237,7 +252,8 @@ jobs:
             - [x] Sync drifted components only (Claude API)
             - [x] Update widgetbook
             - [x] Flutter analyze
-            - [x] Golden regression check ${{ steps.golden_check.outcome == 'failure' && '-- regressions detected' || '' }}
+            - [x] Compliance check (deterministic) — ${{ steps.compliance.outputs.average_score || 'n/a' }}% avg
+            - [x] Golden regression check ${{ steps.golden_check.outcome == 'failure' && '— regressions detected' || '' }}
             - [x] Golden references updated
 
             ### Checklist

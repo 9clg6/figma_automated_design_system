@@ -52,8 +52,15 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
         run: |
+          set +e
           OUTPUT=$(node scripts/discover-components.mjs 2>&1)
+          EXIT_CODE=$?
+          set -e
           echo "$OUTPUT"
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "::error::discover-components.mjs failed with exit code $EXIT_CODE"
+            exit $EXIT_CODE
+          fi
           NEW=$(echo "$OUTPUT" | grep "^NEW_COMPONENTS=" | cut -d= -f2)
           if [ -n "$NEW" ]; then
             echo "new_components=$NEW" >> "$GITHUB_OUTPUT"

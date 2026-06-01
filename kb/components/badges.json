@@ -1,8 +1,10 @@
 {
   "name": "❖ Badges",
   "page_id": "58558:25218",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/badge/twake_badge.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -78,90 +80,6 @@
       ]
     },
     {
-      "name": "Size=Small",
-      "id": "51592:4769",
-      "variants": [
-        {
-          "name": "Size=Small",
-          "type": "COMPONENT",
-          "id": "51592:4769",
-          "width": 6,
-          "height": 6,
-          "cornerRadius": 100,
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FF3347"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8171",
-            "fill": "50391:8171"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Size=Large-Single Digit",
-      "id": "51592:4770",
-      "variants": [
-        {
-          "name": "Size=Large-Single Digit",
-          "type": "COMPONENT",
-          "id": "51592:4770",
-          "width": 16,
-          "height": 16,
-          "cornerRadius": 100,
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FF3347"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8171",
-            "fill": "50391:8171"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Size=Multiple Digits",
-      "id": "51592:4772",
-      "variants": [
-        {
-          "name": "Size=Multiple Digits",
-          "type": "COMPONENT",
-          "id": "51592:4772",
-          "width": 23,
-          "height": 16,
-          "cornerRadius": 100,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 10,
-            "padding": {
-              "right": 4,
-              "left": 4
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FF3347"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8171",
-            "fill": "50391:8171"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
       "name": "Badge-dark",
       "id": "51592:4775",
       "variants": [
@@ -203,90 +121,6 @@
           },
           "children": []
         },
-        {
-          "name": "Size=Multiple Digits",
-          "type": "COMPONENT",
-          "id": "51592:4779",
-          "width": 23,
-          "height": 16,
-          "cornerRadius": 100,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 10,
-            "padding": {
-              "right": 4,
-              "left": 4
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#E64646"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8196",
-            "fill": "50391:8196"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Size=Small",
-      "id": "51592:4776",
-      "variants": [
-        {
-          "name": "Size=Small",
-          "type": "COMPONENT",
-          "id": "51592:4776",
-          "width": 6,
-          "height": 6,
-          "cornerRadius": 100,
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#E64646"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8196",
-            "fill": "50391:8196"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Size=Large-Single Digit",
-      "id": "51592:4777",
-      "variants": [
-        {
-          "name": "Size=Large-Single Digit",
-          "type": "COMPONENT",
-          "id": "51592:4777",
-          "width": 16,
-          "height": 16,
-          "cornerRadius": 100,
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#E64646"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8196",
-            "fill": "50391:8196"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Size=Multiple Digits",
-      "id": "51592:4779",
-      "variants": [
         {
           "name": "Size=Multiple Digits",
           "type": "COMPONENT",

@@ -1,8 +1,10 @@
 {
   "name": "❖ Timestamp",
   "page_id": "58566:34822",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/timestamp//twake_timestamp.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -109,162 +111,6 @@
           },
           "children": []
         },
-        {
-          "name": "Today?=False, Months?=False, Year?=True, On-scrolling?=True",
-          "type": "COMPONENT",
-          "id": "54409:28846",
-          "width": 148,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=True, Months?=False, Year?=False, On-scrolling?=False",
-      "id": "54409:28826",
-      "variants": [
-        {
-          "name": "Today?=True, Months?=False, Year?=False, On-scrolling?=False",
-          "type": "COMPONENT",
-          "id": "54409:28826",
-          "width": 85,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=True, Months?=False, Year?=False, On-scrolling?=True",
-      "id": "54409:28830",
-      "variants": [
-        {
-          "name": "Today?=True, Months?=False, Year?=False, On-scrolling?=True",
-          "type": "COMPONENT",
-          "id": "54409:28830",
-          "width": 85,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=False, Months?=True, Year?=False, On-scrolling?=False",
-      "id": "54409:28834",
-      "variants": [
-        {
-          "name": "Today?=False, Months?=True, Year?=False, On-scrolling?=False",
-          "type": "COMPONENT",
-          "id": "54409:28834",
-          "width": 91,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=False, Months?=True, Year?=False, On-scrolling?=True",
-      "id": "54409:28838",
-      "variants": [
-        {
-          "name": "Today?=False, Months?=True, Year?=False, On-scrolling?=True",
-          "type": "COMPONENT",
-          "id": "54409:28838",
-          "width": 91,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=False, Months?=False, Year?=True, On-scrolling?=False",
-      "id": "54409:28842",
-      "variants": [
-        {
-          "name": "Today?=False, Months?=False, Year?=True, On-scrolling?=False",
-          "type": "COMPONENT",
-          "id": "54409:28842",
-          "width": 148,
-          "height": 48,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 8,
-              "right": 8,
-              "bottom": 8,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Today?=False, Months?=False, Year?=True, On-scrolling?=True",
-      "id": "54409:28846",
-      "variants": [
         {
           "name": "Today?=False, Months?=False, Year?=True, On-scrolling?=True",
           "type": "COMPONENT",
@@ -461,7 +307,8 @@
                     "x": 0,
                     "y": 1
                   },
-                  "color": "#000000"
+                  "color": "#00000026",
+                  "opacity": 0.15
                 },
                 {
                   "type": "DROP_SHADOW",
@@ -470,220 +317,8 @@
                     "x": 0,
                     "y": 1
                   },
-                  "color": "#000000"
-                }
-              ],
-              "styleRefs": {
-                "effect": "50732:11954"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Configuration=Default, Theme=Light",
-      "id": "55030:5131",
-      "variants": [
-        {
-          "name": "Configuration=Default, Theme=Light",
-          "type": "COMPONENT",
-          "id": "55030:5131",
-          "width": 163,
-          "height": 44,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "55030:5132",
-              "width": 80,
-              "height": 36,
-              "layout": {
-                "mode": "HORIZONTAL",
-                "spacing": 8,
-                "padding": {
-                  "top": 8,
-                  "right": 16,
-                  "bottom": 8,
-                  "left": 16
-                },
-                "align": "CENTER",
-                "crossAlign": "CENTER"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Configuration=Default, Theme=Dark",
-      "id": "55030:5134",
-      "variants": [
-        {
-          "name": "Configuration=Default, Theme=Dark",
-          "type": "COMPONENT",
-          "id": "55030:5134",
-          "width": 163,
-          "height": 44,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "55030:5135",
-              "width": 80,
-              "height": 36,
-              "layout": {
-                "mode": "HORIZONTAL",
-                "spacing": 8,
-                "padding": {
-                  "top": 8,
-                  "right": 16,
-                  "bottom": 8,
-                  "left": 16
-                },
-                "align": "CENTER",
-                "crossAlign": "CENTER"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Configuration=On Scrolling, Theme=Light",
-      "id": "55030:5137",
-      "variants": [
-        {
-          "name": "Configuration=On Scrolling, Theme=Light",
-          "type": "COMPONENT",
-          "id": "55030:5137",
-          "width": 163,
-          "height": 44,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "55030:5138",
-              "width": 80,
-              "height": 36,
-              "cornerRadius": 18,
-              "layout": {
-                "mode": "HORIZONTAL",
-                "spacing": 8,
-                "padding": {
-                  "top": 8,
-                  "right": 16,
-                  "bottom": 8,
-                  "left": 16
-                },
-                "align": "CENTER",
-                "crossAlign": "CENTER"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Configuration=On Scrolling, Theme=Dark",
-      "id": "55030:5141",
-      "variants": [
-        {
-          "name": "Configuration=On Scrolling, Theme=Dark",
-          "type": "COMPONENT",
-          "id": "55030:5141",
-          "width": 163,
-          "height": 44,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 8,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "55030:5142",
-              "width": 80,
-              "height": 36,
-              "cornerRadius": 18,
-              "layout": {
-                "mode": "HORIZONTAL",
-                "spacing": 8,
-                "padding": {
-                  "top": 8,
-                  "right": 16,
-                  "bottom": 8,
-                  "left": 16
-                },
-                "align": "CENTER",
-                "crossAlign": "CENTER"
-              },
-              "effects": [
-                {
-                  "type": "DROP_SHADOW",
-                  "radius": 3,
-                  "offset": {
-                    "x": 0,
-                    "y": 1
-                  },
-                  "color": "#000000"
-                },
-                {
-                  "type": "DROP_SHADOW",
-                  "radius": 2,
-                  "offset": {
-                    "x": 0,
-                    "y": 1
-                  },
-                  "color": "#000000"
+                  "color": "#0000004D",
+                  "opacity": 0.3
                 }
               ],
               "styleRefs": {
@@ -1552,7 +1187,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -1561,7 +1197,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {

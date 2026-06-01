@@ -1,8 +1,10 @@
 {
   "name": "❖ Side sheets",
   "page_id": "58560:43980",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/side_sheet/twake_side_sheet.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {

@@ -1,8 +1,10 @@
 {
   "name": "❖ Box text",
   "page_id": "58993:4183",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/dialog_2/twake_dialog_2.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -177,6 +179,11 @@
                       "value": "light",
                       "type": "VARIANT",
                       "boundVariables": {}
+                    },
+                    "size": {
+                      "value": "M",
+                      "type": "VARIANT",
+                      "boundVariables": {}
                     }
                   },
                   "children": []
@@ -261,6 +268,11 @@
                       "value": "dark",
                       "type": "VARIANT",
                       "boundVariables": {}
+                    },
+                    "size": {
+                      "value": "M",
+                      "type": "VARIANT",
+                      "boundVariables": {}
                     }
                   },
                   "children": []
@@ -310,88 +322,6 @@
             }
           ]
         },
-        {
-          "name": "Device=Desktop",
-          "type": "COMPONENT",
-          "id": "58993:18720",
-          "width": 1128,
-          "height": 161,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "crossAlign": "MAX"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "58993:18534",
-              "width": 1096,
-              "height": 153,
-              "layout": {
-                "mode": "VERTICAL",
-                "spacing": 8,
-                "padding": {},
-                "align": "CENTER",
-                "crossAlign": "CENTER"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Device=Mobile",
-      "id": "58993:18721",
-      "variants": [
-        {
-          "name": "Device=Mobile",
-          "type": "COMPONENT",
-          "id": "58993:18721",
-          "width": 360,
-          "height": 278,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 4,
-              "right": 16,
-              "bottom": 4,
-              "left": 16
-            },
-            "align": "MAX",
-            "crossAlign": "MAX"
-          },
-          "children": [
-            {
-              "name": "Container",
-              "type": "FRAME",
-              "id": "58993:18299",
-              "width": 328,
-              "height": 270,
-              "layout": {
-                "mode": "VERTICAL",
-                "spacing": 8,
-                "padding": {},
-                "align": "MAX"
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Device=Desktop",
-      "id": "58993:18720",
-      "variants": [
         {
           "name": "Device=Desktop",
           "type": "COMPONENT",
@@ -778,6 +708,11 @@
                             "value": "light",
                             "type": "VARIANT",
                             "boundVariables": {}
+                          },
+                          "size": {
+                            "value": "M",
+                            "type": "VARIANT",
+                            "boundVariables": {}
                           }
                         },
                         "children": []
@@ -860,6 +795,11 @@
                           },
                           "Theme": {
                             "value": "dark",
+                            "type": "VARIANT",
+                            "boundVariables": {}
+                          },
+                          "size": {
+                            "value": "M",
                             "type": "VARIANT",
                             "boundVariables": {}
                           }

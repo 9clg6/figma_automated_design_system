@@ -1,8 +1,10 @@
 {
   "name": "❖ Tooltips",
   "page_id": "58566:33530",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/container/twake_tooltip.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -114,7 +116,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -123,169 +126,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8209",
-            "fill": "50391:8209",
-            "effect": "50732:11522"
-          },
-          "children": [
-            {
-              "name": "Content",
-              "type": "FRAME",
-              "id": "54351:28398",
-              "width": 320,
-              "height": 88,
-              "layout": {
-                "mode": "VERTICAL",
-                "spacing": 4,
-                "padding": {}
-              },
-              "children": []
-            },
-            {
-              "name": "Buttons",
-              "type": "FRAME",
-              "id": "54351:28399",
-              "width": 320,
-              "height": 40,
-              "layout": {
-                "mode": "HORIZONTAL",
-                "padding": {}
-              },
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Type=Plain",
-      "id": "54351:28404",
-      "variants": [
-        {
-          "name": "Type=Plain",
-          "type": "COMPONENT",
-          "id": "54351:28404",
-          "width": 336,
-          "height": 40,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 8,
-            "padding": {
-              "top": 4,
-              "right": 8,
-              "bottom": 4,
-              "left": 8
-            },
-            "align": "CENTER",
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183"
-          },
-          "children": [
-            {
-              "name": "m3_icons__check_circle_fill_on__24px",
-              "type": "INSTANCE",
-              "id": "59153:1158",
-              "width": 24,
-              "height": 24,
-              "children": []
-            },
-            {
-              "name": "Rich tooltip bring attention to a particular element of feature that warrants the user’s focus",
-              "type": "TEXT",
-              "id": "54351:28386",
-              "width": 320,
-              "height": 32,
-              "fills": [
-                {
-                  "type": "SOLID",
-                  "hex": "#F4EFF4"
-                }
-              ],
-              "text": "Rich tooltip bring attention to a particular eleme",
-              "textStyle": {
-                "fontFamily": "Inter",
-                "fontSize": 12,
-                "fontWeight": 500,
-                "letterSpacing": 0.4000000059604645,
-                "lineHeight": 16,
-                "textAlign": "LEFT"
-              },
-              "styleRefs": {
-                "fill": "50391:8182",
-                "text": "50391:8316"
-              }
-            },
-            {
-              "name": "Icons/close_24px",
-              "type": "INSTANCE",
-              "id": "59153:976",
-              "width": 24,
-              "height": 24,
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Type=Rich",
-      "id": "54351:28403",
-      "variants": [
-        {
-          "name": "Type=Rich",
-          "type": "COMPONENT",
-          "id": "54351:28403",
-          "width": 352,
-          "height": 160,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 12,
-            "padding": {
-              "top": 12,
-              "right": 16,
-              "bottom": 8,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -624,7 +466,8 @@
                           "x": 0,
                           "y": 4
                         },
-                        "color": "#000000"
+                        "color": "#00000026",
+                        "opacity": 0.15
                       },
                       {
                         "type": "DROP_SHADOW",
@@ -633,7 +476,8 @@
                           "x": 0,
                           "y": 1
                         },
-                        "color": "#000000"
+                        "color": "#0000004D",
+                        "opacity": 0.3
                       }
                     ],
                     "styleRefs": {

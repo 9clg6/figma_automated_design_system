@@ -1,8 +1,10 @@
 {
   "name": "❖ Snackbars",
   "page_id": "58560:43982",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/snackbar//twake_snackbar.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -37,7 +39,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -46,7 +49,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -82,7 +86,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -91,7 +96,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -132,7 +138,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -141,7 +148,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -182,7 +190,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -191,7 +200,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -231,7 +241,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -240,7 +251,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -281,7 +293,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -290,7 +303,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -329,7 +343,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -338,7 +353,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -380,7 +396,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -389,7 +406,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -427,7 +445,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -436,7 +455,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -477,7 +497,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -486,554 +507,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=True, Lines=Two lines",
-      "id": "51744:5085",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=True, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5085",
-          "width": 344,
-          "height": 112,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 10,
-            "padding": {},
-            "align": "MAX",
-            "crossAlign": "MAX"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=True, Lines=Two lines",
-      "id": "51744:5079",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=True, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5079",
-          "width": 344,
-          "height": 112,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 14,
-            "padding": {}
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=False, Lines=Two lines",
-      "id": "51744:5066",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5066",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 10,
-              "bottom": 10,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=False, Lines=Two lines",
-      "id": "51744:5060",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5060",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 14,
-              "right": 8,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=True, Longer action=False, Lines=Two lines",
-      "id": "51744:5073",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=True, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5073",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {
-              "top": 10,
-              "bottom": 10,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=False, Longer action=False, Lines=Two lines",
-      "id": "51744:5056",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=False, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "51744:5056",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 10,
-            "padding": {
-              "top": 14,
-              "right": 16,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=False, Lines=One line",
-      "id": "51744:5096",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "51744:5096",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=False, Lines=One line",
-      "id": "51744:5050",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "51744:5050",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 4,
-              "right": 8,
-              "bottom": 4,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=True, Longer action=False, Lines=One line",
-      "id": "51744:5101",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=True, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "51744:5101",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8183",
-            "fill": "50391:8183",
-            "effect": "50732:11522"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=False, Longer action=False, Lines=One line",
-      "id": "51744:5092",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=False, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "51744:5092",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 14,
-              "right": 16,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#313033"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1076,7 +551,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1085,7 +561,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1121,7 +598,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1130,7 +608,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1171,7 +650,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1180,7 +660,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1221,7 +702,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1230,7 +712,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1270,7 +753,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1279,7 +763,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1320,7 +805,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1329,7 +815,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1368,7 +855,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1377,7 +865,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1419,7 +908,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1428,7 +918,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1466,7 +957,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1475,7 +967,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -1516,7 +1009,8 @@
                 "x": 0,
                 "y": 4
               },
-              "color": "#000000"
+              "color": "#00000026",
+              "opacity": 0.15
             },
             {
               "type": "DROP_SHADOW",
@@ -1525,553 +1019,8 @@
                 "x": 0,
                 "y": 1
               },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=True, Lines=Two lines",
-      "id": "52036:23640",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=True, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23640",
-          "width": 344,
-          "height": 112,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "VERTICAL",
-            "padding": {},
-            "align": "MAX",
-            "crossAlign": "MAX"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=True, Lines=Two lines",
-      "id": "52036:23635",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=True, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23635",
-          "width": 344,
-          "height": 112,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "VERTICAL",
-            "spacing": 14,
-            "padding": {}
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=False, Lines=Two lines",
-      "id": "52036:23627",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23627",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 10,
-              "bottom": 10,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=False, Lines=Two lines",
-      "id": "52036:23624",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23624",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 14,
-              "right": 8,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=True, Longer action=False, Lines=Two lines",
-      "id": "52036:23632",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=True, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23632",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {
-              "top": 10,
-              "bottom": 10,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=False, Longer action=False, Lines=Two lines",
-      "id": "52036:23622",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=False, Longer action=False, Lines=Two lines",
-          "type": "COMPONENT",
-          "id": "52036:23622",
-          "width": 344,
-          "height": 68,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 10,
-            "padding": {
-              "top": 14,
-              "right": 16,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=True, Longer action=False, Lines=One line",
-      "id": "52036:23648",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=True, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "52036:23648",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=True, Close affordance=False, Longer action=False, Lines=One line",
-      "id": "52036:23619",
-      "variants": [
-        {
-          "name": "Action=True, Close affordance=False, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "52036:23619",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 4,
-              "right": 8,
-              "bottom": 4,
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=True, Longer action=False, Lines=One line",
-      "id": "52036:23653",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=True, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "52036:23653",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {
-              "left": 16
-            },
-            "crossAlign": "CENTER"
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
-            }
-          ],
-          "styleRefs": {
-            "fills": "50391:8208",
-            "fill": "50391:8208",
-            "effect": "50732:11527"
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Action=False, Close affordance=False, Longer action=False, Lines=One line",
-      "id": "52036:23646",
-      "variants": [
-        {
-          "name": "Action=False, Close affordance=False, Longer action=False, Lines=One line",
-          "type": "COMPONENT",
-          "id": "52036:23646",
-          "width": 344,
-          "height": 48,
-          "cornerRadius": 4,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "spacing": 4,
-            "padding": {
-              "top": 14,
-              "right": 16,
-              "bottom": 14,
-              "left": 16
-            }
-          },
-          "fills": [
-            {
-              "type": "SOLID",
-              "hex": "#FFFFFF"
-            }
-          ],
-          "effects": [
-            {
-              "type": "DROP_SHADOW",
-              "radius": 8,
-              "offset": {
-                "x": 0,
-                "y": 4
-              },
-              "color": "#000000"
-            },
-            {
-              "type": "DROP_SHADOW",
-              "radius": 3,
-              "offset": {
-                "x": 0,
-                "y": 1
-              },
-              "color": "#000000"
+              "color": "#0000004D",
+              "opacity": 0.3
             }
           ],
           "styleRefs": {
@@ -2360,7 +1309,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2369,7 +1319,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2405,7 +1356,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2414,7 +1366,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2455,7 +1408,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2464,7 +1418,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2505,7 +1460,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2514,7 +1470,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2554,7 +1511,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2563,7 +1521,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2604,7 +1563,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2613,7 +1573,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2652,7 +1613,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2661,7 +1623,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2703,7 +1666,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2712,7 +1676,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2750,7 +1715,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2759,7 +1725,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2800,7 +1767,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2809,7 +1777,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2895,7 +1864,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2904,7 +1874,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2940,7 +1911,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2949,7 +1921,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -2990,7 +1963,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -2999,7 +1973,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3040,7 +2015,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3049,7 +2025,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3089,7 +2066,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3098,7 +2076,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3139,7 +2118,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3148,7 +2128,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3187,7 +2168,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3196,7 +2178,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3238,7 +2221,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3247,7 +2231,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3285,7 +2270,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3294,7 +2280,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {
@@ -3335,7 +2322,8 @@
                               "x": 0,
                               "y": 4
                             },
-                            "color": "#000000"
+                            "color": "#00000026",
+                            "opacity": 0.15
                           },
                           {
                             "type": "DROP_SHADOW",
@@ -3344,7 +2332,8 @@
                               "x": 0,
                               "y": 1
                             },
-                            "color": "#000000"
+                            "color": "#0000004D",
+                            "opacity": 0.3
                           }
                         ],
                         "styleRefs": {

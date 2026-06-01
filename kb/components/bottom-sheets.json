@@ -1,8 +1,10 @@
 {
   "name": "❖ Bottom sheets",
   "page_id": "58560:42862",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/bottom_sheet/twake_bottom_sheet.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -28,34 +30,6 @@
       ]
     },
     {
-      "name": "Modal=True",
-      "id": "51827:5863",
-      "variants": [
-        {
-          "name": "Modal=True",
-          "type": "COMPONENT",
-          "id": "51827:5863",
-          "width": 400,
-          "height": 480,
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Modal=False",
-      "id": "51827:5860",
-      "variants": [
-        {
-          "name": "Modal=False",
-          "type": "COMPONENT",
-          "id": "51827:5860",
-          "width": 400,
-          "height": 480,
-          "children": []
-        }
-      ]
-    },
-    {
       "name": "Bottom sheet-dark",
       "id": "51827:5867",
       "variants": [
@@ -67,34 +41,6 @@
           "height": 480,
           "children": []
         },
-        {
-          "name": "Modal=False",
-          "type": "COMPONENT",
-          "id": "51827:5868",
-          "width": 400,
-          "height": 480,
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Modal=True",
-      "id": "51827:5871",
-      "variants": [
-        {
-          "name": "Modal=True",
-          "type": "COMPONENT",
-          "id": "51827:5871",
-          "width": 400,
-          "height": 480,
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Modal=False",
-      "id": "51827:5868",
-      "variants": [
         {
           "name": "Modal=False",
           "type": "COMPONENT",

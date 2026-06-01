@@ -1,8 +1,10 @@
 {
   "name": "❖ Date pickers",
   "page_id": "58560:42902",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/modal_date_picker//twake_modal_date_picker.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {

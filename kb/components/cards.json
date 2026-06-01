@@ -1,8 +1,10 @@
 {
   "name": "❖ Cards",
   "page_id": "58560:42899",
-  "dart_files": [],
-  "has_implementation": false,
+  "dart_files": [
+    "lib/stacked_card//twake_stacked_card.dart"
+  ],
+  "has_implementation": true,
   "variants": [],
   "components": [
     {
@@ -51,63 +53,6 @@
       ]
     },
     {
-      "name": "Style=Outlined",
-      "id": "52346:27574",
-      "variants": [
-        {
-          "name": "Style=Outlined",
-          "type": "COMPONENT",
-          "id": "52346:27574",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Elevated",
-      "id": "52350:27693",
-      "variants": [
-        {
-          "name": "Style=Elevated",
-          "type": "COMPONENT",
-          "id": "52350:27693",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Filled",
-      "id": "52350:27738",
-      "variants": [
-        {
-          "name": "Style=Filled",
-          "type": "COMPONENT",
-          "id": "52350:27738",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
       "name": "Horizontal card",
       "id": "52350:27876",
       "variants": [
@@ -137,63 +82,6 @@
           },
           "children": []
         },
-        {
-          "name": "Style=Filled",
-          "type": "COMPONENT",
-          "id": "52350:28197",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Outlined",
-      "id": "52350:27877",
-      "variants": [
-        {
-          "name": "Style=Outlined",
-          "type": "COMPONENT",
-          "id": "52350:27877",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Elevated",
-      "id": "52350:28183",
-      "variants": [
-        {
-          "name": "Style=Elevated",
-          "type": "COMPONENT",
-          "id": "52350:28183",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Filled",
-      "id": "52350:28197",
-      "variants": [
         {
           "name": "Style=Filled",
           "type": "COMPONENT",
@@ -270,63 +158,6 @@
       ]
     },
     {
-      "name": "Style=Outlined",
-      "id": "52350:28284",
-      "variants": [
-        {
-          "name": "Style=Outlined",
-          "type": "COMPONENT",
-          "id": "52350:28284",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Elevated",
-      "id": "52350:28308",
-      "variants": [
-        {
-          "name": "Style=Elevated",
-          "type": "COMPONENT",
-          "id": "52350:28308",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Filled",
-      "id": "52350:28332",
-      "variants": [
-        {
-          "name": "Style=Filled",
-          "type": "COMPONENT",
-          "id": "52350:28332",
-          "width": 360,
-          "height": 480,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
       "name": "Horizontal card-dark",
       "id": "52350:28356",
       "variants": [
@@ -356,63 +187,6 @@
           },
           "children": []
         },
-        {
-          "name": "Style=Filled",
-          "type": "COMPONENT",
-          "id": "52350:28383",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Outlined",
-      "id": "52350:28357",
-      "variants": [
-        {
-          "name": "Style=Outlined",
-          "type": "COMPONENT",
-          "id": "52350:28357",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Elevated",
-      "id": "52350:28370",
-      "variants": [
-        {
-          "name": "Style=Elevated",
-          "type": "COMPONENT",
-          "id": "52350:28370",
-          "width": 360,
-          "height": 80,
-          "cornerRadius": 12,
-          "layout": {
-            "mode": "HORIZONTAL",
-            "padding": {}
-          },
-          "children": []
-        }
-      ]
-    },
-    {
-      "name": "Style=Filled",
-      "id": "52350:28383",
-      "variants": [
         {
           "name": "Style=Filled",
           "type": "COMPONENT",

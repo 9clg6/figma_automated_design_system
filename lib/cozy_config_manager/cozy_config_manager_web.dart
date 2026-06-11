@@ -3,7 +3,6 @@
 import 'dart:async';
 import 'dart:html';
 import 'dart:js_interop';
-import 'dart:js_util';
 
 import 'package:flutter/foundation.dart';
 import 'package:linagora_design_flutter/cozy_config_manager/cozy_js_interop.dart';
@@ -64,13 +63,13 @@ class CozyConfigManager {
   }
 
   Future<String?> _getTargetOrigin() async {
-    final targetOrigin = await promiseToFuture(requestParentOriginJs());
-    return targetOrigin is JSString ? targetOrigin.toDart : null;
+    final targetOrigin = await requestParentOriginJs().toDart;
+    return targetOrigin?.toDart;
   }
 
   Future<CozyNotificationStatus> requestNotificationPermission() async {
-    final status = await promiseToFuture(requestNotificationPermissionJs());
-    return status is JSString
+    final status = await requestNotificationPermissionJs().toDart;
+    return status != null
         ? CozyNotificationStatus.fromJs(status.toDart)
         : CozyNotificationStatus.isUndefined;
   }

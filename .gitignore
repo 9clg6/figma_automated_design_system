@@ -13,3 +13,4 @@ build/
 .flutter-plugins-dependencies
 .packages
 pubspec.lock
+test/goldens/components/failures/

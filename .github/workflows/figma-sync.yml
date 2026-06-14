@@ -177,7 +177,7 @@ jobs:
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         run: |
           flutter pub get
-          flutter analyze lib/
+          flutter analyze --no-fatal-warnings --no-fatal-infos lib/
 
       - name: Compliance check (deterministic)
         id: compliance

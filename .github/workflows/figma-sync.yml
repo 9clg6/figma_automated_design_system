@@ -215,6 +215,13 @@ jobs:
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
         run: flutter test test/goldens/components/ --update-goldens
 
+      # ── 9b. Clean build artifacts before PR ─────────────────
+      - name: Clean build artifacts
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        run: |
+          rm -rf .dart_tool/ build/ .flutter-plugins .flutter-plugins-dependencies .packages
+          git checkout -- pubspec.lock 2>/dev/null || true
+
       # ── 10. Open draft PR ────────────────────────────────────
       #    Uses a fixed branch name so peter-evans/create-pull-request
       #    updates the existing PR instead of creating a new one each night.

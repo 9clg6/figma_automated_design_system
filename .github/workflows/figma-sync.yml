@@ -150,11 +150,9 @@ jobs:
             exit 0
           fi
 
-          # Extract screenshots ONLY for drifted components
-          echo "Extracting specs + screenshots for drifted components only..."
-          node scripts/extract-figma-components.mjs --only "$CHANGED_LIST"
-
           # Sync each drifted component
+          # NOTE: do NOT run extract-figma-components before sync — it overwrites
+          # the cached spec, making the diff see "no changes".
           IFS=',' read -ra COMPS <<< "$CHANGED_LIST"
           SYNCED=0
           for comp in "${COMPS[@]}"; do
@@ -166,6 +164,17 @@ jobs:
             fi
           done
           echo "Synced $SYNCED/${#COMPS[@]} drifted components."
+
+      # ── 7b. Update cached specs + reference images AFTER sync ──
+      - name: Update Figma specs and reference images
+        if: steps.drift.outputs.changed == 'true' && inputs.dry_run != true
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+        run: |
+          CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
+          if [ -n "$CHANGED_LIST" ]; then
+            node scripts/extract-figma-components.mjs --only "$CHANGED_LIST"
+          fi
 
       # ── 8. Update widgetbook ──────────────────────────────────
       - name: Update widgetbook

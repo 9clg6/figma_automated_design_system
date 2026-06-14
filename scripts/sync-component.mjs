@@ -195,20 +195,22 @@ function diffSpecs(oldSpec, newSpec) {
 
 function diffVariantProperties(oldV, newV, path) {
   const changes = [];
+  const FLOAT_EPSILON = 0.01;
+  const floatEq = (a, b) => typeof a === 'number' && typeof b === 'number' ? Math.abs(a - b) <= FLOAT_EPSILON : a === b;
 
   // Dimensions
-  if (oldV.width !== newV.width) changes.push({ path, prop: 'width', old: oldV.width, new: newV.width });
-  if (oldV.height !== newV.height) changes.push({ path, prop: 'height', old: oldV.height, new: newV.height });
+  if (!floatEq(oldV.width, newV.width)) changes.push({ path, prop: 'width', old: oldV.width, new: newV.width });
+  if (!floatEq(oldV.height, newV.height)) changes.push({ path, prop: 'height', old: oldV.height, new: newV.height });
 
   // Corner radius
-  if (oldV.cornerRadius !== newV.cornerRadius) changes.push({ path, prop: 'cornerRadius', old: oldV.cornerRadius, new: newV.cornerRadius });
+  if (!floatEq(oldV.cornerRadius, newV.cornerRadius)) changes.push({ path, prop: 'cornerRadius', old: oldV.cornerRadius, new: newV.cornerRadius });
 
   // Layout
   if (oldV.layout && newV.layout) {
-    if (oldV.layout.spacing !== newV.layout.spacing) changes.push({ path, prop: 'layout.spacing', old: oldV.layout.spacing, new: newV.layout.spacing });
+    if (!floatEq(oldV.layout.spacing, newV.layout.spacing)) changes.push({ path, prop: 'layout.spacing', old: oldV.layout.spacing, new: newV.layout.spacing });
     if (oldV.layout.mode !== newV.layout.mode) changes.push({ path, prop: 'layout.mode', old: oldV.layout.mode, new: newV.layout.mode });
     for (const side of ['top', 'right', 'bottom', 'left']) {
-      if (oldV.layout.padding?.[side] !== newV.layout.padding?.[side]) {
+      if (!floatEq(oldV.layout.padding?.[side], newV.layout.padding?.[side])) {
         changes.push({ path, prop: `layout.padding.${side}`, old: oldV.layout.padding?.[side], new: newV.layout.padding?.[side] });
       }
     }
@@ -236,11 +238,22 @@ function diffVariantProperties(oldV, newV, path) {
     if (oldTs !== newTs) changes.push({ path, prop: 'textStyle', old: oldV.textStyle, new: newV.textStyle });
   }
 
-  // Recurse into children (shallow — compare child count and names)
-  const oldChildren = (oldV.children || []).map(c => c.name).sort().join(',');
-  const newChildren = (newV.children || []).map(c => c.name).sort().join(',');
-  if (oldChildren !== newChildren) {
-    changes.push({ path, prop: 'children.structure', old: `${(oldV.children || []).length} nodes`, new: `${(newV.children || []).length} nodes` });
+  // Recurse into children — match by name, deep-compare properties
+  const oldChildMap = new Map((oldV.children || []).map(c => [c.name, c]));
+  const newChildMap = new Map((newV.children || []).map(c => [c.name, c]));
+
+  for (const [cName, newChild] of newChildMap) {
+    if (!oldChildMap.has(cName)) {
+      changes.push({ path, prop: `children[${cName}]`, old: undefined, new: 'added' });
+      continue;
+    }
+    const childChanges = diffVariantProperties(oldChildMap.get(cName), newChild, `${path} → ${cName}`);
+    changes.push(...childChanges);
+  }
+  for (const cName of oldChildMap.keys()) {
+    if (!newChildMap.has(cName)) {
+      changes.push({ path, prop: `children[${cName}]`, old: 'removed', new: undefined });
+    }
   }
 
   return changes;

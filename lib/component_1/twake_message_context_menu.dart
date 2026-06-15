@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// A context menu for messages, matching Figma "Component 1".
+/// A context menu for messages, matching Figma "actionbar" / "actioncontact".
 /// Supports an optional emoji reaction bar and a variable list of action items.
 ///
 /// Variants:
 /// - [showEmojiBar] → bool (emoji bar=true/false)
-/// - [items] → list of [TwakeContextMenuItem] (5–9 items)
+/// - [items] → list of [TwakeContextMenuItem] (5–11 items)
 class TwakeMessageContextMenu extends StatelessWidget {
   /// Whether to show the emoji reaction bar at the top.
   final bool showEmojiBar;
@@ -64,12 +64,17 @@ class _EmojiReactionBar extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(32),
         boxShadow: const [
           BoxShadow(
-            color: Color(0x1A000000),
-            blurRadius: 8,
-            offset: Offset(0, 2),
+            color: Color(0x14000000),
+            blurRadius: 80,
+            offset: Offset(0, 1),
+          ),
+          BoxShadow(
+            color: Color(0x26000000),
+            blurRadius: 3,
+            offset: Offset(0, 1),
           ),
         ],
       ),
@@ -102,8 +107,8 @@ class _MoreButton extends StatelessWidget {
       child: Container(
         width: 28,
         height: 28,
-        decoration: BoxDecoration(
-          color: const Color(0xFFE8E8E8),
+        decoration: const BoxDecoration(
+          color: Color(0xFFE8E8E8),
           shape: BoxShape.circle,
         ),
         child: const Icon(
@@ -130,27 +135,39 @@ class _MenuCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: const [
           BoxShadow(
-            color: Color(0x1A000000),
-            blurRadius: 8,
-            offset: Offset(0, 2),
+            color: Color(0x14000000),
+            blurRadius: 80,
+            offset: Offset(0, 1),
+          ),
+          BoxShadow(
+            color: Color(0x26000000),
+            blurRadius: 3,
+            offset: Offset(0, 1),
           ),
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            for (int i = 0; i < items.length; i++) ...
-              [
-                _MenuItemRow(item: items[i]),
-                if (i < items.length - 1)
-                  const Divider(height: 1, thickness: 0.5, color: Color(0xFFE8E8E8)),
-              ],
-          ],
+        borderRadius: BorderRadius.circular(20),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              for (int i = 0; i < items.length; i++) ...
+                [
+                  _MenuItemRow(item: items[i]),
+                  if (i < items.length - 1)
+                    const Divider(
+                      height: 1,
+                      thickness: 1,
+                      color: Color(0xFFF4F4F4),
+                    ),
+                ],
+            ],
+          ),
         ),
       ),
     );
@@ -175,8 +192,10 @@ class _MenuItemRowState extends State<_MenuItemRow> {
   @override
   Widget build(BuildContext context) {
     final isDestructive = widget.item.isDestructive;
-    final textColor = isDestructive ? const Color(0xFFB3261E) : const Color(0xFF1C1B1F);
-    final iconColor = isDestructive ? const Color(0xFFB3261E) : const Color(0xFF49454F);
+    final textColor =
+        isDestructive ? const Color(0xFFB3261E) : const Color(0xFF1C1B1F);
+    final iconColor =
+        isDestructive ? const Color(0xFFB3261E) : const Color(0xFF49454F);
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
@@ -185,24 +204,32 @@ class _MenuItemRowState extends State<_MenuItemRow> {
         onTap: widget.item.onTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
+          width: 216,
+          height: 45,
           color: _hovered ? const Color(0xFFF4F4F4) : Colors.white,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                widget.item.label,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: textColor,
-                  height: 1.43,
+              if (widget.item.icon != null)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: Icon(
+                    widget.item.icon,
+                    size: 18,
+                    color: iconColor,
+                  ),
                 ),
-              ),
-              Icon(
-                widget.item.icon,
-                size: 18,
-                color: iconColor,
+              Expanded(
+                child: Text(
+                  widget.item.label,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: textColor,
+                    height: 1.43,
+                  ),
+                ),
               ),
             ],
           ),
@@ -218,11 +245,11 @@ class _MenuItemRowState extends State<_MenuItemRow> {
 
 /// Represents a single item in the [TwakeMessageContextMenu].
 class TwakeContextMenuItem {
-  /// Label displayed on the left.
+  /// Label displayed in the item.
   final String label;
 
-  /// Icon displayed on the right.
-  final IconData icon;
+  /// Icon displayed on the left of the label.
+  final IconData? icon;
 
   /// When true the item is rendered in red (destructive action like Delete).
   final bool isDestructive;
@@ -232,7 +259,7 @@ class TwakeContextMenuItem {
 
   const TwakeContextMenuItem({
     required this.label,
-    required this.icon,
+    this.icon,
     this.isDestructive = false,
     this.onTap,
   });
@@ -242,7 +269,7 @@ class TwakeContextMenuItem {
 // Pre-built factory helpers
 // ---------------------------------------------------------------------------
 
-/// Returns the standard 5-item list used in Figma.
+/// Returns the standard action bar item list used in Figma (actionbar).
 List<TwakeContextMenuItem> twakeDefaultMenuItems({
   VoidCallback? onReply,
   VoidCallback? onForward,
@@ -258,7 +285,7 @@ List<TwakeContextMenuItem> twakeDefaultMenuItems({
       ),
       TwakeContextMenuItem(
         label: 'Forward',
-        icon: Icons.reply_rounded, // mirrored via Transform in real impl
+        icon: Icons.reply_rounded,
         onTap: onForward,
       ),
       TwakeContextMenuItem(
@@ -276,5 +303,29 @@ List<TwakeContextMenuItem> twakeDefaultMenuItems({
         icon: Icons.delete_outline_rounded,
         isDestructive: true,
         onTap: onDelete,
+      ),
+    ];
+
+/// Returns the contact action menu items used in Figma (actioncontact).
+List<TwakeContextMenuItem> twakeContactMenuItems({
+  VoidCallback? onMarkAsRead,
+  VoidCallback? onPinChat,
+  VoidCallback? onMuteChat,
+}) =>
+    [
+      TwakeContextMenuItem(
+        label: 'Mark this chat as read',
+        icon: Icons.done_all_outlined,
+        onTap: onMarkAsRead,
+      ),
+      TwakeContextMenuItem(
+        label: 'Pin this chat',
+        icon: Icons.push_pin_outlined,
+        onTap: onPinChat,
+      ),
+      TwakeContextMenuItem(
+        label: 'Mute this chat',
+        icon: Icons.notifications_off_outlined,
+        onTap: onMuteChat,
       ),
     ];

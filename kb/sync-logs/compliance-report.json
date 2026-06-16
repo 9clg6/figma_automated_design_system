@@ -1,0 +1,2347 @@
+[
+  {
+    "component": "avatar",
+    "score": 9,
+    "total_tokens": 22,
+    "matched": 2,
+    "mismatched": 20,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#21D4FD",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 6
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#B721FF",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 6
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#38F9D7",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 7
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#43E97B",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 7
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#11E6F0",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 8
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#4FACFE",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 8
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#E88395",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 9
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#EF9C8F",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 9
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#8DDAD5",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 10
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#00CDAC",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 10
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#E4ABF0",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 11
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#D96EED",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 11
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#F0FF00",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 12
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#58CFFB",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 12
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#EFC0D7",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 13
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#1AD5E4",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 13
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#FFD26F",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 14
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#3677FF",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 14
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#87A6F8",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 15
+      },
+      {
+        "property": "color",
+        "expected": "#D2E9FF | #0A84FF | #FFFFFF | #007AFF | #2D2D2E",
+        "actual": "#645FF6",
+        "file": "lib/avatar/round_avatar_style.dart",
+        "line": 15
+      }
+    ]
+  },
+  {
+    "component": "badges",
+    "score": 63,
+    "total_tokens": 8,
+    "matched": 5,
+    "mismatched": 3,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#FF3347 | #E64646",
+        "actual": "#E53935",
+        "file": "lib/badge/twake_badge.dart",
+        "line": 15
+      },
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 8,
+        "file": "lib/badge/twake_badge.dart",
+        "line": 21
+      },
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 8,
+        "file": "lib/badge/twake_badge.dart",
+        "line": 22
+      }
+    ]
+  },
+  {
+    "component": "bottom-sheets",
+    "score": 0,
+    "total_tokens": 2,
+    "matched": 0,
+    "mismatched": 2,
+    "mismatches": [
+      {
+        "property": "dimension.dragHandleWidth",
+        "expected": "400 | 480",
+        "actual": 32,
+        "file": "lib/bottom_sheet/twake_bottom_sheet.dart",
+        "line": 5
+      },
+      {
+        "property": "dimension.dragHandleHeight",
+        "expected": "400 | 480",
+        "actual": 4,
+        "file": "lib/bottom_sheet/twake_bottom_sheet.dart",
+        "line": 6
+      }
+    ]
+  },
+  {
+    "component": "box-text",
+    "score": 33,
+    "total_tokens": 9,
+    "matched": 3,
+    "mismatched": 6,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F | #0A84FF",
+        "actual": "#F2F2F2",
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 55
+      },
+      {
+        "property": "borderRadius",
+        "expected": "16 | 100",
+        "actual": 12,
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 56
+      },
+      {
+        "property": "spacing.height",
+        "expected": "16 | 100 | 340 | 308 | 87 | 85 | 360 | 328 | 1128 | 1096 | 144 | 56 | 28 | 20 | 48 | 278 | 270 | 161 | 153 | 4 | 8 | 10",
+        "actual": 12,
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 76
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F | #0A84FF",
+        "actual": "#1976D2",
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 85
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F | #0A84FF",
+        "actual": "#1976D2",
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 94
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/dialog_2/twake_dialog_2.dart",
+        "line": 105
+      }
+    ]
+  },
+  {
+    "component": "bubble-media",
+    "score": 0,
+    "total_tokens": 7,
+    "matched": 0,
+    "mismatched": 7,
+    "mismatches": [
+      {
+        "property": "borderRadius",
+        "expected": "16 | 24",
+        "actual": 8,
+        "file": "lib/file//twake_file.dart",
+        "line": 60
+      },
+      {
+        "property": "color",
+        "expected": "#F5F5F5 | #FFFFFF | #0A84FF",
+        "actual": "#000000",
+        "file": "lib/file//twake_file.dart",
+        "line": 131
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "8",
+        "actual": 4,
+        "file": "lib/file//twake_file.dart",
+        "line": 149
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "8",
+        "actual": 2,
+        "file": "lib/file//twake_file.dart",
+        "line": 149
+      },
+      {
+        "property": "color",
+        "expected": "#F5F5F5 | #FFFFFF | #0A84FF",
+        "actual": "#000000",
+        "file": "lib/file//twake_file.dart",
+        "line": 151
+      },
+      {
+        "property": "borderRadius",
+        "expected": "16 | 24",
+        "actual": 4,
+        "file": "lib/file//twake_file.dart",
+        "line": 152
+      },
+      {
+        "property": "color",
+        "expected": "#F5F5F5 | #FFFFFF | #0A84FF",
+        "actual": "#000000",
+        "file": "lib/file//twake_file.dart",
+        "line": 180
+      }
+    ]
+  },
+  {
+    "component": "bubble-message",
+    "score": 50,
+    "total_tokens": 12,
+    "matched": 6,
+    "mismatched": 6,
+    "mismatches": [
+      {
+        "property": "padding.right",
+        "expected": "16",
+        "actual": 8,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 160
+      },
+      {
+        "property": "padding.right",
+        "expected": "16",
+        "actual": 8,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 173
+      },
+      {
+        "property": "padding.bottom",
+        "expected": "4",
+        "actual": 2,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 229
+      },
+      {
+        "property": "padding.right",
+        "expected": "16",
+        "actual": 3,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 271
+      },
+      {
+        "property": "padding.bottom",
+        "expected": "4",
+        "actual": 6,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 307
+      },
+      {
+        "property": "spacing.height",
+        "expected": "360 | 1128 | 167 | 106 | 16 | 10 | 86 | 64 | 12 | 44 | 78 | 9 | 58 | 74 | 13 | 54 | 57 | 15 | 37 | 66 | 50 | 128 | 183 | 123 | 256 | 247 | 188 | 144 | 124 | 132 | 223 | 171 | 163 | 243 | 231 | 172 | 240 | 180 | 194 | 284 | 322 | 354 | 335 | 405 | 315 | 385 | 264 | 334 | 342 | 401 | 419 | 398 | 483 | 479 | 384 | 471 | 386 | 302 | 166 | 221 | 319 | 381 | 399 | 103 | 114 | 7 | 4",
+        "actual": 2,
+        "file": "lib/bubble_message//twake_bubble_message.dart",
+        "line": 372
+      }
+    ]
+  },
+  {
+    "component": "bubble-thread",
+    "score": 19,
+    "total_tokens": 47,
+    "matched": 9,
+    "mismatched": 38,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#1F1B24",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 90
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#EADDFF",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 91
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#F4F4F4",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 92
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#2B2930",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 96
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#ECE6F0",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 101
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#1C1B1F",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 102
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#CAC4D0",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 106
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#49454F",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 107
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#D0BCFF",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 111
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#6750A4",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 112
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#36343B",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 116
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#ECE6F0",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 117
+      },
+      {
+        "property": "borderRadius",
+        "expected": "75",
+        "actual": 16,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 128
+      },
+      {
+        "property": "spacing.height",
+        "expected": "1128 | 768 | 360 | 328 | 17 | 0 | 8 | 16 | 36 | 18 | 430 | 422 | 186 | 172 | 325 | 317 | 173 | 165 | 341 | 333 | 181 | 7 | 4 | 10 | 75",
+        "actual": 2,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 283
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 10",
+        "actual": 12,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 330
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 16 | 10",
+        "actual": 6,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 330
+      },
+      {
+        "property": "padding.right",
+        "expected": "16",
+        "actual": 2,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 371
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 16 | 10",
+        "actual": 2,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 372
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#4A4458",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 375
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#EADDFF",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 376
+      },
+      {
+        "property": "borderRadius",
+        "expected": "75",
+        "actual": 8,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 377
+      },
+      {
+        "property": "spacing.width",
+        "expected": "1128 | 768 | 360 | 328 | 17 | 0 | 8 | 16 | 36 | 18 | 430 | 422 | 186 | 172 | 325 | 317 | 173 | 165 | 341 | 333 | 181 | 7 | 4 | 10 | 75",
+        "actual": 2,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 384
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#D0BCFF",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 389
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#6750A4",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 389
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 10",
+        "actual": 12,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 424
+      },
+      {
+        "property": "spacing.height",
+        "expected": "1128 | 768 | 360 | 328 | 17 | 0 | 8 | 16 | 36 | 18 | 430 | 422 | 186 | 172 | 325 | 317 | 173 | 165 | 341 | 333 | 181 | 7 | 4 | 10 | 75",
+        "actual": 2,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 460
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 10",
+        "actual": 12,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 480
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 16 | 10",
+        "actual": 6,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 480
+      },
+      {
+        "property": "borderRadius",
+        "expected": "75",
+        "actual": 20,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 483
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 10",
+        "actual": 12,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 513
+      },
+      {
+        "property": "borderRadius",
+        "expected": "75",
+        "actual": 20,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 557
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 10",
+        "actual": 12,
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 559
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#6750A4",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 625
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#958DA5",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 626
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#B0A7C0",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 627
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#2B2930",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 646
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#958DA5",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 671
+      },
+      {
+        "property": "color",
+        "expected": "#FF3347 | #000000 | #FFFFFF | #651FFF",
+        "actual": "#6750A4",
+        "file": "lib/threads_bubble//twake_threads_bubble.dart",
+        "line": 671
+      }
+    ]
+  },
+  {
+    "component": "buttons",
+    "score": 100,
+    "total_tokens": 7,
+    "matched": 7,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "cards",
+    "score": 0,
+    "total_tokens": 4,
+    "matched": 0,
+    "mismatched": 4,
+    "mismatches": [
+      {
+        "property": "spacing.width",
+        "expected": "12 | 360 | 480 | 80",
+        "actual": 16,
+        "file": "lib/stacked_card//twake_stacked_card.dart",
+        "line": 191
+      },
+      {
+        "property": "spacing.height",
+        "expected": "12 | 360 | 480 | 80",
+        "actual": 2,
+        "file": "lib/stacked_card//twake_stacked_card.dart",
+        "line": 321
+      },
+      {
+        "property": "spacing.height",
+        "expected": "12 | 360 | 480 | 80",
+        "actual": 8,
+        "file": "lib/stacked_card//twake_stacked_card.dart",
+        "line": 328
+      },
+      {
+        "property": "spacing.width",
+        "expected": "12 | 360 | 480 | 80",
+        "actual": 8,
+        "file": "lib/stacked_card//twake_stacked_card.dart",
+        "line": 376
+      }
+    ]
+  },
+  {
+    "component": "chat-message",
+    "score": 33,
+    "total_tokens": 61,
+    "matched": 20,
+    "mismatched": 41,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#E3EDF8",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 99
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#ECF3FB",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 102
+      },
+      {
+        "property": "spacing.height",
+        "expected": "4 | 344 | 56 | 264 | 48 | 204 | 240 | 80 | 72 | 64 | 44 | 8 | 12",
+        "actual": 2,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 157
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 199
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 231
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 233
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 233
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 256
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#1C1B1F",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 269
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 276
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 285
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 286
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#49454F",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 320
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 330
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#E0E0E0",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 337
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 341
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#49454F",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 350
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 360
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#E0E0E0",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 367
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 371
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#49454F",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 380
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 393
+      },
+      {
+        "property": "spacing.width",
+        "expected": "4 | 344 | 56 | 264 | 48 | 204 | 240 | 80 | 72 | 64 | 44 | 8 | 12",
+        "actual": 2,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 394
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 398
+      },
+      {
+        "property": "spacing.width",
+        "expected": "4 | 344 | 56 | 264 | 48 | 204 | 240 | 80 | 72 | 64 | 44 | 8 | 12",
+        "actual": 2,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 399
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 411
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#49454F",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 412
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 463
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 469
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 475
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 8 | 12",
+        "actual": 6,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 494
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 8 | 12",
+        "actual": 2,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 494
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#9E9E9E",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 496
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 496
+      },
+      {
+        "property": "borderRadius",
+        "expected": "4",
+        "actual": 12,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 497
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 520
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 551
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 569
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #E8F0FA | #FFFFFF | #FFA000 | #7C4DFF | #0A84FF | #FF3347 | #00BFA5 | #B8C1CC | #46A2FF",
+        "actual": "#4B6EAF",
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 584
+      },
+      {
+        "property": "borderRadius",
+        "expected": "4",
+        "actual": 14,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 585
+      },
+      {
+        "property": "borderRadius",
+        "expected": "4",
+        "actual": 16,
+        "file": "lib/message_list//twake_message_list_item.dart",
+        "line": 613
+      }
+    ]
+  },
+  {
+    "component": "checkboxes",
+    "score": 17,
+    "total_tokens": 6,
+    "matched": 1,
+    "mismatched": 5,
+    "mismatches": [
+      {
+        "property": "dimension.boxSize",
+        "expected": "100 | 48",
+        "actual": 18,
+        "file": "lib/checkboxes/twake_checkbox.dart",
+        "line": 24
+      },
+      {
+        "property": "dimension.borderWidth",
+        "expected": "100 | 48",
+        "actual": 2,
+        "file": "lib/checkboxes/twake_checkbox.dart",
+        "line": 26
+      },
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 2,
+        "file": "lib/checkboxes/twake_checkbox.dart",
+        "line": 27
+      },
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 20,
+        "file": "lib/checkboxes/twake_checkbox.dart",
+        "line": 28
+      },
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 1,
+        "file": "lib/checkboxes/twake_checkbox.dart",
+        "line": 272
+      }
+    ]
+  },
+  {
+    "component": "chips",
+    "score": 14,
+    "total_tokens": 7,
+    "matched": 1,
+    "mismatched": 6,
+    "mismatches": [
+      {
+        "property": "padding.top",
+        "expected": "4",
+        "actual": 6,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 200
+      },
+      {
+        "property": "padding.bottom",
+        "expected": "4",
+        "actual": 6,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 200
+      },
+      {
+        "property": "padding.right",
+        "expected": "4",
+        "actual": 8,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 211
+      },
+      {
+        "property": "padding.right",
+        "expected": "4",
+        "actual": 8,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 225
+      },
+      {
+        "property": "padding.right",
+        "expected": "4",
+        "actual": 8,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 234
+      },
+      {
+        "property": "padding.left",
+        "expected": "4",
+        "actual": 8,
+        "file": "lib/input_chip//twake_input_chip.dart",
+        "line": 278
+      }
+    ]
+  },
+  {
+    "component": "date-pickers",
+    "score": 100,
+    "total_tokens": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "dialog-modal",
+    "score": 53,
+    "total_tokens": 15,
+    "matched": 8,
+    "mismatched": 7,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #1C1C1E | #EBF5FF",
+        "actual": "#000000",
+        "file": "lib/dialog/confirmation_dialog_builder.dart",
+        "line": 163
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #1C1C1E | #EBF5FF",
+        "actual": "#000000",
+        "file": "lib/dialog/confirmation_dialog_builder.dart",
+        "line": 168
+      },
+      {
+        "property": "spacing.height",
+        "expected": "24 | 312 | 280 | 296 | 248 | 448 | 360 | 48 | 240 | 434 | 474 | 526 | 289 | 479 | 439 | 484 | 288 | 168 | 128 | 332 | 172 | 120 | 436 | 80 | 356 | 4 | 44 | 16 | 64 | 28 | 10",
+        "actual": 8,
+        "file": "lib/dialog/confirmation_dialog_builder.dart",
+        "line": 315
+      },
+      {
+        "property": "spacing.width",
+        "expected": "24 | 312 | 280 | 296 | 248 | 448 | 360 | 48 | 240 | 434 | 474 | 526 | 289 | 479 | 439 | 484 | 288 | 168 | 128 | 332 | 172 | 120 | 436 | 80 | 356 | 4 | 44 | 16 | 64 | 28 | 10",
+        "actual": 8,
+        "file": "lib/dialog/confirmation_dialog_builder.dart",
+        "line": 346
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #1C1C1E | #EBF5FF",
+        "actual": "#000000",
+        "file": "lib/dialog/options_dialog.dart",
+        "line": 202
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #1C1C1E | #EBF5FF",
+        "actual": "#000000",
+        "file": "lib/dialog/options_dialog.dart",
+        "line": 207
+      },
+      {
+        "property": "padding.all",
+        "expected": "24 | 4 | 44",
+        "actual": 8,
+        "file": "lib/dialog/options_dialog.dart",
+        "line": 215
+      }
+    ]
+  },
+  {
+    "component": "dividers",
+    "score": 100,
+    "total_tokens": 7,
+    "matched": 7,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "fab",
+    "score": 50,
+    "total_tokens": 2,
+    "matched": 1,
+    "mismatched": 1,
+    "mismatches": [
+      {
+        "property": "dimension.iconSize",
+        "expected": "12 | 16 | 28 | 40 | 56 | 96 | 127 | 130 | 123 | 72",
+        "actual": 24,
+        "file": "lib/small_fab//twake_small_fab.dart",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "component": "headers",
+    "score": 33,
+    "total_tokens": 12,
+    "matched": 4,
+    "mismatched": 8,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #FFFBFE | #6750A4 | #1C1B1F | #99A0A9 | #F4F4F4 | #5C9CE6",
+        "actual": "#6B4EFF",
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 91
+      },
+      {
+        "property": "borderRadius",
+        "expected": "50 | 36 | 68.56999969482422 | 100 | 24",
+        "actual": 6,
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 92
+      },
+      {
+        "property": "spacing.width",
+        "expected": "565 | 191 | 152 | 31 | 126 | 88 | 36 | 48 | 360 | 96 | 150 | 260 | 533 | 174 | 255 | 189 | 240 | 63 | 288 | 193 | 236 | 341 | 114 | 364 | 73 | 248 | 40 | 237 | 67 | 95 | 24 | 256 | 59 | 11 | 233 | 60 | 62 | 194 | 71 | 185 | 66 | 328 | 232 | 53 | 344 | 112 | 109 | 148 | 161 | 35 | 22 | 120 | 1 | 192 | 28 | 20 | 56 | 52 | 57 | 32 | 12 | 44 | 64 | 16 | 4 | 14 | 10 | 8 | 50 | 68.56999969482422 | 100",
+        "actual": 6,
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 100
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #FFFBFE | #6750A4 | #1C1B1F | #99A0A9 | #F4F4F4 | #5C9CE6",
+        "actual": "#1A1A2E",
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 108
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #FFFBFE | #6750A4 | #1C1B1F | #99A0A9 | #F4F4F4 | #5C9CE6",
+        "actual": "#6B4EFF",
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 120
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #FFFBFE | #6750A4 | #1C1B1F | #99A0A9 | #F4F4F4 | #5C9CE6",
+        "actual": "#EEEEEE",
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 164
+      },
+      {
+        "property": "borderRadius",
+        "expected": "50 | 36 | 68.56999969482422 | 100 | 24",
+        "actual": 8,
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 166
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #FFFBFE | #6750A4 | #1C1B1F | #99A0A9 | #F4F4F4 | #5C9CE6",
+        "actual": "#625B71",
+        "file": "lib/bar_logo_web//twake_bar_logo_web.dart",
+        "line": 171
+      }
+    ]
+  },
+  {
+    "component": "icon-button",
+    "score": 38,
+    "total_tokens": 24,
+    "matched": 9,
+    "mismatched": 15,
+    "mismatches": [
+      {
+        "property": "borderRadius",
+        "expected": "14 | 100 | 22 | 48 | 20",
+        "actual": 18,
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 21
+      },
+      {
+        "property": "dimension.borderWidth",
+        "expected": "36 | 28 | 44 | 40 | 96 | 10 | 14 | 13 | 48 | 52 | 4 | 8 | 100 | 22 | 20",
+        "actual": 1,
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 22
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#49454F",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 25
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#6750A4",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 26
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#E8DEF8",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 28
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#21005D",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 29
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#79747E",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 30
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#6750A4",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 31
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#CCC2DC",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 37
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#D0BCFF",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 38
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#381E72",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 39
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#4A4458",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 40
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#E8DEF8",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 41
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#938F99",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 42
+      },
+      {
+        "property": "color",
+        "expected": "#0A84FF | #E8F0FA | #3F3F3F | #1C1B1F | #E6E1E5 | #FFFFFF | #D9D9D9 | #C9C5CA | #AEAAAE",
+        "actual": "#CCC2DC",
+        "file": "lib/icon_button_web/twake_icon_button_web.dart",
+        "line": 43
+      }
+    ]
+  },
+  {
+    "component": "input-field",
+    "score": 27,
+    "total_tokens": 33,
+    "matched": 9,
+    "mismatched": 24,
+    "mismatches": [
+      {
+        "property": "dimension.fieldHeight",
+        "expected": "276 | 335 | 467 | 72 | 50 | 22 | 77 | 54 | 23 | 74 | 52 | 76 | 53 | 2 | 3 | 4 | 16 | 8",
+        "actual": 56,
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 16
+      },
+      {
+        "property": "dimension.labelFontSize",
+        "expected": "276 | 335 | 467 | 72 | 50 | 22 | 77 | 54 | 23 | 74 | 52 | 76 | 53 | 2 | 3 | 4 | 16 | 8",
+        "actual": 12,
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 19
+      },
+      {
+        "property": "dimension.supportingFontSize",
+        "expected": "276 | 335 | 467 | 72 | 50 | 22 | 77 | 54 | 23 | 74 | 52 | 76 | 53 | 2 | 3 | 4 | 16 | 8",
+        "actual": 12,
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 21
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "2 | 3 | 4 | 16",
+        "actual": 8,
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 23
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#ECECEC",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 26
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#E2E2E2",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 27
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#F5F5F5",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 28
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#FFFFFF",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 29
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#49454F",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 31
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#79747E",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 32
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#CAC4D0",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 33
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#1565C0",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 34
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#B3261E",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 35
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#313033",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 40
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#3A3A3D",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 41
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#2B2B2E",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 42
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#E6E1E5",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 44
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#CAC4D0",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 45
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#938F99",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 46
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#49454F",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 47
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#D0BCFF",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 48
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#F2B8B5",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 49
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#E6E1E5",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 50
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #1C1B1F",
+        "actual": "#E6E1E5",
+        "file": "lib/text_fields//twake_text_field.dart",
+        "line": 51
+      }
+    ]
+  },
+  {
+    "component": "label",
+    "score": 69,
+    "total_tokens": 13,
+    "matched": 9,
+    "mismatched": 4,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #6750A4 | #1C1B1F | #D0BCFF | #000000 | #E8F0FA | #99A0A9 | #49454F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/labels//twake_label.dart",
+        "line": 41
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #6750A4 | #1C1B1F | #D0BCFF | #000000 | #E8F0FA | #99A0A9 | #49454F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/labels//twake_label.dart",
+        "line": 42
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #6750A4 | #1C1B1F | #D0BCFF | #000000 | #E8F0FA | #99A0A9 | #49454F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/labels//twake_label.dart",
+        "line": 43
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #6750A4 | #1C1B1F | #D0BCFF | #000000 | #E8F0FA | #99A0A9 | #49454F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/labels//twake_label.dart",
+        "line": 44
+      }
+    ]
+  },
+  {
+    "component": "lists",
+    "score": 100,
+    "total_tokens": 2,
+    "matched": 2,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "menus",
+    "score": 65,
+    "total_tokens": 20,
+    "matched": 13,
+    "mismatched": 7,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#313033",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 71
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#CAC4D0",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 75
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#938F99",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 77
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#938F99",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 79
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#79747E",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 79
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#CAC4D0",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 81
+      },
+      {
+        "property": "color",
+        "expected": "#6750A4 | #D0BCFF | #F4F4F4 | #1C1B1F | #000000 | #49454F | #6E6977",
+        "actual": "#E7E0EC",
+        "file": "lib/menu_with_text_field_example_1/twake_menu_with_text_field.dart",
+        "line": 83
+      }
+    ]
+  },
+  {
+    "component": "menu-new",
+    "score": 57,
+    "total_tokens": 23,
+    "matched": 13,
+    "mismatched": 10,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#000000",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 70
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#000000",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 75
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "8 | 4 | 12",
+        "actual": 6,
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 81
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#E8E8E8",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 111
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#49454F",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 117
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#000000",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 141
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#000000",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 146
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#B3261E",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 196
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#B3261E",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 198
+      },
+      {
+        "property": "color",
+        "expected": "#FFFFFF | #6750A4 | #484649 | #1C1B1F | #FF3347 | #F4F4F4",
+        "actual": "#49454F",
+        "file": "lib/component_1/twake_message_context_menu.dart",
+        "line": 198
+      }
+    ]
+  },
+  {
+    "component": "members-list",
+    "score": 20,
+    "total_tokens": 15,
+    "matched": 3,
+    "mismatched": 12,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#E8F0FA | #F4F4F4 | #3F3F3F | #1C1B1F",
+        "actual": "#3A3A3C",
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 94
+      },
+      {
+        "property": "color",
+        "expected": "#E8F0FA | #F4F4F4 | #3F3F3F | #1C1B1F",
+        "actual": "#49454F",
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 103
+      },
+      {
+        "property": "color",
+        "expected": "#E8F0FA | #F4F4F4 | #3F3F3F | #1C1B1F",
+        "actual": "#4CAF50",
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 104
+      },
+      {
+        "property": "color",
+        "expected": "#E8F0FA | #F4F4F4 | #3F3F3F | #1C1B1F",
+        "actual": "#49454F",
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 105
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "8 | 4",
+        "actual": 16,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 121
+      },
+      {
+        "property": "borderRadius",
+        "expected": "40 | 4 | 100",
+        "actual": 2,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 135
+      },
+      {
+        "property": "spacing.width",
+        "expected": "344 | 56 | 264 | 48 | 208 | 360 | 224 | 280 | 62 | 72 | 44 | 80 | 64 | 40 | 76 | 60 | 100 | 84 | 8 | 4 | 10",
+        "actual": 12,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 147
+      },
+      {
+        "property": "color",
+        "expected": "#E8F0FA | #F4F4F4 | #3F3F3F | #1C1B1F",
+        "actual": "#8B6A9B",
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 217
+      },
+      {
+        "property": "spacing.height",
+        "expected": "344 | 56 | 264 | 48 | 208 | 360 | 224 | 280 | 62 | 72 | 44 | 80 | 64 | 40 | 76 | 60 | 100 | 84 | 8 | 4 | 10",
+        "actual": 2,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 291
+      },
+      {
+        "property": "spacing.height",
+        "expected": "344 | 56 | 264 | 48 | 208 | 360 | 224 | 280 | 62 | 72 | 44 | 80 | 64 | 40 | 76 | 60 | 100 | 84 | 8 | 4 | 10",
+        "actual": 2,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 307
+      },
+      {
+        "property": "spacing.height",
+        "expected": "344 | 56 | 264 | 48 | 208 | 360 | 224 | 280 | 62 | 72 | 44 | 80 | 64 | 40 | 76 | 60 | 100 | 84 | 8 | 4 | 10",
+        "actual": 2,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 323
+      },
+      {
+        "property": "spacing.height",
+        "expected": "344 | 56 | 264 | 48 | 208 | 360 | 224 | 280 | 62 | 72 | 44 | 80 | 64 | 40 | 76 | 60 | 100 | 84 | 8 | 4 | 10",
+        "actual": 2,
+        "file": "lib/member_list_1/twake_member_list_item.dart",
+        "line": 339
+      }
+    ]
+  },
+  {
+    "component": "message-counter",
+    "score": 75,
+    "total_tokens": 4,
+    "matched": 3,
+    "mismatched": 1,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#0A84FF | #FFFFFF | #D9D9D9",
+        "actual": "#2196F3",
+        "file": "lib/message_counter//twake_message_counter.dart",
+        "line": 7
+      }
+    ]
+  },
+  {
+    "component": "message-type-icon",
+    "score": 33,
+    "total_tokens": 3,
+    "matched": 1,
+    "mismatched": 2,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#F7F7F8 | #71767C | #3F3F3F",
+        "actual": "#44464E",
+        "file": "lib/lin_message_type_icon_24px/twake_message_type_icon.dart",
+        "line": 82
+      },
+      {
+        "property": "color",
+        "expected": "#F7F7F8 | #71767C | #3F3F3F",
+        "actual": "#E2E1E5",
+        "file": "lib/lin_message_type_icon_24px/twake_message_type_icon.dart",
+        "line": 84
+      }
+    ]
+  },
+  {
+    "component": "navigation-rail",
+    "score": 43,
+    "total_tokens": 21,
+    "matched": 9,
+    "mismatched": 12,
+    "mismatches": [
+      {
+        "property": "dimension.itemWidth",
+        "expected": "360 | 352 | 56 | 28 | 30 | 44 | 24 | 72 | 52 | 32 | 16 | 48 | 443 | 40 | 247 | 4 | 12 | 8 | 10 | 14",
+        "actual": 120,
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 23
+      },
+      {
+        "property": "padding.horizontal",
+        "expected": "4 | 16 | 12 | 8",
+        "actual": 0,
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 30
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#1A73E8",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 31
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#5F6368",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 32
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#444746",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 33
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#E53935",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 34
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#FFFFFF",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 35
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#E0E0E0",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 37
+      },
+      {
+        "property": "color",
+        "expected": "#F4F4F4 | #818C99 | #E6E1E5 | #0A84FF | #1C1B1F | #E8F0FA | #3F3F3F",
+        "actual": "#D3E3FD",
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 38
+      },
+      {
+        "property": "dimension.indicatorWidth",
+        "expected": "360 | 352 | 56 | 28 | 30 | 44 | 24 | 72 | 52 | 32 | 16 | 48 | 443 | 40 | 247 | 4 | 12 | 8 | 10 | 14",
+        "actual": 64,
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 40
+      },
+      {
+        "property": "borderRadius",
+        "expected": "14",
+        "actual": 16,
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 41
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 16 | 12 | 8",
+        "actual": 1,
+        "file": "lib/bottom_navigation//twake_bottom_navigation.dart",
+        "line": 264
+      }
+    ]
+  },
+  {
+    "component": "on-action-hovered-bar",
+    "score": 100,
+    "total_tokens": 3,
+    "matched": 3,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "pin-events",
+    "score": 83,
+    "total_tokens": 12,
+    "matched": 10,
+    "mismatched": 2,
+    "mismatches": [
+      {
+        "property": "dimension.thumbnailSize",
+        "expected": "768 | 556 | 281 | 302 | 348 | 316 | 285 | 300 | 310 | 360 | 328 | 304 | 48 | 40 | 64 | 4 | 8 | 16 | 10",
+        "actual": 32,
+        "file": "lib/pin_events//twake_pin_event.dart",
+        "line": 22
+      },
+      {
+        "property": "padding.right",
+        "expected": "16 | 4",
+        "actual": 8,
+        "file": "lib/pin_events//twake_pin_event.dart",
+        "line": 209
+      }
+    ]
+  },
+  {
+    "component": "progress-indicators",
+    "error": "No dart_files defined"
+  },
+  {
+    "component": "reaction-chat",
+    "score": 100,
+    "total_tokens": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "radio-buttons",
+    "error": "No tokens extracted from Dart files"
+  },
+  {
+    "component": "ruller",
+    "error": "No dart_files defined"
+  },
+  {
+    "component": "side-sheets",
+    "score": 100,
+    "total_tokens": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "sliders",
+    "score": 0,
+    "total_tokens": 2,
+    "matched": 0,
+    "mismatched": 2,
+    "mismatches": [
+      {
+        "property": "dimension.trackHeight",
+        "expected": "180 | 20 | 8",
+        "actual": 4,
+        "file": "lib/slider/twake_slider.dart",
+        "line": 9
+      },
+      {
+        "property": "dimension.valueIndicatorTextSize",
+        "expected": "180 | 20 | 8",
+        "actual": 11,
+        "file": "lib/slider/twake_slider.dart",
+        "line": 14
+      }
+    ]
+  },
+  {
+    "component": "snackbars",
+    "score": 61,
+    "total_tokens": 23,
+    "matched": 14,
+    "mismatched": 9,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#313033 | #FFFFFF",
+        "actual": "#E6E1E5",
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 52
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #FFFFFF",
+        "actual": "#90CAF9",
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 53
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "10 | 14 | 4 | 16 | 8",
+        "actual": 12,
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 56
+      },
+      {
+        "property": "padding.bottom",
+        "expected": "10 | 14 | 4",
+        "actual": 8,
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 58
+      },
+      {
+        "property": "dimension._closeIconSize",
+        "expected": "4 | 344 | 112 | 68 | 48 | 10 | 14 | 16 | 8",
+        "actual": 18,
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 59
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #FFFFFF",
+        "actual": "#E6E1E5",
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 155
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #FFFFFF",
+        "actual": "#90CAF9",
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 156
+      },
+      {
+        "property": "dimension._closeIconSize",
+        "expected": "4 | 344 | 112 | 68 | 48 | 10 | 14 | 16 | 8",
+        "actual": 18,
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 158
+      },
+      {
+        "property": "padding.top",
+        "expected": "10 | 14 | 4",
+        "actual": 12,
+        "file": "lib/snackbar//twake_snackbar.dart",
+        "line": 183
+      }
+    ]
+  },
+  {
+    "component": "settings",
+    "score": 100,
+    "total_tokens": 4,
+    "matched": 4,
+    "mismatched": 0,
+    "mismatches": []
+  },
+  {
+    "component": "switch",
+    "score": 15,
+    "total_tokens": 20,
+    "matched": 3,
+    "mismatched": 17,
+    "mismatches": [
+      {
+        "property": "borderRadius",
+        "expected": "100",
+        "actual": 16,
+        "file": "lib/switch/twake_switch.dart",
+        "line": 17
+      },
+      {
+        "property": "dimension.thumbSizeEnabled",
+        "expected": "52 | 44 | 40 | 20 | 32 | 28 | 100",
+        "actual": 24,
+        "file": "lib/switch/twake_switch.dart",
+        "line": 20
+      },
+      {
+        "property": "dimension.thumbSizeSmall",
+        "expected": "52 | 44 | 40 | 20 | 32 | 28 | 100",
+        "actual": 16,
+        "file": "lib/switch/twake_switch.dart",
+        "line": 21
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 28
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#B3D7F8",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 29
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#E0E0E0",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 33
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#F5F5F5",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 34
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 35
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#BDBDBD",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 36
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#757575",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 37
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#616161",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 38
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 41
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 42
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 43
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#2196F3",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 46
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#9E9E9E",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 47
+      },
+      {
+        "property": "color",
+        "expected": "#E7E0EC | #F7F7F8 | #1C1B1F | #0A84FF",
+        "actual": "#BDBDBD",
+        "file": "lib/switch/twake_switch.dart",
+        "line": 48
+      }
+    ]
+  },
+  {
+    "component": "tabs",
+    "error": "No tokens extracted from Dart files"
+  },
+  {
+    "component": "timestamp",
+    "score": 60,
+    "total_tokens": 5,
+    "matched": 3,
+    "mismatched": 2,
+    "mismatches": [
+      {
+        "property": "padding.horizontal",
+        "expected": "8 | 4 | 16",
+        "actual": 12,
+        "file": "lib/timestamp//twake_timestamp.dart",
+        "line": 35
+      },
+      {
+        "property": "borderRadius",
+        "expected": "18",
+        "actual": 20,
+        "file": "lib/timestamp//twake_timestamp.dart",
+        "line": 36
+      }
+    ]
+  },
+  {
+    "component": "tooltips",
+    "score": 70,
+    "total_tokens": 20,
+    "matched": 14,
+    "mismatched": 6,
+    "mismatches": [
+      {
+        "property": "color",
+        "expected": "#313033 | #F4EFF4 | #FFFFFF",
+        "actual": "#1C1B1F",
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 19
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #F4EFF4 | #FFFFFF",
+        "actual": "#49454F",
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 20
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #F4EFF4 | #FFFFFF",
+        "actual": "#6750A4",
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 21
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #F4EFF4 | #FFFFFF",
+        "actual": "#000000",
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 28
+      },
+      {
+        "property": "color",
+        "expected": "#313033 | #F4EFF4 | #FFFFFF",
+        "actual": "#000000",
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 33
+      },
+      {
+        "property": "padding.vertical",
+        "expected": "4 | 12 | 8 | 16",
+        "actual": 0,
+        "file": "lib/container/twake_tooltip.dart",
+        "line": 255
+      }
+    ]
+  },
+  {
+    "component": "typing-bar",
+    "score": 67,
+    "total_tokens": 18,
+    "matched": 12,
+    "mismatched": 6,
+    "mismatches": [
+      {
+        "property": "borderRadius",
+        "expected": "24 | 22",
+        "actual": 20,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 242
+      },
+      {
+        "property": "borderRadius",
+        "expected": "24 | 22",
+        "actual": 20,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 246
+      },
+      {
+        "property": "borderRadius",
+        "expected": "24 | 22",
+        "actual": 20,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 252
+      },
+      {
+        "property": "borderRadius",
+        "expected": "24 | 22",
+        "actual": 8,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 323
+      },
+      {
+        "property": "borderRadius",
+        "expected": "24 | 22",
+        "actual": 8,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 389
+      },
+      {
+        "property": "padding.all",
+        "expected": "8 | 4 | 16 | 2 | 12 | 48",
+        "actual": 10,
+        "file": "lib/typing_bar//twake_typing_bar.dart",
+        "line": 409
+      }
+    ]
+  }
+]

@@ -177,9 +177,19 @@ jobs:
           fi
 
       # ── 8. Update widgetbook ──────────────────────────────────
-      - name: Update widgetbook
+      - name: Update widgetbook (scoped)
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
-        run: node scripts/update-widgetbook.mjs
+        run: |
+          CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
+          NEW_LIST="${{ steps.discover.outputs.new_components }}"
+          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}"
+          ALL_SLUGS="${ALL_SLUGS#,}"
+
+          if [ -n "$ALL_SLUGS" ]; then
+            node scripts/update-widgetbook.mjs --only "$ALL_SLUGS"
+          else
+            node scripts/update-widgetbook.mjs
+          fi
 
       # ── 9. Validate ──────────────────────────────────────────
       - name: Validate — Flutter analyze

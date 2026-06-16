@@ -23,6 +23,15 @@ const WIDGETBOOK_DART = join(WIDGETBOOK_DIR, 'lib', 'widgetbook.dart');
 
 const dryRun = process.argv.includes('--dry-run');
 
+// --only flag: restrict use case generation to specific slugs
+const onlyArg = process.argv.find(a => a.startsWith('--only'));
+const onlyFilter = onlyArg
+  ? (onlyArg.includes('=')
+      ? onlyArg.split('=')[1]
+      : process.argv[process.argv.indexOf('--only') + 1]
+    )?.split(',')
+  : null;
+
 const componentMap = JSON.parse(readFileSync(MAP_PATH, 'utf8'));
 
 // ── Helpers ───────────────────────────────────────────────────
@@ -98,7 +107,15 @@ console.log(`Found ${components.length} components with widgets\n`);
 let created = 0;
 let skipped = 0;
 
-for (const comp of components) {
+const targetComponents = onlyFilter
+  ? components.filter(c => onlyFilter.includes(c.slug))
+  : components;
+
+if (onlyFilter) {
+  console.log(`Scoped to: ${onlyFilter.join(', ')}\n`);
+}
+
+for (const comp of targetComponents) {
   const dirName = `${slugify(comp.figmaName)}_component`;
   const dir = join(COMPONENTS_DIR, dirName);
   const fileName = `${slugify(comp.figmaName)}_use_case.dart`;
@@ -157,6 +174,13 @@ console.log(`\nUse cases: ${created} created, ${skipped} already existed`);
 // ── Update widgetbook.dart ────────────────────────────────────
 if (dryRun) {
   console.log('\n--dry-run: widgetbook.dart not updated.');
+  process.exit(0);
+}
+
+// Only rewrite widgetbook.dart when new use cases were created
+// (drift-only runs don't need to touch the index)
+if (created === 0) {
+  console.log('\nNo new use cases — widgetbook.dart unchanged.');
   process.exit(0);
 }
 

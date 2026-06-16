@@ -339,3 +339,85 @@ The pipeline is designed to minimize Claude API usage:
 | Sync drifted | 1 Claude call per changed component | Only for drifted components |
 
 On a typical nightly run with 0-2 drifted components, the pipeline makes **0-2 Claude API calls** while checking all 42 components for drift using only the Figma REST API.
+
+## How It Works (mental model)
+
+The whole system rests on three stable anchors and one deterministic diff:
+
+```
+Figma file
+  └─ Page "❖ Name"                      ← the ONLY thing treated as a component
+       └─ COMPONENT_SET                   ← a group of variants
+            ├─ COMPONENT "state=hover"    ← one variant = one state (identified by NAME)
+            └─ COMPONENT "state=pressed"
+                 └─ FRAME / TEXT / ...     ← internal nodes (recursed, depth ≤ 6)
+```
+
+1. **Discover** — list pages, keep only those starting with `❖`, key them by `page_id`.
+2. **Extract** — walk each page, keep only `COMPONENT_SET` / `COMPONENT` nodes, serialize their design-relevant properties (size, color, radius, shadow, text, layout) into a cached JSON spec under `kb/components/`.
+3. **Diff** — fetch live Figma, run `structuralDiff(cached, live)`. Arrays are matched **by `name`**, numbers compared with a `±0.01` float tolerance, IDs/positions/timestamps ignored. The result is a list of human-readable path strings (e.g. `…children[Reaction Bar].cornerRadius: 24 → 32`).
+4. **Classify** — each diff string is tested against `DESIGN_PATTERNS` regexes. Matches are design changes; everything else is noise. A component drifts only if `designDiffs.length > 0`.
+5. **Sync** — only drifted/new components are sent to Claude (`claude-sonnet-4-6`), which returns targeted Dart edits. Everything downstream (goldens, widgetbook) is **scoped to the changed slugs** so the PR stays small.
+
+Detection is **100% deterministic** — no LLM. The LLM only translates an already-computed diff into code.
+
+## Design Decisions & Trade-offs
+
+### Why per-component structural diff instead of Figma's version API
+
+Figma exposes `GET /files/:key/versions`, but its version ID is **global to the whole file**, not per component. One designer edit bumps the file version without telling you *which* component changed — and never *what* changed. We need both (to scope the Claude call and to build its prompt), so we cache a per-component spec and diff it ourselves. The file-level version would save nothing.
+
+### Why match variants by `name`, not by node `id`
+
+Node IDs are stable across renames but **change on copy/paste / recreate** — a designer duplicating a variant would trigger a phantom "removed + added". Names are stable across copy/paste but **change on rename**. We chose `name` (in `IGNORED_FIELDS` we explicitly drop `id`) because copy/paste is far more common than renaming in this team's workflow. Both have a blind spot; this one fires less often.
+
+### Why a `❖` naming convention
+
+There is no Figma-native flag for "this page is a shippable design-system component". The `❖` prefix is a cheap, explicit, human-controlled marker. Trade-off: it is a **convention, not a constraint** — forget the prefix and the component is invisible to the pipeline.
+
+### Why regex classification of diffs
+
+`classifyDiffs` runs `DESIGN_PATTERNS` (e.g. `/\.cornerRadius/`, `/\.fills/`, `/\.width(?!\.)/`) over the **stringified diff path**, not over the data structure. It is simple and readable, but **fragile** (see Limitations).
+
+### Other deliberate choices
+
+| Choice | Rationale | Trade-off |
+|--------|-----------|-----------|
+| Fixed PR branch `figma-sync/auto` | One rolling PR, no nightly duplicates | Force-updated; don't commit to it by hand |
+| Guard rail at 15 drifted | Catches DS-wide refactors that need a human | Arbitrary threshold |
+| Draft PRs only, no auto-merge | LLM output always reviewed | Requires a human in the loop |
+| Two diff implementations (`detect-drift` + `sync-component`) | Each script self-contained | **Divergence risk** — float epsilon already drifted between them once |
+| Scoped goldens/widgetbook regeneration | Small, reviewable PRs | Extra slug-plumbing in the workflow |
+
+## Limitations (known fragilities)
+
+| Area | Failure mode | Protected? |
+|------|--------------|-----------|
+| `❖` prefix | Forgotten → component never seen | ❌ human convention |
+| Variant rename | Shows as `removed` + `added`, not a modification | ❌ matched by `name` |
+| `DESIGN_PATTERNS` regex | A design field not in the list (e.g. `blendMode`, `itemSpacing`) is silently classified as noise → **missed drift** | ❌ allowlist by regex |
+| Field rename in `extractComponentSpec` | Path string changes, regex no longer matches → silent | ❌ |
+| `COMPONENT` nested inside a demo/example frame | Captured as a real component | ❌ |
+| New component's `dart_files` | Auto-discovery fills `page_id` but **`dart_files: []`** — linking to existing code is manual | ⚠️ semi-auto |
+| Page rename | Handled — matched by stable `page_id` | ✅ |
+
+The regex classifier is the sharpest edge: it is a **denylist-by-omission**. A real change to a property nobody listed passes as noise and the component is reported clean.
+
+## How This Could Be Improved
+
+### In this codebase
+
+- **Tag design-relevance at extraction, not after.** Instead of regex-matching stringified paths in `classifyDiffs`, mark each field as `design` vs `noise` inside `extractComponentSpec`. Removes the silent-omission failure mode and the path/field-name coupling.
+- **Unify the two diff engines.** Collapse `detect-drift`'s `structuralDiff` and `sync-component`'s `diffVariantProperties` into one shared function in `figma-api.mjs` so the float tolerance and children-matching logic can't diverge again.
+- **Match variants by `id` with `name` fallback.** Keep node `id` in the spec, match on it first, fall back to `name` — kills the rename → removed+added phantom while keeping copy/paste resilience.
+- **Carry `componentPropertyDefinitions` through.** Figma exposes the real variant axes (`Type=Filled|Tonal`); parsing them would let drift describe state changes semantically instead of as opaque name strings.
+
+### On the Figma side
+
+- **Replace the `❖` convention with a Figma "Published Component" / library status** queried via the API, so membership isn't a typo away from breaking.
+- **Adopt strict variant property naming** (no free-text variant names) so the `name`-as-identity assumption holds.
+
+### Architecturally
+
+- **Webhook-driven instead of nightly cron.** Figma supports file-update webhooks — react to actual edits rather than polling 42 components every night.
+- **Persist a per-node fingerprint** (hash of design-relevant fields) in the spec, so drift is a cheap hash compare and the human-readable diff is computed only for the components that actually changed.

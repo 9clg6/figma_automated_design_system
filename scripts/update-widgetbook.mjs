@@ -177,6 +177,9 @@ function literalForType(type, enums) {
     case 'IconData': return 'Icons.star';
     case 'EdgeInsets':
     case 'EdgeInsetsGeometry': return 'const EdgeInsets.all(8)';
+    case 'DateTime': return 'DateTime(2020, 1, 1)';
+    case 'DateTimeRange':
+      return 'DateTimeRange(start: DateTime(2020, 1, 1), end: DateTime(2030, 12, 31))';
     default:
       if (nullable) return 'null';
       // Unknown non-nullable type — best effort const constructor
@@ -186,7 +189,7 @@ function literalForType(type, enums) {
 
 // Is a literal expression non-const (contains a closure or runtime value)?
 function isNonConst(expr) {
-  return /\{\}|\(_\)|Colors\.|=>/.test(expr) && !expr.startsWith('const ');
+  return /\{\}|\(_\)|Colors\.|=>|DateTime\(|DateTimeRange\(/.test(expr) && !expr.startsWith('const ');
 }
 
 // Map a Dart param (name + type) to a widgetbook knob expression, or a
@@ -372,8 +375,12 @@ ${rows}
     const constructorArgs = comp.requiredParams
       .map(p => `        ${knobForParam(p, comp.enums)}`)
       .join('\n');
-    const hasKnobs = comp.requiredParams.some(p => knobForParam(p, comp.enums).includes('context.knobs'));
-    const childConst = hasKnobs ? '' : 'const ';
+    // Drop `const` if any arg is a knob or a non-const literal (DateTime, etc.)
+    const constSafe = comp.requiredParams.every(p => {
+      const expr = knobForParam(p, comp.enums);
+      return !expr.includes('context.knobs') && !isNonConst(expr);
+    });
+    const childConst = constSafe ? 'const ' : '';
 
     code = `import 'package:flutter/material.dart';
 import 'package:linagora_design_flutter/${comp.importPath}';

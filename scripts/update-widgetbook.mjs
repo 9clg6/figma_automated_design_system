@@ -12,7 +12,7 @@
  *   node scripts/update-widgetbook.mjs --dry-run
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { join, resolve, basename, dirname } from 'node:path';
 
 const ROOT = resolve(import.meta.dirname, '..');
@@ -46,6 +46,21 @@ function pascalCase(str) {
     .join('');
 }
 
+// Canonical naming derived from the component-map KEY (slug). Single source
+// of truth so generation and the index never diverge.
+function canonicalNames(comp) {
+  const snake = comp.slug.replace(/-/g, '_');
+  const dirName = `${snake}_component`;
+  const fileName = `${snake}_use_case.dart`;
+  const pas = pascalCase(comp.slug);
+  const fnBase = pas.charAt(0).toLowerCase() + pas.slice(1);
+  const useCaseName = comp.primaryAxis ? 'Variants' : 'Default';
+  const useCaseFn = comp.primaryAxis
+    ? `${fnBase}VariantsUseCase`
+    : `${fnBase}DefaultUseCase`;
+  return { dirName, fileName, useCaseName, useCaseFn };
+}
+
 function extractMainClass(dartCode) {
   // Find the first public StatelessWidget or StatefulWidget class
   const match = dartCode.match(/class\s+(Twake\w+|Linagora\w+)\s+extends\s+Stateless/);
@@ -57,32 +72,133 @@ function extractMainClass(dartCode) {
   return match3 ? match3[1] : null;
 }
 
+function fieldType(dartCode, name) {
+  // Resolve the declared type of `final <Type> <name>;`
+  const fieldRegex = new RegExp(`final\\s+([\\w<>,\\s]+?\\??)\\s+${name}\\s*;`);
+  const fieldMatch = dartCode.match(fieldRegex);
+  return fieldMatch ? fieldMatch[1].trim() : 'dynamic';
+}
+
 function extractConstructorParams(dartCode, className) {
-  // Extract required params from constructor.
-  // Returns [{ name, type }]. The type is resolved from the matching
-  // field declaration in the class body (constructor uses `this.x`).
+  // Extract ALL named params (required + optional) from the primary
+  // (non-named) constructor. Returns [{ name, type, required }].
+  // The type is resolved from the matching field declaration in the
+  // class body (constructor uses `this.x`).
   const ctorRegex = new RegExp(`const\\s+${className}\\(\\{[^}]*\\}\\)`, 's');
   const match = dartCode.match(ctorRegex);
   if (!match) return [];
 
+  const body = match[0];
   const params = [];
-  const requiredMatches = match[0].matchAll(/required\s+this\.(\w+)/g);
-  for (const m of requiredMatches) {
+  const seen = new Set();
+
+  // Required params: `required this.<name>`
+  for (const m of body.matchAll(/required\s+this\.(\w+)/g)) {
     const name = m[1];
-    // Find the field declaration: `final <Type> <name>;`
-    const fieldRegex = new RegExp(`final\\s+([\\w<>,\\s]+?\\??)\\s+${name}\\s*;`);
-    const fieldMatch = dartCode.match(fieldRegex);
-    const type = fieldMatch ? fieldMatch[1].trim() : 'dynamic';
-    params.push({ name, type });
+    if (seen.has(name)) continue;
+    seen.add(name);
+    params.push({ name, type: fieldType(dartCode, name), required: true });
   }
+
+  // Optional params: `this.<name>` (with or without `= default`),
+  // excluding the required ones already captured.
+  for (const m of body.matchAll(/(?<!required\s)this\.(\w+)/g)) {
+    const name = m[1];
+    if (seen.has(name)) continue;
+    seen.add(name);
+    params.push({ name, type: fieldType(dartCode, name), required: false });
+  }
+
   return params;
+}
+
+// Parse top-level enum declarations: `enum Name { a, b, c }`
+// Returns Map<enumName, [values]>.
+function extractEnums(dartCode) {
+  const enums = new Map();
+  for (const m of dartCode.matchAll(/enum\s+(\w+)\s*\{([^}]*)\}/g)) {
+    const name = m[1];
+    let body = m[2]
+      // strip line + block comments
+      .replace(/\/\/[^\n]*/g, '')
+      .replace(/\/\*[\s\S]*?\*\//g, '');
+    // enhanced enums: members section starts at the first ';'
+    const semi = body.indexOf(';');
+    if (semi !== -1) body = body.slice(0, semi);
+    const values = body
+      .split(',')
+      .map(v => v.trim()
+        .replace(/\(.*$/s, '')   // strip constructor args
+        .replace(/<.*$/s, '')    // strip generics
+        .trim())
+      // keep only valid lowerCamel identifiers
+      .filter(v => /^[a-z_]\w*$/.test(v));
+    if (values.length) enums.set(name, values);
+  }
+  return enums;
+}
+
+// Produce a fixed literal Dart expression for a given param type, used to
+// fill every non-axis param when building a showcase instance.
+// `enums` is the widget's enum map. Returns a Dart expression string.
+function literalForType(type, enums) {
+  const nullable = type.endsWith('?');
+  const base = nullable ? type.slice(0, -1) : type;
+
+  if (enums.has(base)) return `${base}.${enums.get(base)[0]}`;
+
+  // Callbacks
+  if (base === 'VoidCallback') return '() {}';
+  if (base.startsWith('void Function') || base.startsWith('Function')) {
+    return '(_) {}';
+  }
+  if (base.startsWith('ValueChanged')) return '(_) {}';
+
+  // List<X> → build 1 element for primitive/enum/Widget X, else empty list
+  // (we can't safely construct arbitrary custom classes).
+  const listMatch = base.match(/^List<(.+)>$/);
+  if (listMatch) {
+    const inner = listMatch[1].trim();
+    const innerBase = inner.endsWith('?') ? inner.slice(0, -1) : inner;
+    const simple = enums.has(innerBase) ||
+      ['String', 'bool', 'int', 'double', 'num', 'Color', 'Widget', 'IconData']
+        .includes(innerBase);
+    return simple ? `[${literalForType(inner, enums)}]` : 'const []';
+  }
+
+  switch (base) {
+    case 'String': return `'Example'`;
+    case 'bool': return 'false';
+    case 'int': return '1';
+    case 'double': return '1.0';
+    case 'num': return '1';
+    case 'Color': return 'Colors.blue';
+    case 'Widget': return `const Text('Example')`;
+    case 'IconData': return 'Icons.star';
+    case 'EdgeInsets':
+    case 'EdgeInsetsGeometry': return 'const EdgeInsets.all(8)';
+    default:
+      if (nullable) return 'null';
+      // Unknown non-nullable type — best effort const constructor
+      return `const ${base}()`;
+  }
+}
+
+// Is a literal expression non-const (contains a closure or runtime value)?
+function isNonConst(expr) {
+  return /\{\}|\(_\)|Colors\.|=>/.test(expr) && !expr.startsWith('const ');
 }
 
 // Map a Dart param (name + type) to a widgetbook knob expression, or a
 // static fallback when no sensible knob exists (callbacks, unknown types).
-function knobForParam({ name, type }) {
+function knobForParam({ name, type }, enums) {
   const nullable = type.endsWith('?');
   const base = nullable ? type.slice(0, -1) : type;
+
+  // Enum-typed param — use the first enum value (no knob).
+  if (enums && enums.has(base)) {
+    return `${name}: ${base}.${enums.get(base)[0]},`;
+  }
 
   // Callbacks — no knob, just a no-op
   if (base.startsWith('void Function') || base.startsWith('Function') ||
@@ -106,8 +222,9 @@ function knobForParam({ name, type }) {
     case 'IconData':
       return `${name}: Icons.star,`;
     default:
-      // Unknown type (enum, custom class) — leave a TODO the dev can fill
-      return `// ${name}: TODO (${type}),`;
+      // Unknown type (custom class etc.) — best-effort literal so the
+      // generated instance still compiles.
+      return `${name}: ${literalForType(type, enums || new Map())},`;
   }
 }
 
@@ -130,15 +247,30 @@ for (const [slug, cfg] of Object.entries(componentMap.components)) {
     continue;
   }
 
-  const requiredParams = extractConstructorParams(dartCode, mainClass);
+  const allParams = extractConstructorParams(dartCode, mainClass);
+  const requiredParams = allParams.filter(p => p.required);
+  const enums = extractEnums(dartCode);
   const importPath = cfg.dart_files[0].replace(/^lib\//, '');
+
+  // Axes = params whose (non-nullable) type is one of the widget's enums.
+  const axisParams = allParams.filter(p => {
+    const base = p.type.endsWith('?') ? p.type.slice(0, -1) : p.type;
+    return enums.has(base);
+  });
+
+  // Primary axis: prefer type/variant/style, else first enum param.
+  let primaryAxis = axisParams.find(p =>
+    ['type', 'variant', 'style'].includes(p.name)) || axisParams[0] || null;
 
   components.push({
     slug,
     figmaName: cfg.figma_name,
     mainClass,
     importPath,
+    allParams,
     requiredParams,
+    enums,
+    primaryAxis,
     dartCode,
   });
 }
@@ -157,30 +289,93 @@ if (onlyFilter) {
   console.log(`Scoped to: ${onlyFilter.join(', ')}\n`);
 }
 
+// Build a `<Widget>(args)` instance expression filling every param with a
+// fixed literal, except `overrideName` which is set to `overrideExpr`.
+// `indent` is the leading whitespace for each arg line.
+function buildInstance(comp, overrideName, overrideExpr, indent) {
+  const lines = [];
+  for (const p of comp.allParams) {
+    if (p.name === overrideName) {
+      lines.push(`${indent}${p.name}: ${overrideExpr},`);
+      continue;
+    }
+    // Only fill REQUIRED params with literals. Optional params keep their
+    // constructor defaults — this avoids inventing values for private /
+    // dynamic / complex types we can't safely construct.
+    if (!p.required) continue;
+    lines.push(`${indent}${p.name}: ${literalForType(p.type, comp.enums)},`);
+  }
+  return `${comp.mainClass}(\n${lines.join('\n')}\n${indent.slice(2)})`;
+}
+
 for (const comp of targetComponents) {
-  const dirName = `${slugify(comp.figmaName)}_component`;
+  // Canonical dir/file/fn derive from the component-map KEY (slug), never
+  // from slugify(figmaName) — guarantees one dir per component.
+  const { dirName, fileName, useCaseFn } = canonicalNames(comp);
   const dir = join(COMPONENTS_DIR, dirName);
-  const fileName = `${slugify(comp.figmaName)}_use_case.dart`;
   const filePath = join(dir, fileName);
 
-  if (existsSync(filePath)) {
+  // Skip only when the existing canonical file already defines the function
+  // the index will reference — otherwise we MUST regenerate so the index and
+  // file stay consistent (legacy hand-written files often use other fn names).
+  if (existsSync(filePath) &&
+      readFileSync(filePath, 'utf8').includes(`Widget ${useCaseFn}(`)) {
     skipped++;
     continue;
   }
 
-  // Build minimal use case
-  const useCaseFn = `${slugify(comp.figmaName).replace(/_/g, '')}DefaultUseCase`;
+  let code;
 
-  // Determine constructor args — interactive knobs where the type allows it
-  const constructorArgs = comp.requiredParams
-    .map(p => `        ${knobForParam(p)}`)
-    .join('\n');
+  if (comp.primaryAxis) {
+    // ── Variant showcase ──────────────────────────────────────
+    const axis = comp.primaryAxis;
+    const axisBase = axis.type.endsWith('?') ? axis.type.slice(0, -1) : axis.type;
+    const values = comp.enums.get(axisBase);
 
-  // `const` only holds if there are no knob expressions (knobs are runtime)
-  const hasKnobs = comp.requiredParams.some(p => knobForParam(p).includes('context.knobs'));
-  const childConst = hasKnobs ? '' : 'const ';
+    const rows = values.map(v => {
+      const instance = buildInstance(comp, axis.name, `${axisBase}.${v}`, '            ');
+      return `          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${v}', style: const TextStyle(fontSize: 12, color: Colors.grey)),
+                const SizedBox(height: 4),
+                ${instance},
+              ],
+            ),
+          ),`;
+    }).join('\n');
 
-  const code = `import 'package:flutter/material.dart';
+    code = `import 'package:flutter/material.dart';
+import 'package:linagora_design_flutter/${comp.importPath}';
+import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
+
+@widgetbook.UseCase(name: 'Variants', type: ${comp.mainClass})
+Widget ${useCaseFn}(BuildContext context) {
+  return SingleChildScrollView(
+    child: Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+${rows}
+        ],
+      ),
+    ),
+  );
+}
+`;
+  } else {
+    // ── Default single instance (fallback) ────────────────────
+    const constructorArgs = comp.requiredParams
+      .map(p => `        ${knobForParam(p, comp.enums)}`)
+      .join('\n');
+    const hasKnobs = comp.requiredParams.some(p => knobForParam(p, comp.enums).includes('context.knobs'));
+    const childConst = hasKnobs ? '' : 'const ';
+
+    code = `import 'package:flutter/material.dart';
 import 'package:linagora_design_flutter/${comp.importPath}';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
@@ -197,6 +392,7 @@ ${constructorArgs}
   );
 }
 `;
+  }
 
   if (dryRun) {
     console.log(`  Would create: ${dirName}/${fileName}`);
@@ -218,12 +414,8 @@ if (dryRun) {
   process.exit(0);
 }
 
-// Only rewrite widgetbook.dart when new use cases were created
-// (drift-only runs don't need to touch the index)
-if (created === 0) {
-  console.log('\nNo new use cases — widgetbook.dart unchanged.');
-  process.exit(0);
-}
+// The index is ALWAYS rebuilt from the component map (never from the
+// filesystem) so it can never contain duplicates, regardless of `created`.
 
 // Read existing widgetbook.dart to preserve addons/theme config
 const existingWidgetbook = readFileSync(WIDGETBOOK_DART, 'utf8');
@@ -240,19 +432,17 @@ const widgetbookEntries = [];
 const sorted = [...components].sort((a, b) => a.slug.localeCompare(b.slug));
 
 for (const comp of sorted) {
-  const dirName = `${slugify(comp.figmaName)}_component`;
-  const fileName = `${slugify(comp.figmaName)}_use_case.dart`;
+  const { dirName, fileName, useCaseName, useCaseFn } = canonicalNames(comp);
   const importLine = `import 'package:widgetbook_workspace/components/${dirName}/${fileName}';`;
   imports.push(importLine);
 
-  const useCaseFn = `${slugify(comp.figmaName).replace(/_/g, '')}DefaultUseCase`;
   const displayName = comp.figmaName.replace(/[❖]/g, '').trim();
 
   widgetbookEntries.push(`            WidgetbookComponent(
               name: '${displayName}',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
+                  name: '${useCaseName}',
                   builder: (context) => ${useCaseFn}(context),
                 ),
               ],
@@ -295,3 +485,20 @@ ${widgetbookEntries.join('\n')}
 
 writeFileSync(WIDGETBOOK_DART, newWidgetbook, 'utf8');
 console.log(`\nUpdated widgetbook.dart (${sorted.length} components)`);
+
+// ── Delete legacy duplicate dirs (orphans) ────────────────────
+// Keep only `${slug}_component` dirs for slugs present in the current map.
+const canonicalDirs = new Set(sorted.map(c => canonicalNames(c).dirName));
+if (existsSync(COMPONENTS_DIR)) {
+  let deleted = 0;
+  for (const entry of readdirSync(COMPONENTS_DIR)) {
+    const full = join(COMPONENTS_DIR, entry);
+    if (!statSync(full).isDirectory()) continue;
+    if (!entry.endsWith('_component')) continue; // only touch *_component dirs
+    if (canonicalDirs.has(entry)) continue;
+    rmSync(full, { recursive: true, force: true });
+    console.log(`  🗑️  deleted orphan dir: ${entry}`);
+    deleted++;
+  }
+  console.log(`\nOrphan dirs deleted: ${deleted}`);
+}

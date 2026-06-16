@@ -14,7 +14,7 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { join, resolve, dirname, basename } from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { createFigmaClient, slugify as sharedSlugify, sleep } from './lib/figma-api.mjs';
 
@@ -408,15 +408,27 @@ async function main() {
         }
       }
 
-      // Write files
-      const dir = result.directory || `lib/${slugify(componentInfo.name)}`;
+      // Write files.
+      // If the component is ALREADY implemented, overwrite its existing file
+      // in place (reuse dir + filename) instead of creating a new slug dir —
+      // otherwise regeneration orphans the old path and duplicates the widget.
+      let dir, fileName;
+      if (cfg.dart_files.length > 0) {
+        const existing = cfg.dart_files[0].replace(/\/+/g, '/'); // normalise //
+        dir = dirname(existing);
+        fileName = basename(existing);
+        console.log(`  ♻️  Regenerating in place: ${existing}`);
+      } else {
+        dir = result.directory || `lib/${slugify(componentInfo.name)}`;
+        fileName = result.file_name;
+      }
       const fullDir = join(ROOT, dir);
       mkdirSync(fullDir, { recursive: true });
 
       // Widget code
-      const widgetPath = join(ROOT, dir, result.file_name);
+      const widgetPath = join(ROOT, dir, fileName);
       writeFileSync(widgetPath, result.widget_code, 'utf8');
-      console.log(`  ✅ ${dir}/${result.file_name}`);
+      console.log(`  ✅ ${dir}/${fileName}`);
 
       // Golden test
       if (result.test_code) {
@@ -435,7 +447,7 @@ async function main() {
       }
 
       // Update component-map.json
-      const dartFiles = [`${dir}/${result.file_name}`];
+      const dartFiles = [`${dir}/${fileName}`];
       cfg.dart_files = dartFiles;
       if (result.test_code) {
         const testFile = result.test_file_name || `${slugify(componentInfo.name)}_golden_test.dart`;

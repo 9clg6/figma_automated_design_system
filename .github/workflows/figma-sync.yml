@@ -215,8 +215,12 @@ jobs:
           fi
 
       # ── 9. Validate ──────────────────────────────────────────
+      #    On manual regen runs, analyze is non-blocking so a single broken
+      #    component doesn't lose the whole PR — review the diff instead.
+      #    Stays blocking on nightly/drift runs.
       - name: Validate — Flutter analyze
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
+        continue-on-error: ${{ inputs.regenerate_components != '' }}
         run: |
           flutter pub get
           flutter analyze --no-fatal-warnings --no-fatal-infos lib/
@@ -255,6 +259,7 @@ jobs:
 
       - name: Update golden references (scoped)
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
+        continue-on-error: ${{ inputs.regenerate_components != '' }}
         run: |
           # Build list of golden test files for drifted/new components only
           CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"

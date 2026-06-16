@@ -220,9 +220,37 @@ jobs:
             echo "::warning::Golden regressions detected ($COUNT files): $FILES"
           fi
 
-      - name: Update golden references
+      - name: Update golden references (scoped)
         if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
-        run: flutter test test/goldens/components/ --update-goldens
+        run: |
+          # Build list of golden test files for drifted/new components only
+          CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
+          NEW_LIST="${{ steps.discover.outputs.new_components }}"
+          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}"
+          ALL_SLUGS="${ALL_SLUGS#,}"
+
+          if [ -z "$ALL_SLUGS" ]; then
+            echo "No components to update goldens for."
+            exit 0
+          fi
+
+          # Look up golden_test paths from component-map.json
+          GOLDEN_FILES=$(node -e "
+            const map = JSON.parse(require('fs').readFileSync('config/component-map.json','utf8'));
+            const slugs = '${ALL_SLUGS}'.split(',');
+            const files = slugs
+              .map(s => map.components[s]?.golden_test)
+              .filter(Boolean);
+            if (files.length) console.log(files.join(' '));
+          ")
+
+          if [ -z "$GOLDEN_FILES" ]; then
+            echo "No golden test files mapped for: $ALL_SLUGS"
+            exit 0
+          fi
+
+          echo "Updating goldens for: $GOLDEN_FILES"
+          flutter test $GOLDEN_FILES --update-goldens
 
       # ── 9b. Clean build artifacts before PR ─────────────────
       - name: Clean build artifacts

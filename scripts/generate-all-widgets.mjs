@@ -62,9 +62,22 @@ function extractComponentInfo(nodeData) {
     return { name: doc.name, type: doc.type, variants: [], properties: {}, isEmpty: true };
   }
 
+  // Collect ALL top-level component-set / component node ids on the page so we
+  // can screenshot each one individually (sharper than one whole-page image).
+  const setIds = [];
+  (function collect(node) {
+    if (node.type === 'COMPONENT_SET' || node.type === 'COMPONENT') {
+      setIds.push(node.id);
+      return; // don't descend into a set's own variants
+    }
+    (node.children || []).forEach(collect);
+  })(doc);
+
   const info = {
     name: target.name,
     type: target.type,
+    id: target.id,
+    setIds,
     properties: {},
     variants: [],
   };
@@ -136,7 +149,12 @@ function pascalCase(name) {
 }
 
 // ── Build Claude prompt ────────────────────────────────────────
-function buildPrompt(componentInfo, screenshotBase64, existingCode) {
+function buildPrompt(componentInfo, screenshots, existingCode) {
+  // `screenshots` is an array of base64 PNGs (per-component-set crops, high-res).
+  // Back-compat: accept a single base64 string too.
+  const shots = Array.isArray(screenshots)
+    ? screenshots.filter(Boolean)
+    : (screenshots ? [screenshots] : []);
   const systemPrompt = `You are a Flutter widget engineer for the Linagora Design Flutter package.
 You generate production-ready Flutter widgets from Figma component data.
 
@@ -171,6 +189,16 @@ You generate production-ready Flutter widgets from Figma component data.
 - required for non-optional, defaults for optional
 - Extract sub-widgets as private classes if complex
 
+### Source of truth — IMPORTANT
+- The Figma screenshot(s) are the PRIMARY visual reference: reproduce EXACTLY
+  what you see — layout, composition, hierarchy, spacing, every visible element.
+- The JSON spec is the PRECISE-VALUES reference: use it for exact colors (hex),
+  font sizes, corner radii, paddings, dimensions.
+- These components are DERIVED from Material 3 but are NOT plain M3 widgets.
+  Do NOT emit stock \`showDatePicker\`, \`Material\` pickers, \`CalendarDatePicker\`,
+  or other ready-made M3 widgets. Build the bespoke widget tree that matches the
+  screenshot pixel-for-pixel, even when it resembles an M3 component.
+
 ## EXISTING PACKAGE CODE
 The following files already exist in the package — use the SAME import style and patterns:
 ${existingCode}
@@ -195,14 +223,16 @@ CRITICAL: Start with { end with }. No other text.`;
 
   const userContent = [];
 
-  if (screenshotBase64) {
+  for (const shot of shots) {
     userContent.push({
       type: 'image',
-      source: { type: 'base64', media_type: 'image/png', data: screenshotBase64 },
+      source: { type: 'base64', media_type: 'image/png', data: shot },
     });
+  }
+  if (shots.length) {
     userContent.push({
       type: 'text',
-      text: '☝️ Figma screenshot of this component with all variants.',
+      text: `☝️ ${shots.length} high-resolution Figma screenshot(s) of this component and its variants — the PRIMARY visual reference. Reproduce exactly.`,
     });
   }
 
@@ -299,21 +329,36 @@ async function main() {
       continue;
     }
 
-    // Fetch screenshot — always use scale=1 (scale=2 often exceeds 8000px or 5MB limits)
-    // Skip screenshot for components with known oversized images
+    // Fetch screenshots — one PER component-set at scale=2 (sharp), capped to
+    // avoid token blow-up. figmaGetImage auto-downscales to scale=1 if >3.5MB.
+    // Falls back to a single whole-page shot if no set ids were found.
     const skipScreenshot = args.includes('--no-screenshot');
-    const imgScale = 1;
-    let screenshot = null;
+    const MAX_SHOTS = 6;
+    let screenshots = [];
     if (!skipScreenshot) {
-      console.log(`  📸 Fetching screenshot (scale=${imgScale})...`);
-      try {
-        screenshot = await figmaGetImage(cfg.page_id, imgScale);
-        if (screenshot) console.log(`     ${Math.round(screenshot.length / 1024)}KB`);
-        else console.log('     ⚠️ No screenshot');
-      } catch { console.log('     ⚠️ Screenshot failed'); }
+      const ids = (componentInfo.setIds && componentInfo.setIds.length)
+        ? componentInfo.setIds.slice(0, MAX_SHOTS)
+        : [cfg.page_id];
+      console.log(`  📸 Fetching ${ids.length} screenshot(s) (scale=2)...`);
+      for (const id of ids) {
+        try {
+          const shot = await figmaGetImage(id, 2);
+          if (shot) {
+            screenshots.push(shot);
+            console.log(`     ✅ ${id} — ${Math.round(shot.length / 1024)}KB`);
+          } else {
+            console.log(`     ⚠️ ${id} — no image`);
+          }
+        } catch { console.log(`     ⚠️ ${id} — failed`); }
+      }
+      if (ids.length > MAX_SHOTS) {
+        console.log(`     ⚠️  ${componentInfo.setIds.length - MAX_SHOTS} extra sets not screenshotted (cap ${MAX_SHOTS})`);
+      }
     } else {
-      console.log('  📸 Skipping screenshot (--no-screenshot)');
+      console.log('  📸 Skipping screenshots (--no-screenshot)');
     }
+    // Keep the first shot as the saved reference image (kb/components/images)
+    const screenshot = screenshots[0] || null;
 
     await sleep(RATE_DELAY);
 
@@ -325,7 +370,7 @@ async function main() {
 
     // Call Claude (with retry on JSON parse errors)
     console.log('  🤖 Generating widget with Claude...');
-    const { systemPrompt, userContent } = buildPrompt(componentInfo, screenshot, existingCode);
+    const { systemPrompt, userContent } = buildPrompt(componentInfo, screenshots, existingCode);
 
     try {
       const client = new Anthropic();

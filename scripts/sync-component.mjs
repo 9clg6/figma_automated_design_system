@@ -284,9 +284,10 @@ function truncateSpec(spec) {
   if (result.components) {
     result.components = truncate(result.components, 0, 8);
   }
-  // pageSpec: truncate aggressively — it's just context
+  // pageSpec: keep moderate depth — gives Claude the real nested structure
+  // (calendars/grids/lists) instead of just top-level building-block names
   if (result.pageSpec) {
-    result.pageSpec = truncate(result.pageSpec, 0, 3);
+    result.pageSpec = truncate(result.pageSpec, 0, 5);
   }
   return result;
 }
@@ -329,6 +330,13 @@ Your job: MODIFY the existing Dart widget code to reflect the Figma design chang
 - New variants: add new enum values, new optional constructor params
 - Size presets: update or add named size constants
 - Theme integration: replace hardcoded values with theme references
+
+### Material 3 derivation — IMPORTANT
+- These components are DERIVED from Material 3 but are bespoke Twake widgets.
+- Figma node names like "M3 calendar cell" or "Building Blocks/*" describe the
+  source inspiration — they are NOT an instruction to use the stock M3 widget.
+- Never replace a custom widget tree with \`showDatePicker\`, \`CalendarDatePicker\`,
+  stock \`Material\` pickers, or other ready-made M3 widgets. Keep the bespoke tree.
 
 ### What you MUST NOT change
 - Public API: don't rename classes, don't change required parameter types

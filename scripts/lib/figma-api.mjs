@@ -131,10 +131,11 @@ export function rgbaToHex(c) {
  *
  * @param {object} node - Figma node from REST API
  * @param {number} [depth=0] - Current recursion depth
- * @param {number} [maxDepth=6] - Maximum recursion depth
+ * @param {number} [maxDepth=12] - Maximum recursion depth (deep enough for
+ *   nested grids/calendars/lists whose leaf styling matters)
  * @returns {object} Structured spec
  */
-export function extractComponentSpec(node, depth = 0, maxDepth = 6) {
+export function extractComponentSpec(node, depth = 0, maxDepth = 12) {
   const spec = { name: node.name, type: node.type, id: node.id };
 
   if (node.absoluteBoundingBox) {

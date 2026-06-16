@@ -58,15 +58,57 @@ function extractMainClass(dartCode) {
 }
 
 function extractConstructorParams(dartCode, className) {
-  // Extract required params from constructor
+  // Extract required params from constructor.
+  // Returns [{ name, type }]. The type is resolved from the matching
+  // field declaration in the class body (constructor uses `this.x`).
   const ctorRegex = new RegExp(`const\\s+${className}\\(\\{[^}]*\\}\\)`, 's');
   const match = dartCode.match(ctorRegex);
   if (!match) return [];
 
   const params = [];
   const requiredMatches = match[0].matchAll(/required\s+this\.(\w+)/g);
-  for (const m of requiredMatches) params.push(m[1]);
+  for (const m of requiredMatches) {
+    const name = m[1];
+    // Find the field declaration: `final <Type> <name>;`
+    const fieldRegex = new RegExp(`final\\s+([\\w<>,\\s]+?\\??)\\s+${name}\\s*;`);
+    const fieldMatch = dartCode.match(fieldRegex);
+    const type = fieldMatch ? fieldMatch[1].trim() : 'dynamic';
+    params.push({ name, type });
+  }
   return params;
+}
+
+// Map a Dart param (name + type) to a widgetbook knob expression, or a
+// static fallback when no sensible knob exists (callbacks, unknown types).
+function knobForParam({ name, type }) {
+  const nullable = type.endsWith('?');
+  const base = nullable ? type.slice(0, -1) : type;
+
+  // Callbacks — no knob, just a no-op
+  if (base.startsWith('void Function') || base.startsWith('Function') ||
+      name === 'onTap' || name === 'onPressed' || name.startsWith('on')) {
+    return `${name}: (${base.includes('()') || base === 'VoidCallback' ? '' : '_'}) {},`;
+  }
+
+  switch (base) {
+    case 'String':
+      return `${name}: context.knobs.string(label: '${name}', initialValue: '${name}'),`;
+    case 'bool':
+      return `${name}: context.knobs.boolean(label: '${name}', initialValue: false),`;
+    case 'int':
+      return `${name}: context.knobs.int.slider(label: '${name}', initialValue: 1, min: 0, max: 100),`;
+    case 'double':
+      return `${name}: context.knobs.double.slider(label: '${name}', initialValue: 1, min: 0, max: 100),`;
+    case 'Color':
+      return `${name}: context.knobs.color(label: '${name}', initialValue: Colors.blue),`;
+    case 'Widget':
+      return `${name}: const Text('Example'),`;
+    case 'IconData':
+      return `${name}: Icons.star,`;
+    default:
+      // Unknown type (enum, custom class) — leave a TODO the dev can fill
+      return `// ${name}: TODO (${type}),`;
+  }
 }
 
 // ── Scan components ───────────────────────────────────────────
@@ -129,20 +171,18 @@ for (const comp of targetComponents) {
   // Build minimal use case
   const useCaseFn = `${slugify(comp.figmaName).replace(/_/g, '')}DefaultUseCase`;
 
-  // Determine constructor args
-  let constructorArgs = '';
-  for (const p of comp.requiredParams) {
-    if (p === 'child') constructorArgs += "    child: Text('Example'),\n";
-    else if (p === 'onTap' || p === 'onPressed') constructorArgs += `    ${p}: () {},\n`;
-    else if (p === 'label' || p === 'title' || p === 'text' || p === 'message')
-      constructorArgs += `    ${p}: '${comp.mainClass} example',\n`;
-    else if (p === 'icon') constructorArgs += `    ${p}: Icons.star,\n`;
-    else if (p.startsWith('on')) constructorArgs += `    ${p}: (_) {},\n`;
-    else constructorArgs += `    // ${p}: TODO,\n`;
-  }
+  // Determine constructor args — interactive knobs where the type allows it
+  const constructorArgs = comp.requiredParams
+    .map(p => `        ${knobForParam(p)}`)
+    .join('\n');
+
+  // `const` only holds if there are no knob expressions (knobs are runtime)
+  const hasKnobs = comp.requiredParams.some(p => knobForParam(p).includes('context.knobs'));
+  const childConst = hasKnobs ? '' : 'const ';
 
   const code = `import 'package:flutter/material.dart';
 import 'package:linagora_design_flutter/${comp.importPath}';
+import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 @widgetbook.UseCase(name: 'Default', type: ${comp.mainClass})
@@ -150,8 +190,9 @@ Widget ${useCaseFn}(BuildContext context) {
   return Center(
     child: Padding(
       padding: const EdgeInsets.all(24),
-      child: ${comp.mainClass}(
-${constructorArgs}      ),
+      child: ${childConst}${comp.mainClass}(
+${constructorArgs}
+      ),
     ),
   );
 }

@@ -13,6 +13,10 @@ on:
         description: 'Force re-generate all unimplemented components'
         type: boolean
         default: false
+      regenerate_components:
+        description: 'Comma-separated slugs to re-generate IN PLACE (overwrites existing widgets), e.g. date-pickers,lists'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -134,6 +138,24 @@ jobs:
         timeout-minutes: 15
         run: node scripts/generate-all-widgets.mjs
 
+      # ── 6b. Regenerate specific components IN PLACE ───────────
+      #    Manual override to re-generate named components (overwrites their
+      #    existing widget file). Used to re-run after extraction improvements.
+      - name: Regenerate components (in place)
+        if: inputs.regenerate_components != '' && inputs.dry_run != true
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        timeout-minutes: 20
+        run: |
+          IFS=',' read -ra COMPS <<< "${{ inputs.regenerate_components }}"
+          for comp in "${COMPS[@]}"; do
+            comp=$(echo "$comp" | xargs)  # trim whitespace
+            [ -z "$comp" ] && continue
+            echo "━━━ Regenerating $comp ━━━"
+            node scripts/generate-all-widgets.mjs --component "$comp" || echo "::warning::regenerate failed for $comp"
+          done
+
       # ── 7. Sync ONLY drifted components ─────────────────────────
       #    Uses the drift report to skip unchanged components.
       #    Saves Claude API tokens by not re-processing stable specs.
@@ -178,11 +200,12 @@ jobs:
 
       # ── 8. Update widgetbook ──────────────────────────────────
       - name: Update widgetbook (scoped)
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         run: |
           CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
           NEW_LIST="${{ steps.discover.outputs.new_components }}"
-          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}"
+          REGEN_LIST="${{ inputs.regenerate_components }}"
+          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}${REGEN_LIST:+,$REGEN_LIST}"
           ALL_SLUGS="${ALL_SLUGS#,}"
 
           if [ -n "$ALL_SLUGS" ]; then
@@ -193,14 +216,14 @@ jobs:
 
       # ── 9. Validate ──────────────────────────────────────────
       - name: Validate — Flutter analyze
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         run: |
           flutter pub get
           flutter analyze --no-fatal-warnings --no-fatal-infos lib/
 
       - name: Compliance check (deterministic)
         id: compliance
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         continue-on-error: true
         run: |
           node scripts/check-compliance-deterministic.mjs --json > kb/sync-logs/compliance-report.json 2>kb/sync-logs/compliance-stderr.log || true
@@ -214,7 +237,7 @@ jobs:
 
       - name: Golden regression check
         id: golden_check
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         continue-on-error: true
         run: node scripts/check-golden-regressions.mjs
 
@@ -231,12 +254,13 @@ jobs:
           fi
 
       - name: Update golden references (scoped)
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         run: |
           # Build list of golden test files for drifted/new components only
           CHANGED_LIST="${{ steps.drift.outputs.changed_list }}"
           NEW_LIST="${{ steps.discover.outputs.new_components }}"
-          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}"
+          REGEN_LIST="${{ inputs.regenerate_components }}"
+          ALL_SLUGS="${CHANGED_LIST:+$CHANGED_LIST}${NEW_LIST:+,$NEW_LIST}${REGEN_LIST:+,$REGEN_LIST}"
           ALL_SLUGS="${ALL_SLUGS#,}"
 
           if [ -z "$ALL_SLUGS" ]; then
@@ -264,7 +288,7 @@ jobs:
 
       # ── 9b. Clean build artifacts before PR ─────────────────
       - name: Clean build artifacts
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         run: |
           rm -rf .dart_tool/ build/ .flutter-plugins .flutter-plugins-dependencies .packages
           git checkout -- pubspec.lock 2>/dev/null || true
@@ -273,7 +297,7 @@ jobs:
       #    Uses a fixed branch name so peter-evans/create-pull-request
       #    updates the existing PR instead of creating a new one each night.
       - name: Create draft PR
-        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true') && inputs.dry_run != true
+        if: (steps.drift.outputs.changed == 'true' || steps.discover.outputs.has_new == 'true' || inputs.regenerate_components != '') && inputs.dry_run != true
         uses: peter-evans/create-pull-request@v6
         with:
           branch: figma-sync/auto

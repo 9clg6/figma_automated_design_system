@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-17T10:22:11.484Z",
+  "styles": [
+    {
+      "key": "a9b12f0fc7be8aecb9c8fe0326c0592407ba4bcf",
+      "name": "M3/headline/small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "1e1f6e84efd8a463abd3dd2888ff4165ef2c105f",
+      "name": "M3/headline/medium",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "3fec56f23d4c3dc7a68e6b80bf3591d9cd17059c",
+      "name": "M3/title/small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "062e1feb5c771c0b3a3714853d7856573e4c2824",
+      "name": "M3/title/medium",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "9f9a5f2160a74449e98ad47df680935aa7b950a2",
+      "name": "M3/label/large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "4809818776aa62e9122c2aecc506f58c427194e4",
+      "name": "M3/title/large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "a71ab56c727fb430098cf047878df6308399e688",
+      "name": "M3/label/medium",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "f6584a9ca51579f156fcade7ec17e51dab6388af",
+      "name": "M3/body/medium3",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "d96a99eec35594186b057ce8e25d49ae26d841c7",
+      "name": "M3/body/medium",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "89bddd5600756cd6e25df354704e3e9c93e46cc3",
+      "name": "M3/body/large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "3d1bb9797361ad7db7ac59f14f8ed70569e0309a",
+      "name": "M3/body/large1",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "c54ae002635a5a66f1d7cad2d9ab107a1b3ee922",
+      "name": "M3/display/large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "5004abfa77efeb5bd99e94a25f70df9fb3a87a13",
+      "name": "M3/headline/large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "0fb2f2e7b2c7827f068f0a1e5bb4efb311fcd77a",
+      "name": "M3/title/Semibold",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "89ffe334f962fab18ffd7c9076d20207d73528c2",
+      "name": "M3/body/Medium1",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "61e3f4b5d2cdfe82420a6b1da268a554bc0c9bbd",
+      "name": "M3/body/medium2",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "792a744d6820a18983432e936ead5e90edc14df9",
+      "name": "M3/body/large2",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "0b7ad8146102232bcdd303532379675fc5f005ac",
+      "name": "M3/body/large bold",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "1949659c0142c09093dbfe625ac608476435ca66",
+      "name": "M3/body/small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "45b095da4dad5528c31128cb46964f00e1ab26c7",
+      "name": "M3/label/small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "fad5b3ed071c97c763e96cb1cf438711acaa2f9b",
+      "name": "M3/display/medium",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    },
+    {
+      "key": "0382442b5f32dcbf6310533fd5eb3c6187921316",
+      "name": "M3/display/small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20
+    }
+  ]
+}

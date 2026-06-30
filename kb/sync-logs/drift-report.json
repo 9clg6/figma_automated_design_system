@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-06-30T06:18:49.821Z",
+  "changed": [
+    "menu-new"
+  ],
+  "unchanged": [
+    "avatar",
+    "badges",
+    "bottom-sheets",
+    "box-text",
+    "bubble-media",
+    "bubble-message",
+    "bubble-thread",
+    "buttons",
+    "cards",
+    "chat-message",
+    "checkboxes",
+    "chips",
+    "date-pickers",
+    "dialog-modal",
+    "dividers",
+    "fab",
+    "headers",
+    "icon-button",
+    "input-field",
+    "label",
+    "lists",
+    "menus",
+    "members-list",
+    "message-counter",
+    "message-type-icon",
+    "navigation-rail",
+    "on-action-hovered-bar",
+    "pin-events",
+    "radio-buttons",
+    "side-sheets",
+    "sliders",
+    "snackbars",
+    "settings",
+    "switch",
+    "tabs",
+    "timestamp",
+    "tooltips",
+    "typing-bar"
+  ],
+  "new": [],
+  "errors": [
+    {
+      "name": "progress-indicators",
+      "error": "no Figma data"
+    },
+    {
+      "name": "reaction-chat",
+      "error": "no Figma data"
+    },
+    {
+      "name": "ruller",
+      "error": "no Figma data"
+    }
+  ],
+  "details": {
+    "menu-new": {
+      "designChanges": 3,
+      "noiseChanges": 0,
+      "diffs": [
+        "components[Component 1]: removed",
+        "components[actionbar]: added",
+        "components[actioncontact]: added"
+      ]
+    }
+  },
+  "summary": "1 drifted, 38 unchanged, 3 errors",
+  "stats": {
+    "total": 42,
+    "changed": 1,
+    "unchanged": 38,
+    "new": 0,
+    "errors": 3
+  }
+}

@@ -2,52 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:linagora_design_flutter/linagora_design_flutter.dart';
 import 'package:widgetbook/widgetbook.dart' hide AlignmentAddon;
 import 'package:widgetbook_workspace/components/avatar_component/avatar_use_case.dart';
-import 'package:widgetbook_workspace/components/badge_component/badge_use_case.dart';
-import 'package:widgetbook_workspace/components/bar_logo_web_component/bar_logo_web_use_case.dart';
-import 'package:widgetbook_workspace/components/bottom_navigation_component/bottom_navigation_use_case.dart';
-import 'package:widgetbook_workspace/components/bottom_sheet_component/bottom_sheet_use_case.dart';
+import 'package:widgetbook_workspace/components/badges_component/badges_use_case.dart';
+import 'package:widgetbook_workspace/components/bottom_sheets_component/bottom_sheets_use_case.dart';
+import 'package:widgetbook_workspace/components/box_text_component/box_text_use_case.dart';
+import 'package:widgetbook_workspace/components/bubble_media_component/bubble_media_use_case.dart';
 import 'package:widgetbook_workspace/components/bubble_message_component/bubble_message_use_case.dart';
-import 'package:widgetbook_workspace/components/button_component/button_use_case.dart';
-import 'package:widgetbook_workspace/components/checkbox_component/checkbox_use_case.dart';
-import 'package:widgetbook_workspace/components/contact_component/matrix_contact_use_case.dart';
-import 'package:widgetbook_workspace/components/contact_component/phonebook_contact_use_case.dart';
-import 'package:widgetbook_workspace/components/date_picker_component/date_picker_use_case.dart';
-import 'package:widgetbook_workspace/components/dialog2_component/dialog2_use_case.dart';
-import 'package:widgetbook_workspace/components/dialog_component/confirmation_dialog_use_case.dart';
-import 'package:widgetbook_workspace/components/dialog_component/options_dialog_use_case.dart';
-import 'package:widgetbook_workspace/components/divider_component/divider_use_case.dart';
-import 'package:widgetbook_workspace/components/file_component/file_use_case.dart';
-import 'package:widgetbook_workspace/components/hover_style_component/hover_style_use_case.dart';
-import 'package:widgetbook_workspace/components/icon_button_web_component/icon_button_web_use_case.dart';
-import 'package:widgetbook_workspace/components/input_chip_component/input_chip_use_case.dart';
+import 'package:widgetbook_workspace/components/bubble_thread_component/bubble_thread_use_case.dart';
+import 'package:widgetbook_workspace/components/buttons_component/buttons_use_case.dart';
+import 'package:widgetbook_workspace/components/cards_component/cards_use_case.dart';
+import 'package:widgetbook_workspace/components/chat_message_component/chat_message_use_case.dart';
+import 'package:widgetbook_workspace/components/checkboxes_component/checkboxes_use_case.dart';
+import 'package:widgetbook_workspace/components/chips_component/chips_use_case.dart';
+import 'package:widgetbook_workspace/components/date_pickers_component/date_pickers_use_case.dart';
+import 'package:widgetbook_workspace/components/dialog_modal_component/dialog_modal_use_case.dart';
+import 'package:widgetbook_workspace/components/fab_component/fab_use_case.dart';
+import 'package:widgetbook_workspace/components/headers_component/headers_use_case.dart';
+import 'package:widgetbook_workspace/components/icon_button_component/icon_button_use_case.dart';
+import 'package:widgetbook_workspace/components/input_field_component/input_field_use_case.dart';
 import 'package:widgetbook_workspace/components/label_component/label_use_case.dart';
-import 'package:widgetbook_workspace/components/linear_progress_indicator_component/linear_progress_indicator_use_case.dart';
-import 'package:widgetbook_workspace/components/list_item_component/list_item_use_case.dart';
-import 'package:widgetbook_workspace/components/member_list_item_component/member_list_item_use_case.dart';
-import 'package:widgetbook_workspace/components/menu_with_text_field_component/menu_with_text_field_use_case.dart';
-import 'package:widgetbook_workspace/components/message_list_item_component/message_list_item_use_case.dart';
-import 'package:widgetbook_workspace/components/message_context_menu_component/message_context_menu_use_case.dart';
+import 'package:widgetbook_workspace/components/lists_component/lists_use_case.dart';
+import 'package:widgetbook_workspace/components/members_list_component/members_list_use_case.dart';
+import 'package:widgetbook_workspace/components/menu_new_component/menu_new_use_case.dart';
+import 'package:widgetbook_workspace/components/menus_component/menus_use_case.dart';
 import 'package:widgetbook_workspace/components/message_counter_component/message_counter_use_case.dart';
 import 'package:widgetbook_workspace/components/message_type_icon_component/message_type_icon_use_case.dart';
-import 'package:widgetbook_workspace/components/pin_event_component/pin_event_use_case.dart';
-import 'package:widgetbook_workspace/components/reaction_component/reaction_use_case.dart';
-import 'package:widgetbook_workspace/components/search_tab_component/search_tab_use_case.dart';
-import 'package:widgetbook_workspace/components/setting_profile_component/setting_profile_use_case.dart';
-import 'package:widgetbook_workspace/components/side_sheet_component/side_sheet_use_case.dart';
-import 'package:widgetbook_workspace/components/slider_component/slider_use_case.dart';
-import 'package:widgetbook_workspace/components/small_fab_component/small_fab_use_case.dart';
-import 'package:widgetbook_workspace/components/snackbar_component/snackbar_use_case.dart';
-import 'package:widgetbook_workspace/components/stacked_card_component/stacked_card_use_case.dart';
+import 'package:widgetbook_workspace/components/navigation_rail_component/navigation_rail_use_case.dart';
+import 'package:widgetbook_workspace/components/pin_events_component/pin_events_use_case.dart';
+import 'package:widgetbook_workspace/components/radio_buttons_component/radio_buttons_use_case.dart';
+import 'package:widgetbook_workspace/components/reaction_chat_component/reaction_chat_use_case.dart';
+import 'package:widgetbook_workspace/components/settings_component/settings_use_case.dart';
+import 'package:widgetbook_workspace/components/side_sheets_component/side_sheets_use_case.dart';
+import 'package:widgetbook_workspace/components/sliders_component/sliders_use_case.dart';
+import 'package:widgetbook_workspace/components/snackbars_component/snackbars_use_case.dart';
 import 'package:widgetbook_workspace/components/switch_component/switch_use_case.dart';
-import 'package:widgetbook_workspace/components/text_field_component/text_field_use_case.dart';
-import 'package:widgetbook_workspace/components/threads_bubble_component/threads_bubble_use_case.dart';
+import 'package:widgetbook_workspace/components/tabs_component/tabs_use_case.dart';
 import 'package:widgetbook_workspace/components/timestamp_component/timestamp_use_case.dart';
-import 'package:widgetbook_workspace/components/tooltip_component/tooltip_use_case.dart';
+import 'package:widgetbook_workspace/components/tooltips_component/tooltips_use_case.dart';
 import 'package:widgetbook_workspace/components/typing_bar_component/typing_bar_use_case.dart';
-import 'package:widgetbook_workspace/components/welcome_screen_component/welcome_screen_use_case.dart';
 import 'package:widgetbook_workspace/custom/github_addon.dart';
 import 'package:widgetbook_workspace/theme/theme_data.dart';
-
 import 'custom/alignment_addon.dart';
 
 void main() {
@@ -114,655 +107,345 @@ class WidgetbookApp extends StatelessWidget {
         WidgetbookFolder(
           name: 'Components',
           children: [
-            // ── Avatar ──────────────────────────────────
             WidgetbookComponent(
               name: 'Avatar',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Monogram',
-                  builder: (context) => avatarMonogramUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All sizes',
-                  builder: (context) => avatarSizesUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Gradient colors',
-                  builder: (context) => avatarGradientsUseCase(context),
+                  name: 'Default',
+                  builder: (context) => avatarDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Badge ───────────────────────────────────
             WidgetbookComponent(
-              name: 'Badge',
+              name: 'Badges',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Small dot',
-                  builder: (context) => badgeSmallUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Single digit',
-                  builder: (context) => badgeSingleDigitUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Multiple digits',
-                  builder: (context) => badgeMultipleDigitsUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => badgesVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Bar Logo Web ────────────────────────────
             WidgetbookComponent(
-              name: 'Bar Logo Web',
+              name: 'Bottom sheets',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => barLogoWebDefaultUseCase(context),
+                  builder: (context) => bottomSheetsDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Bottom Navigation ───────────────────────
             WidgetbookComponent(
-              name: 'Bottom Navigation',
+              name: 'Box text',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      bottomNavigationDefaultUseCase(context),
+                  builder: (context) => boxTextDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Bottom Sheet ────────────────────────────
             WidgetbookComponent(
-              name: 'Bottom Sheet',
+              name: 'Bubble media',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => bubbleMediaVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Bubble message',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => bubbleMessageVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Bubble thread',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => bubbleThreadVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Buttons',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => buttonsVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Cards',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => cardsVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Chat message',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => chatMessageVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Checkboxes',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => checkboxesVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Chips',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => chipsVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Date pickers',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => datePickersVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Dialog modal',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      bottomSheetDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Modal',
-                  builder: (context) => bottomSheetModalUseCase(context),
+                  builder: (context) => dialogModalDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Bubble Message ──────────────────────────
             WidgetbookComponent(
-              name: 'Bubble Message',
+              name: 'Floating action buttons (FAB)',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => fabVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Headers',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      bubbleMessageDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Sender',
-                  builder: (context) =>
-                      bubbleMessageSenderUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Button ──────────────────────────────────
-            WidgetbookComponent(
-              name: 'Button',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Filled',
-                  builder: (context) => buttonFilledUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All types',
-                  builder: (context) => buttonAllTypesUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Checkbox ────────────────────────────────
-            WidgetbookComponent(
-              name: 'Checkbox',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => checkboxDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All types',
-                  builder: (context) => checkboxAllTypesUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Dialog ──────────────────────────────────
-            WidgetbookComponent(
-              name: 'Confirmation Dialog',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Basic',
-                  builder: (context) => dialogBasicUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Vertical actions',
-                  builder: (context) => dialogVerticalUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'With close button',
-                  builder: (context) => dialogCloseButtonUseCase(context),
+                  builder: (context) => headersDefaultUseCase(context),
                 ),
               ],
             ),
             WidgetbookComponent(
-              name: 'Options Dialog',
+              name: 'Icon button',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Basic',
-                  builder: (context) => optionsDialogBasicUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'With description',
-                  builder: (context) =>
-                      optionsDialogDescriptionUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'With icons',
-                  builder: (context) => optionsDialogIconsUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => iconButtonVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Dialog 2 ────────────────────────────────
             WidgetbookComponent(
-              name: 'Dialog 2',
+              name: 'Input field',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => dialog2DefaultUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => inputFieldVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Date Picker ─────────────────────────────
-            WidgetbookComponent(
-              name: 'Date Picker',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Single date',
-                  builder: (context) => datePickerSingleUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Date range',
-                  builder: (context) => datePickerRangeUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Divider ─────────────────────────────────
-            WidgetbookComponent(
-              name: 'Divider',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Horizontal',
-                  builder: (context) => dividerHorizontalUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'In a list',
-                  builder: (context) => dividerInListUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── File ────────────────────────────────────
-            WidgetbookComponent(
-              name: 'File',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Preview',
-                  builder: (context) => filePreviewUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Media',
-                  builder: (context) => fileMediaUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Hover Style ─────────────────────────────
-            WidgetbookComponent(
-              name: 'Hover Style',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Style properties',
-                  builder: (context) => hoverStylePropertiesUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Icon Button Web ─────────────────────────
-            WidgetbookComponent(
-              name: 'Icon Button Web',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) =>
-                      iconButtonWebDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All configurations',
-                  builder: (context) =>
-                      iconButtonWebAllConfigsUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Input Chip ──────────────────────────────
-            WidgetbookComponent(
-              name: 'Input Chip',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => inputChipDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Selected with trailing icon',
-                  builder: (context) => inputChipSelectedUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Label ───────────────────────────────────
             WidgetbookComponent(
               name: 'Label',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => labelDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All variants',
-                  builder: (context) => labelAllVariantsUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => labelVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Linear Progress Indicator ───────────────
             WidgetbookComponent(
-              name: 'Linear Progress Indicator',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Determinate',
-                  builder: (context) =>
-                      linearProgressDeterminateUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Indeterminate',
-                  builder: (context) =>
-                      linearProgressIndeterminateUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── List Item ───────────────────────────────
-            WidgetbookComponent(
-              name: 'List Item',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Line variants',
-                  builder: (context) => listItemVariantsUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Leading & trailing',
-                  builder: (context) =>
-                      listItemLeadingTrailingUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'InkWell states',
-                  builder: (context) => inkwellStatesUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Member List Item ────────────────────────
-            WidgetbookComponent(
-              name: 'Member List Item',
+              name: 'Lists',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      memberListItemDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Admin with details',
-                  builder: (context) =>
-                      memberListItemAdminUseCase(context),
+                  builder: (context) => listsDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Menu With Text Field ────────────────────
             WidgetbookComponent(
-              name: 'Menu With Text Field',
+              name: 'Members list',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => membersListVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'menu new (desktop+mobile)',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      menuWithTextFieldDefaultUseCase(context),
+                  builder: (context) => menuNewDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Message Context Menu ────────────────────
             WidgetbookComponent(
-              name: 'Message Context Menu',
+              name: 'Menus',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      messageContextMenuDefaultUseCase(context),
+                  builder: (context) => menusDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Message Counter ─────────────────────────
             WidgetbookComponent(
-              name: 'Message Counter',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Single digit',
-                  builder: (context) =>
-                      messageCounterSingleUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Multiple digits with mention',
-                  builder: (context) =>
-                      messageCounterMultipleUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Message List Item ───────────────────────
-            WidgetbookComponent(
-              name: 'Message List Item',
+              name: 'Message counter',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      messageListItemDefaultUseCase(context),
+                  builder: (context) => messageCounterDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Message Type Icon ───────────────────────
             WidgetbookComponent(
-              name: 'Message Type Icon',
+              name: 'Message type icon',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'All types',
-                  builder: (context) =>
-                      messageTypeIconAllUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => messageTypeIconVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Pin Event ───────────────────────────────
             WidgetbookComponent(
-              name: 'Pin Event',
+              name: 'Navigation rail',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => pinEventDefaultUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => navigationRailVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Reaction ────────────────────────────────
             WidgetbookComponent(
-              name: 'Reaction Picker',
+              name: 'Pin events',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) =>
-                      reactionPickerDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Custom size',
-                  builder: (context) =>
-                      reactionPickerCustomUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'With my reaction',
-                  builder: (context) =>
-                      reactionPickerMyReactionUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => pinEventsVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Search Tab ──────────────────────────────
             WidgetbookComponent(
-              name: 'Search Tab',
+              name: 'Radio buttons',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) => searchTabDefaultUseCase(context),
+                  builder: (context) => radioButtonsDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Setting Profile ─────────────────────────
             WidgetbookComponent(
-              name: 'Setting Profile',
+              name: 'Reaction chat',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      settingProfileDefaultUseCase(context),
+                  builder: (context) => reactionChatDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Side Sheet ──────────────────────────────
             WidgetbookComponent(
-              name: 'Side Sheet',
+              name: 'Settings',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Standard',
-                  builder: (context) =>
-                      sideSheetStandardUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Modal',
-                  builder: (context) => sideSheetModalUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => settingsVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Slider ──────────────────────────────────
             WidgetbookComponent(
-              name: 'Slider',
+              name: 'Side sheets',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Continuous',
-                  builder: (context) =>
-                      sliderContinuousUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Discrete',
-                  builder: (context) => sliderDiscreteUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => sideSheetsVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Small FAB ───────────────────────────────
             WidgetbookComponent(
-              name: 'Small FAB',
+              name: 'Sliders',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => smallFabDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'All configurations',
-                  builder: (context) =>
-                      smallFabAllConfigsUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => slidersVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Snackbar ────────────────────────────────
             WidgetbookComponent(
-              name: 'Snackbar',
+              name: 'Snackbars',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'One line',
-                  builder: (context) => snackbarOneLineUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'With action and close',
-                  builder: (context) =>
-                      snackbarWithActionUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => snackbarsVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Stacked Card ────────────────────────────
-            WidgetbookComponent(
-              name: 'Stacked Card',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) =>
-                      stackedCardDefaultUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Switch ──────────────────────────────────
             WidgetbookComponent(
               name: 'Switch',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => switchDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Selected with icon',
-                  builder: (context) => switchSelectedUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => switchVariantsUseCase(context),
                 ),
               ],
             ),
-
-            // ── Text Field ──────────────────────────────
             WidgetbookComponent(
-              name: 'Text Field',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Filled',
-                  builder: (context) => textFieldFilledUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Outline',
-                  builder: (context) => textFieldOutlineUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Threads Bubble ──────────────────────────
-            WidgetbookComponent(
-              name: 'Threads Bubble',
+              name: 'Tabs',
               useCases: [
                 WidgetbookUseCase(
                   name: 'Default',
-                  builder: (context) =>
-                      threadsBubbleDefaultUseCase(context),
+                  builder: (context) => tabsDefaultUseCase(context),
                 ),
               ],
             ),
-
-            // ── Timestamp ───────────────────────────────
             WidgetbookComponent(
               name: 'Timestamp',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => timestampDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'On scrolling pill',
-                  builder: (context) =>
-                      timestampScrollingUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Tooltip ─────────────────────────────────
-            WidgetbookComponent(
-              name: 'Tooltip',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Plain',
-                  builder: (context) => tooltipPlainUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Rich',
-                  builder: (context) => tooltipRichUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Typing Bar ──────────────────────────────
-            WidgetbookComponent(
-              name: 'Typing Bar',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => typingBarDefaultUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Reply mode',
-                  builder: (context) => typingBarReplyUseCase(context),
-                ),
-              ],
-            ),
-
-            // ── Contact Item ────────────────────────────
-            WidgetbookComponent(
-              name: 'Contact Item',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Phonebook contact',
-                  builder: (context) => phonebookContactUseCase(context),
-                ),
-                WidgetbookUseCase(
-                  name: 'Matrix contact',
-                  builder: (context) => matrixContactUseCase(context),
-                ),
-              ],
-            ),
-          ],
-        ),
-        WidgetbookFolder(
-          name: 'Screens',
-          children: [
-            // ── Welcome Screen ──────────────────────────
-            WidgetbookComponent(
-              name: 'Welcome Screen',
-              useCases: [
-                WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => welcomeScreenUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => timestampVariantsUseCase(context),
                 ),
               ],
             ),
             WidgetbookComponent(
-              name: 'Homeserver Button',
+              name: 'Tooltips',
               useCases: [
                 WidgetbookUseCase(
-                  name: 'Default',
-                  builder: (context) => homeserverButtonUseCase(context),
+                  name: 'Variants',
+                  builder: (context) => tooltipsVariantsUseCase(context),
+                ),
+              ],
+            ),
+            WidgetbookComponent(
+              name: 'Typing bar',
+              useCases: [
+                WidgetbookUseCase(
+                  name: 'Variants',
+                  builder: (context) => typingBarVariantsUseCase(context),
                 ),
               ],
             ),

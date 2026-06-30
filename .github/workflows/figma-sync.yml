@@ -1,8 +1,8 @@
 name: Figma DS Sync
 
 on:
-  schedule:
-    - cron: '0 2 * * *' # Nightly at 2am UTC
+  # ponytail: nightly schedule removed — manual dispatch only. Re-add a
+  # `schedule:` block with `- cron: '0 2 * * *'` to resume daily runs.
   workflow_dispatch:
     inputs:
       dry_run:

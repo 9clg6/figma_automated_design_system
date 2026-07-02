@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-17T10:21:42.846Z",
+  "generatedAt": "2026-07-02T08:37:47.274Z",
   "components": [
     {
       "name": "Building Blocks/Period Selector-dark",
@@ -387,19 +387,6 @@
       "description": ""
     },
     {
-      "name": "Floating Send button",
-      "key": "7d58e7438f93cd40a5420b173543058d858f1079",
-      "id": "54825:5442",
-      "type": "COMPONENT_SET",
-      "variants": 2,
-      "page": "❖ Buttons",
-      "category": "layout",
-      "properties": {
-        "Type": "VARIANT(Default,Counter)"
-      },
-      "description": ""
-    },
-    {
       "name": "Building Blocks / segment",
       "key": "1bb3ab705536d11c8f8133d2fbf228eadbaa5f16",
       "id": "50721:10427",
@@ -449,32 +436,6 @@
         "State": "VARIANT(Enabled,Hovered,Focused,Pressed,Disabled)"
       },
       "description": "Day cell"
-    },
-    {
-      "name": "Threads bubble",
-      "key": "11b3ef7b450a728110129140863dd09be2fcbb5e",
-      "id": "55063:6871",
-      "type": "COMPONENT_SET",
-      "variants": 11,
-      "page": "❖ Bubble thread",
-      "category": "layout",
-      "properties": {
-        "time of last commented#2322:0": "TEXT",
-        "last one commented#2322:1": "TEXT",
-        "thread's description#2322:2": "TEXT",
-        "thread's title#2322:3": "TEXT",
-        "thread's owner#2322:4": "TEXT",
-        "last commented#2322:5": "TEXT",
-        "time created thread#2322:7": "TEXT",
-        "Show thread's-owner-info#58648:0": "BOOLEAN",
-        "Show  icon Thread left#58648:9": "BOOLEAN",
-        "Show input comment-section#58648:36": "BOOLEAN",
-        "Show interaction_with_thread#58648:54": "BOOLEAN",
-        "Theme": "VARIANT(Light,Dark)",
-        "Device": "VARIANT(Desktop,Mobile)",
-        "State": "VARIANT(Sender+react,DM+react,DM+no react,Sender+no react)"
-      },
-      "description": ""
     },
     {
       "name": "Labels Contact",
@@ -650,40 +611,6 @@
       "description": ""
     },
     {
-      "name": "List item connect",
-      "key": "4697c526b505c74c7b3bffbf65dc996a90e50b04",
-      "id": "58931:1965",
-      "type": "COMPONENT_SET",
-      "variants": 2,
-      "page": "❖ Settings",
-      "category": "layout",
-      "properties": {
-        "Label#58931:0": "TEXT",
-        "State": "VARIANT(Connect,Disconnect)"
-      },
-      "description": ""
-    },
-    {
-      "name": "Bubble message button",
-      "key": "36e76bb2f89dae3e1a549e6e3402e505346d4753",
-      "id": "58993:18722",
-      "type": "COMPONENT_SET",
-      "variants": 2,
-      "page": "❖ Box text",
-      "category": "layout",
-      "properties": {
-        "Show Icon#58993:16": "BOOLEAN",
-        "Text#58993:19": "TEXT",
-        "Sub text#58993:22": "TEXT",
-        "Show Button 2#58993:25": "BOOLEAN",
-        "Show Additional content#58993:28": "BOOLEAN",
-        "Show Title#58993:31": "BOOLEAN",
-        "Show Sub Text#58993:34": "BOOLEAN",
-        "Device": "VARIANT(Desktop,Mobile)"
-      },
-      "description": ""
-    },
-    {
       "name": "Checkboxes-dark",
       "key": "78c3956462c16ff1a7922ff745feafa87fa600ad",
       "id": "51859:5746",
@@ -707,20 +634,6 @@
       "category": "layout",
       "properties": {
         "Active:": "VARIANT(Setting,Chat,Default,Contact,Setting Active)"
-      },
-      "description": ""
-    },
-    {
-      "name": "Message boxes",
-      "key": "f24b8f1ab32a8a298a07db7e382a11838a83a727",
-      "id": "55057:6514",
-      "type": "COMPONENT_SET",
-      "variants": 4,
-      "page": "Components Draft",
-      "category": "layout",
-      "properties": {
-        "Configuration": "VARIANT(Separate tabs,Single list)",
-        "Selection mode?": "VARIANT(False,True)"
       },
       "description": ""
     },
@@ -769,21 +682,6 @@
       "category": "layout",
       "properties": {
         "State": "VARIANT(new chat,Settings,Contact info,Add members,Group info,Thread,Group Name)"
-      },
-      "description": ""
-    },
-    {
-      "name": "Uploader",
-      "key": "600035ed87907b89219c3498ab9a9b4966f0ffe7",
-      "id": "55286:39066",
-      "type": "COMPONENT_SET",
-      "variants": 4,
-      "page": "❖ Icon button",
-      "category": "layout",
-      "properties": {
-        "Configuration": "VARIANT(Default,Edit)",
-        "Theme": "VARIANT(Dark,Light)",
-        "icon size": "VARIANT(Medium)"
       },
       "description": ""
     },
@@ -900,33 +798,6 @@
       "category": "layout",
       "properties": {
         "Property 1": "VARIANT(Light,Dark)"
-      },
-      "description": ""
-    },
-    {
-      "name": "Message list",
-      "key": "879e9a7b307c88c2a7c441c428814d5af4c74728",
-      "id": "54373:28410",
-      "type": "COMPONENT_SET",
-      "variants": 252,
-      "page": "❖ Chat message",
-      "category": "layout",
-      "properties": {
-        "Time#11453:18": "TEXT",
-        "Pinned?#11453:27": "BOOLEAN",
-        "Name#11453:54": "TEXT",
-        "Text Content#11453:63": "TEXT",
-        "Mention?#54416:0": "BOOLEAN",
-        "Last one commented#54433:4": "TEXT",
-        "Show sent?#54827:0": "BOOLEAN",
-        "Show Encrypted#55427:0": "BOOLEAN",
-        "Chat?": "VARIANT(False,True)",
-        "State?": "VARIANT(Default,Unselect,Selected,Typing,Reaction,Media photo,Media video)",
-        "Mute?": "VARIANT(True,False)",
-        "Hovered?": "VARIANT(False,True)",
-        "Read?": "VARIANT(True,False)",
-        "Chat+Media": "VARIANT(False,True)",
-        "Selected?": "VARIANT(False,True)"
       },
       "description": ""
     },
@@ -1580,21 +1451,6 @@
       "description": "Period selector building block"
     },
     {
-      "name": "Avatars base",
-      "key": "55749f8776831a3ac8e5db54d524383e568fd57f",
-      "id": "58644:7894",
-      "type": "COMPONENT_SET",
-      "variants": 117,
-      "page": "❖ Avatar",
-      "category": "layout",
-      "properties": {
-        "Alias#806:0": "TEXT",
-        "Name": "VARIANT(Pale Green,Cornflower,Moon Blue,Selected,Portrait,PLUVIOPHILE,SNOW PEA,BYZANTINE NIGHT BLUE,BLUE MANA,PINK BONNET,SUGAR CORAL,DOWNY,SUNRISE)",
-        "Size": "VARIANT(160,96,60,56,40,36,32,24,20)"
-      },
-      "description": ""
-    },
-    {
       "name": "Preview",
       "key": "64fd2ef5ad8532d3e9075981de08c6c81e55f4e8",
       "id": "58599:19932",
@@ -1722,20 +1578,6 @@
         "State": "VARIANT(enabled,hovered,focused,pressed)"
       },
       "description": "Primary tabs icon only building blocks"
-    },
-    {
-      "name": "Navigation bar-dark",
-      "key": "da779f5d2d8c3e59bb916cd8551053a003e9b224",
-      "id": "52031:23830",
-      "type": "COMPONENT_SET",
-      "variants": 6,
-      "page": "Components Draft",
-      "category": "layout",
-      "properties": {
-        "Configuration": "VARIANT(icon & label,icon)",
-        "Segments": "VARIANT(3,4,5)"
-      },
-      "description": "Navigation bars (nav bars) provide access to three to five destinations.\n\nThe nav bar is positioned at the bottom of screens for convenient access. Each destination is represented by an icon and optional text label.\nWhen a navigation bar icon is tapped or focused, the user is taken to the navigation destination associated with that icon. \n\nUse on mobile or tablet only.\n\n🛠 Additional options \nSegments - can be edited by selecting individual segments and  selecting states, labels, and badges from the variant properties. "
     },
     {
       "name": "Building Blocks/Tab Single Unit/Secondary/Icon and label",
@@ -2744,19 +2586,6 @@
       "description": ""
     },
     {
-      "name": "Sliding message",
-      "key": "241eda882e24e5873c20803d0d1c98cab544fee7",
-      "id": "58666:9826",
-      "type": "COMPONENT_SET",
-      "variants": 5,
-      "page": "❖ Chat message",
-      "category": "layout",
-      "properties": {
-        "Sliding statut?": "VARIANT(Default,All active,Unmute,Read,Unpin)"
-      },
-      "description": ""
-    },
-    {
       "name": "FigmaTokenPlugin/Button ",
       "key": "ff4c63a79bfa25210d214351b16beeba13527812",
       "id": "53570:27392",
@@ -3280,28 +3109,6 @@
       "description": ""
     },
     {
-      "name": "Bubble message",
-      "key": "8a928fbb8d3842856b7d842c9069b8887fbf3132",
-      "id": "54909:28337",
-      "type": "COMPONENT_SET",
-      "variants": 112,
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {
-        "Show Uploading#2190:201": "BOOLEAN",
-        "Show Reaction?#2190:232": "BOOLEAN",
-        "Message#2207:263": "TEXT",
-        "Time#2207:324": "TEXT",
-        "Show Pin#2207:385": "BOOLEAN",
-        "Name#54933:0": "TEXT",
-        "Selection mode?#55871:0": "BOOLEAN",
-        "Device?": "VARIANT(MOBILE,DESKTOP)",
-        "Chat?": "VARIANT(DM,Chat,Sender,Chat Sender)",
-        "Type": "VARIANT(Short Message,Multiple lines,Media,Media+Text,Link,Files,Location,Live location,Contact,Reply,audio call,video call,video autoplay,visio call)"
-      },
-      "description": ""
-    },
-    {
       "name": "Member list 1",
       "key": "a7d04bc206db4f6ab75993833d643ed77db4c6b9",
       "id": "54603:18371",
@@ -3576,28 +3383,6 @@
       "description": "A Dialog is a modal window that appears in front of app content to provide critical information or ask for a decision. They disable all app functionality when they appear, and remain on screen until a required action has been taken.\n\nMost dialog content should avoid scrolling. Even when scrolling is required, the dialog title is pinned at the top, with buttons pinned at the bottom. Dialogs don’t scroll with elements outside of the dialog, such as the background.\n\nBeing purposefully interruptive they should be used sparingly. To provide options without interrupting a user’s experience use a Menu.\n\n🛠 Additional options \nList item - can be edited by selecting an individual list item and  selecting states, leading icons, trailing icons, and dividers from the variant properties. "
     },
     {
-      "name": "Members list 2",
-      "key": "5b62fe572768b2cb4e06eabaaaf4de39fc3279d8",
-      "id": "55286:38802",
-      "type": "COMPONENT_SET",
-      "variants": 12,
-      "page": "❖ Members list",
-      "category": "layout",
-      "properties": {
-        "Name#2522:0": "TEXT",
-        "Email#2523:14": "BOOLEAN",
-        "MattrixID#2523:23": "BOOLEAN",
-        "Online?#2523:32": "BOOLEAN",
-        "Status#55997:0": "BOOLEAN",
-        "Show Invite btn?#56001:13": "BOOLEAN",
-        "Theme": "VARIANT(Light,Dark)",
-        "Configuration": "VARIANT(Default,Selecting)",
-        "Selected": "VARIANT(TRUE,FALSE)",
-        "HOVERED": "VARIANT(FALSE,True)"
-      },
-      "description": ""
-    },
-    {
       "name": "Assistive chip",
       "key": "7c459dfa2a7abf3f0b3bd1de17f81ac07e4f97f5",
       "id": "50994:6935",
@@ -3820,26 +3605,6 @@
       "description": "Date pickers let users select a date, or a range of dates.\n\n🛠 Additional options \nDays/Years - edit the states of the days/years by selecting the individual day/year and editing the variant properties.\n\nMenu button - edit menu button states by selecting and editing variant properties."
     },
     {
-      "name": "List item",
-      "key": "854e0bbc312a3b450fbd97c9f2affb9f1b1df67e",
-      "id": "56094:37195",
-      "type": "COMPONENT_SET",
-      "variants": 8,
-      "page": "❖ Lists",
-      "category": "layout",
-      "properties": {
-        "Trailing icon#56094:0": "BOOLEAN",
-        "Leading icon#56094:4": "BOOLEAN",
-        "Icon#56094:11": "INSTANCE_SWAP",
-        "Divider#56094:18": "BOOLEAN",
-        "Trailing content#56094:25": "BOOLEAN",
-        "Main text#56094:32": "TEXT",
-        "Line": "VARIANT(1,2,3,4)",
-        "Switch before": "VARIANT(No,Yes)"
-      },
-      "description": ""
-    },
-    {
       "name": "Keyboard picker",
       "key": "c8ac280a0c5a5ca059d8bfcdadc2e452318185ce",
       "id": "52949:28053",
@@ -3938,32 +3703,6 @@
       "description": ""
     },
     {
-      "name": "Setting items",
-      "key": "5de7d159f8d53953c161e47f48b61984a4c9ef3c",
-      "id": "58604:6127",
-      "type": "COMPONENT_SET",
-      "variants": 3,
-      "page": "❖ Settings",
-      "category": "layout",
-      "properties": {
-        "State": "VARIANT(Default,Hover,Active)"
-      },
-      "description": ""
-    },
-    {
-      "name": "Setting sub items",
-      "key": "335ac7e63681e448ce9cfad9ecd7494c2296b487",
-      "id": "58604:6243",
-      "type": "COMPONENT_SET",
-      "variants": 3,
-      "page": "Components Draft",
-      "category": "layout",
-      "properties": {
-        "State": "VARIANT(Default,Hovered,Selected)"
-      },
-      "description": ""
-    },
-    {
       "name": "Icon button (web)",
       "key": "a9d1fb9a768753706597de3508dcad546c56d36c",
       "id": "55001:5880",
@@ -4010,23 +3749,6 @@
       "description": ""
     },
     {
-      "name": "Header",
-      "key": "51f3fd5a4f31131ae9e424e54c8688a4e4589b4e",
-      "id": "56283:10242",
-      "type": "COMPONENT_SET",
-      "variants": 4,
-      "page": "❖ Headers",
-      "category": "layout",
-      "properties": {
-        "Divider?#56283:0": "BOOLEAN",
-        "Show Search?#56283:1": "BOOLEAN",
-        "Show Status Bar#58763:2": "BOOLEAN",
-        "State": "VARIANT(Default,invitation,Cancel,Contact)",
-        "Type": "VARIANT(Search)"
-      },
-      "description": ""
-    },
-    {
       "name": "Action Bar Hovered",
       "key": "9c47f2953480ebb153e43e48943437f4797ef734",
       "id": "54559:1991",
@@ -4050,21 +3772,6 @@
       "name": "Switch",
       "key": "130a18bd2f2fdee764172f6b996d77fd3b971d12",
       "id": "51945:10135",
-      "type": "COMPONENT_SET",
-      "variants": 20,
-      "page": "❖ Switch",
-      "category": "layout",
-      "properties": {
-        "Selected": "VARIANT(false,true)",
-        "State": "VARIANT(enabled,hovered,focused,pressed,disabled)",
-        "Icon": "VARIANT(false,true)"
-      },
-      "description": "Switches are the preferred way to adjust settings. They're used to control binary options – think On/Off or True/False."
-    },
-    {
-      "name": "Switch",
-      "key": "d4a9094d7c4730d97198e892bda38741c24aeccf",
-      "id": "56093:34396",
       "type": "COMPONENT_SET",
       "variants": 20,
       "page": "❖ Switch",
@@ -4159,6 +3866,342 @@
       "category": "layout",
       "properties": {
         "State": "VARIANT(Default)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Menu item",
+      "key": "4d62f0022cbd9b13f0e153c2253edf891faf65bf",
+      "id": "60275:25154",
+      "type": "COMPONENT_SET",
+      "variants": 2,
+      "page": "❖ menu new (desktop+mobile)",
+      "category": "layout",
+      "properties": {
+        "Content#60275:4": "TEXT",
+        "icon#60275:5": "INSTANCE_SWAP",
+        "Show Icon left#60275:6": "BOOLEAN",
+        "state": "VARIANT(Default,hover desktop)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Members list 2",
+      "key": "5b62fe572768b2cb4e06eabaaaf4de39fc3279d8",
+      "id": "55286:38802",
+      "type": "COMPONENT_SET",
+      "variants": 12,
+      "page": "❖ Members list",
+      "category": "layout",
+      "properties": {
+        "Name#2522:0": "TEXT",
+        "Email#2523:14": "BOOLEAN",
+        "MattrixID#2523:23": "BOOLEAN",
+        "Online?#2523:32": "BOOLEAN",
+        "Status#55997:0": "BOOLEAN",
+        "Show Invite btn?#56001:13": "BOOLEAN",
+        "Theme": "VARIANT(Light,Dark)",
+        "Configuration": "VARIANT(Default,Selecting)",
+        "Selected": "VARIANT(TRUE,FALSE)",
+        "HOVERED": "VARIANT(FALSE,True)"
+      },
+      "description": ""
+    },
+    {
+      "name": "actionbar",
+      "key": "c31ce831eb9082957a59d14c0d6f974a5dfeb1fa",
+      "id": "60275:22337",
+      "type": "COMPONENT_SET",
+      "variants": 2,
+      "page": "❖ menu new (desktop+mobile)",
+      "category": "layout",
+      "properties": {
+        "emoji bar": "VARIANT(true,false)"
+      },
+      "description": ""
+    },
+    {
+      "name": "video call state",
+      "key": "a31d42adc346ecfb045cd4b6c76fd5abfe7043d5",
+      "id": "61202:19016",
+      "type": "COMPONENT_SET",
+      "variants": 5,
+      "page": "❖ Bubble message",
+      "category": "layout",
+      "properties": {
+        "state": "VARIANT(Failed,completed,declined,missed,canceled)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Threads bubble",
+      "key": "11b3ef7b450a728110129140863dd09be2fcbb5e",
+      "id": "55063:6871",
+      "type": "COMPONENT_SET",
+      "variants": 11,
+      "page": "❖ Bubble thread",
+      "category": "layout",
+      "properties": {
+        "time of last commented#2322:0": "TEXT",
+        "last one commented#2322:1": "TEXT",
+        "thread's description#2322:2": "TEXT",
+        "thread's title#2322:3": "TEXT",
+        "thread's owner#2322:4": "TEXT",
+        "last commented#2322:5": "TEXT",
+        "time created thread#2322:7": "TEXT",
+        "Show thread's-owner-info#58648:0": "BOOLEAN",
+        "Show  icon Thread left#58648:9": "BOOLEAN",
+        "Show input comment-section#58648:36": "BOOLEAN",
+        "Show interaction_with_thread#58648:54": "BOOLEAN",
+        "Theme": "VARIANT(Light,Dark)",
+        "Device": "VARIANT(Desktop,Mobile)",
+        "State": "VARIANT(Sender+react,DM+react,DM+no react,Sender+no react)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Sliding message",
+      "key": "241eda882e24e5873c20803d0d1c98cab544fee7",
+      "id": "58666:9826",
+      "type": "COMPONENT_SET",
+      "variants": 5,
+      "page": "❖ Chat message",
+      "category": "layout",
+      "properties": {
+        "Sliding statut?": "VARIANT(Default,All active,Unmute,Read,Unpin)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Setting sub items",
+      "key": "335ac7e63681e448ce9cfad9ecd7494c2296b487",
+      "id": "58604:6243",
+      "type": "COMPONENT_SET",
+      "variants": 3,
+      "page": "Components Draft",
+      "category": "layout",
+      "properties": {
+        "State": "VARIANT(Default,Hovered,Selected)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Bubble message button",
+      "key": "36e76bb2f89dae3e1a549e6e3402e505346d4753",
+      "id": "58993:18722",
+      "type": "COMPONENT_SET",
+      "variants": 2,
+      "page": "❖ Box text",
+      "category": "layout",
+      "properties": {
+        "Show Icon#58993:16": "BOOLEAN",
+        "Text#58993:19": "TEXT",
+        "Sub text#58993:22": "TEXT",
+        "Show Button 2#58993:25": "BOOLEAN",
+        "Show Additional content#58993:28": "BOOLEAN",
+        "Show Title#58993:31": "BOOLEAN",
+        "Show Sub Text#58993:34": "BOOLEAN",
+        "Device": "VARIANT(Desktop,Mobile)"
+      },
+      "description": ""
+    },
+    {
+      "name": "List item connect",
+      "key": "4697c526b505c74c7b3bffbf65dc996a90e50b04",
+      "id": "58931:1965",
+      "type": "COMPONENT_SET",
+      "variants": 2,
+      "page": "❖ Settings",
+      "category": "layout",
+      "properties": {
+        "Label#58931:0": "TEXT",
+        "State": "VARIANT(Connect,Disconnect)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Header",
+      "key": "51f3fd5a4f31131ae9e424e54c8688a4e4589b4e",
+      "id": "56283:10242",
+      "type": "COMPONENT_SET",
+      "variants": 4,
+      "page": "❖ Headers",
+      "category": "layout",
+      "properties": {
+        "Divider?#56283:0": "BOOLEAN",
+        "Show Search?#56283:1": "BOOLEAN",
+        "Show Status Bar#58763:2": "BOOLEAN",
+        "State": "VARIANT(Default,invitation,Cancel,Contact)",
+        "Type": "VARIANT(Search)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Setting items",
+      "key": "5de7d159f8d53953c161e47f48b61984a4c9ef3c",
+      "id": "58604:6127",
+      "type": "COMPONENT_SET",
+      "variants": 3,
+      "page": "❖ Settings",
+      "category": "layout",
+      "properties": {
+        "State": "VARIANT(Default,Hover,Active)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Floating Send button",
+      "key": "7d58e7438f93cd40a5420b173543058d858f1079",
+      "id": "54825:5442",
+      "type": "COMPONENT_SET",
+      "variants": 2,
+      "page": "❖ Buttons",
+      "category": "layout",
+      "properties": {
+        "Type": "VARIANT(Default,Counter)"
+      },
+      "description": ""
+    },
+    {
+      "name": "List item",
+      "key": "854e0bbc312a3b450fbd97c9f2affb9f1b1df67e",
+      "id": "56094:37195",
+      "type": "COMPONENT_SET",
+      "variants": 8,
+      "page": "❖ Lists",
+      "category": "layout",
+      "properties": {
+        "Trailing icon#56094:0": "BOOLEAN",
+        "Leading icon#56094:4": "BOOLEAN",
+        "Icon#56094:11": "INSTANCE_SWAP",
+        "Divider#56094:18": "BOOLEAN",
+        "Trailing content#56094:25": "BOOLEAN",
+        "Main text#56094:32": "TEXT",
+        "Line": "VARIANT(1,2,3,4)",
+        "Switch before": "VARIANT(No,Yes)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Navigation bar-dark",
+      "key": "da779f5d2d8c3e59bb916cd8551053a003e9b224",
+      "id": "52031:23830",
+      "type": "COMPONENT_SET",
+      "variants": 6,
+      "page": "Components Draft",
+      "category": "layout",
+      "properties": {
+        "Configuration": "VARIANT(icon & label,icon)",
+        "Segments": "VARIANT(3,4,5)"
+      },
+      "description": "Navigation bars (nav bars) provide access to three to five destinations.\n\nThe nav bar is positioned at the bottom of screens for convenient access. Each destination is represented by an icon and optional text label.\nWhen a navigation bar icon is tapped or focused, the user is taken to the navigation destination associated with that icon. \n\nUse on mobile or tablet only.\n\n🛠 Additional options \nSegments - can be edited by selecting individual segments and  selecting states, labels, and badges from the variant properties. "
+    },
+    {
+      "name": "Uploader",
+      "key": "600035ed87907b89219c3498ab9a9b4966f0ffe7",
+      "id": "55286:39066",
+      "type": "COMPONENT_SET",
+      "variants": 12,
+      "page": "❖ Icon button",
+      "category": "layout",
+      "properties": {
+        "Configuration": "VARIANT(Default,Edit,members)",
+        "Theme": "VARIANT(Dark,Light)",
+        "icon size": "VARIANT(Medium)",
+        "type": "VARIANT(mobile,Desktop)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Message list",
+      "key": "879e9a7b307c88c2a7c441c428814d5af4c74728",
+      "id": "54373:28410",
+      "type": "COMPONENT_SET",
+      "variants": 252,
+      "page": "❖ Chat message",
+      "category": "layout",
+      "properties": {
+        "Time#11453:18": "TEXT",
+        "Pinned?#11453:27": "BOOLEAN",
+        "Name#11453:54": "TEXT",
+        "Text Content#11453:63": "TEXT",
+        "Mention?#54416:0": "BOOLEAN",
+        "Last one commented#54433:4": "TEXT",
+        "Show sent?#54827:0": "BOOLEAN",
+        "Show Encrypted#55427:0": "BOOLEAN",
+        "Chat?": "VARIANT(False,True)",
+        "State?": "VARIANT(Default,Unselect,Selected,Typing,Reaction,Media photo,Media video)",
+        "Mute?": "VARIANT(True,False)",
+        "Hovered?": "VARIANT(False,True)",
+        "Read?": "VARIANT(True,False)",
+        "Chat+Media": "VARIANT(False,True)",
+        "Selected?": "VARIANT(False,True)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Switch",
+      "key": "d4a9094d7c4730d97198e892bda38741c24aeccf",
+      "id": "56093:34396",
+      "type": "COMPONENT_SET",
+      "variants": 20,
+      "page": "❖ Switch",
+      "category": "layout",
+      "properties": {
+        "Selected": "VARIANT(false,true)",
+        "State": "VARIANT(enabled,hovered,focused,pressed,disabled)",
+        "Icon": "VARIANT(false,true)"
+      },
+      "description": "Switches are the preferred way to adjust settings. They're used to control binary options – think On/Off or True/False."
+    },
+    {
+      "name": "Message boxes",
+      "key": "f24b8f1ab32a8a298a07db7e382a11838a83a727",
+      "id": "55057:6514",
+      "type": "COMPONENT_SET",
+      "variants": 4,
+      "page": "Components Draft",
+      "category": "layout",
+      "properties": {
+        "Configuration": "VARIANT(Separate tabs,Single list)",
+        "Selection mode?": "VARIANT(False,True)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Bubble message",
+      "key": "8a928fbb8d3842856b7d842c9069b8887fbf3132",
+      "id": "54909:28337",
+      "type": "COMPONENT_SET",
+      "variants": 120,
+      "page": "❖ Bubble message",
+      "category": "layout",
+      "properties": {
+        "Show Uploading#2190:201": "BOOLEAN",
+        "Show Reaction?#2190:232": "BOOLEAN",
+        "Message#2207:263": "TEXT",
+        "Time#2207:324": "TEXT",
+        "Show Pin#2207:385": "BOOLEAN",
+        "Name#54933:0": "TEXT",
+        "Selection mode?#55871:0": "BOOLEAN",
+        "Device?": "VARIANT(MOBILE,DESKTOP)",
+        "Chat?": "VARIANT(DM,Chat,Sender,Chat Sender)",
+        "Type": "VARIANT(Short Message,Multiple lines,Media,Media+Text,Link,Files,Location,Live location,Contact,Reply,audio call,video call,video autoplay,visio call,mediachannel)"
+      },
+      "description": ""
+    },
+    {
+      "name": "Avatars base",
+      "key": "55749f8776831a3ac8e5db54d524383e568fd57f",
+      "id": "58644:7894",
+      "type": "COMPONENT_SET",
+      "variants": 126,
+      "page": "❖ Avatar",
+      "category": "layout",
+      "properties": {
+        "Alias#806:0": "TEXT",
+        "Name": "VARIANT(Pale Green,Cornflower,Moon Blue,Selected,Portrait,PLUVIOPHILE,SNOW PEA,BYZANTINE NIGHT BLUE,BLUE MANA,PINK BONNET,SUGAR CORAL,DOWNY,SUNRISE,DEFAULT)",
+        "Size": "VARIANT(160,96,60,56,40,36,32,24,20)"
       },
       "description": ""
     },
@@ -17923,96 +17966,6 @@
       "description": ""
     },
     {
-      "name": "Device?=DESKTOP, Chat?=Sender, Type=incoming video call",
-      "key": "115d3047b9550d2c427c7922c8cc74696aa0ee41",
-      "id": "58648:25174",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=MOBILE, Chat?=Sender, Type=incoming call",
-      "key": "358ff20d9fd6c4d3bf3fdf6f858f9fba7ffe64f6",
-      "id": "58648:24508",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Dialog 2",
-      "key": "746bcbfe674607749ab3d53c319acb30685841e1",
-      "id": "58898:30274",
-      "type": "COMPONENT",
-      "page": "❖ Box text",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=MOBILE, Chat?=DM, Type=incoming video call",
-      "key": "5e2068e111cf4d108630195a4839c11be580bd90",
-      "id": "58648:23836",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=MOBILE, Chat?=DM, Type=incoming call",
-      "key": "5f44eb463e34b8aaaf8c0038f649683fc791e07e",
-      "id": "58648:23761",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=DESKTOP, Chat?=DM, Type=incoming video call",
-      "key": "7310df48a38116dc6b7ab2ad35321762671fb94c",
-      "id": "58648:24672",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=MOBILE, Chat?=Sender, Type=incoming video call",
-      "key": "b4670ff5cbd142dbc1026ef699653c3ac410898a",
-      "id": "58648:24571",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=DESKTOP, Chat?=DM, Type=incoming call",
-      "key": "d5c04d2284fd317276fd2604f4c65c75074be1b7",
-      "id": "58648:24611",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Device?=DESKTOP, Chat?=Sender, Type=incoming call",
-      "key": "ff96db0437ca604d2dfef7c193b17c6a4b4e05b3",
-      "id": "58648:25157",
-      "type": "COMPONENT",
-      "page": "❖ Bubble message",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
       "name": "update",
       "key": "e427ac772ecbb38ea810ffa94fa5c1b5656a0151",
       "id": "53543:30567",
@@ -30803,16 +30756,6 @@
       "description": ""
     },
     {
-      "name": "scrim__40",
-      "key": "f17a8fd6c515da69ab30f305ea67b24dc41ab46a",
-      "id": "58803:21697",
-      "type": "COMPONENT",
-      "page": "   Shadows & Blurs",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
       "name": "import_export",
       "key": "146d22ae337f395a6e3163ee0b7a1a7330bcae6f",
       "id": "53543:31497",
@@ -32683,16 +32626,6 @@
       "description": ""
     },
     {
-      "name": "Reaction Bar",
-      "key": "27953b26eb79baefbc16569b572a39a5a0229dea",
-      "id": "58721:5972",
-      "type": "COMPONENT",
-      "page": "❖ Reaction chat",
-      "category": "actions",
-      "properties": {},
-      "description": ""
-    },
-    {
       "name": "videocam",
       "key": "3a0cb7e14c30c115684aaaeef974300ec0bc22a9",
       "id": "53543:31134",
@@ -32746,16 +32679,6 @@
       "name": "swipe_left",
       "key": "18e091108729f4a216888cf4d7a45a499b6802ea",
       "id": "53543:30745",
-      "type": "COMPONENT",
-      "page": "   Icons",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "m3_icons__mail_fill_off__24px",
-      "key": "1d9b934090ddb0fefefd378a464e5ed69bc3899a",
-      "id": "56249:36214",
       "type": "COMPONENT",
       "page": "   Icons",
       "category": "layout",
@@ -34918,16 +34841,6 @@
       "id": "53543:30446",
       "type": "COMPONENT",
       "page": "   Icons",
-      "category": "layout",
-      "properties": {},
-      "description": ""
-    },
-    {
-      "name": "Top app bar",
-      "key": "f0556fcd01e8cbff5dc5825aa3feedc8f8686c4c",
-      "id": "58700:4579",
-      "type": "COMPONENT",
-      "page": "❖ Headers",
       "category": "layout",
       "properties": {},
       "description": ""
@@ -44268,6 +44181,86 @@
       "id": "56249:36220",
       "type": "COMPONENT",
       "page": "   Icons",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "m3_icons__mail_fill_off__24px",
+      "key": "1d9b934090ddb0fefefd378a464e5ed69bc3899a",
+      "id": "56249:36214",
+      "type": "COMPONENT",
+      "page": "   Icons",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "actioncontact",
+      "key": "719e62c30f2eb8c99d88b8981c12cdde42ff36db",
+      "id": "61368:9921",
+      "type": "COMPONENT",
+      "page": "❖ menu new (desktop+mobile)",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "ghost",
+      "key": "db15f86f0b57b969e1b4cf77b00803bdd27b9ff4",
+      "id": "59967:148",
+      "type": "COMPONENT",
+      "page": "   Icons",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "actioncontact",
+      "key": "22e9d821ef74a43ed2a078777de7fa3ea3c8052c",
+      "id": "61368:9558",
+      "type": "COMPONENT",
+      "page": "❖ menu new (desktop+mobile)",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "Dialog 2",
+      "key": "746bcbfe674607749ab3d53c319acb30685841e1",
+      "id": "58898:30274",
+      "type": "COMPONENT",
+      "page": "❖ Box text",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "Reaction Bar",
+      "key": "27953b26eb79baefbc16569b572a39a5a0229dea",
+      "id": "58721:5972",
+      "type": "COMPONENT",
+      "page": "❖ Reaction chat",
+      "category": "actions",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "Top app bar",
+      "key": "f0556fcd01e8cbff5dc5825aa3feedc8f8686c4c",
+      "id": "58700:4579",
+      "type": "COMPONENT",
+      "page": "❖ Headers",
+      "category": "layout",
+      "properties": {},
+      "description": ""
+    },
+    {
+      "name": "scrim__40",
+      "key": "f17a8fd6c515da69ab30f305ea67b24dc41ab46a",
+      "id": "58803:21697",
+      "type": "COMPONENT",
+      "page": "   Shadows & Blurs",
       "category": "layout",
       "properties": {},
       "description": ""
